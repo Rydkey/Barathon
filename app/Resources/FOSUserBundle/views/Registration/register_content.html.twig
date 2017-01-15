@@ -1,0 +1,30 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<style>
+    body{background-image:url('{{ asset('assets/Index/images/bar.jpg')}}');}
+</style>
+<div class="row-fluid">
+    <div class="col-md-6 col-lg-offset-3" style="background-color: rgb(232, 119, 20); border-radius: 5px">
+        <div class="signup-header wow fadeInUp">
+            <h3 class="form-title text-center">Inscription</h3>
+            <div class="form-group">
+                <form name="fos_user_registration_form" method="post" action="/private/BarathonNew/web/app_dev.php/register/" class="fos_user_registration_register form-header">
+                    <div id="fos_user_registration_form">
+                        {{ form_start
+                        (form, {'method': 'post', 'action':
+                            path('fos_user_registration_register'),
+                            'attr': {'class': 'fos_user_registration_register'}
+                        })
+                        }}
+                        {{ form_widget(form) }}
+                        <br>
+                        <div class="form-group last">
+                            <input type="submit" value="{{ 'registration.submit'|trans }}" class="btn btn-warning btn-block btn-lg" />
+                        </div>
+                        <br>
+                        {{ form_end(form) }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

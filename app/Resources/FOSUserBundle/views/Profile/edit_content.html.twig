@@ -1,0 +1,93 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+    <div class="row-fluid">
+        <div class="col-lg-12">
+            <br>
+            <div class="container">
+                <h1>Modifier le profil</h1>
+                <hr>
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+                            <h6>Changer de Photo</h6>
+                            {#<input type="file" class="form-control">#}
+                        </div>
+                    </div>
+
+                    <!-- edit form column -->
+                    <div class="col-md-9 personal-info">
+                        {#<div class="alert alert-info alert-dismissable">#}
+                            {#<a class="panel-close close" data-dismiss="alert">×</a>#}
+                            {#<i class="fa fa-coffee"></i>#}
+                            {#This is an <strong>.alert</strong>. Use this to show important messages to the user.#}
+                        {#</div>#}
+                        <h3>Infos personnels</h3>
+                        {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+                        {{ form_widget(form) }}
+                        <div>
+                            <input type="submit" value="{{ 'profile.edit.submit'|trans }}" class="btn btn-success"/>
+                            <a href="{{ path('fos_user_profile_show') }}" class="btn btn-danger"> annuler</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <br>
+        </div>
+    </div>
+
+
+{#<form name="fos_user_profile_form" method="post" action="/private/BarathonNew/web/app_dev.php/profile/edit" class="fos_user_profile_edit">#}
+    {#<div id="fos_user_profile_form">#}
+        {#<div>#}
+            {#<label for="fos_user_profile_form_username" class="required">Nom d&#039;utilisateur</label>#}
+            {#<input type="text" id="fos_user_profile_form_username" name="fos_user_profile_form[username]" required="required" maxlength="255" pattern=".{2,}" val />#}
+        {#</div>#}
+        {#<div>#}
+            {#<label for="fos_user_profile_form_email" class="required">Adresse e-mail</label>#}
+            {#<input type="email" id="fos_user_profile_form_email" name="fos_user_profile_form[email]" required="required" value="s.belocchi57@gmail.com" />#}
+        {#</div>#}
+        {#<div>#}
+            {#<label for="fos_user_profile_form_current_password" class="required">Mot de passe actuel</label>#}
+            {#<input type="password" id="fos_user_profile_form_current_password" name="fos_user_profile_form[current_password]" required="required" />#}
+        {#</div>#}
+        {#<div>#}
+            {#<label for="fos_user_profile_form_pays" class="required">Pays</label>#}
+            {#<input type="text" id="fos_user_profile_form_pays" name="fos_user_profile_form[pays]" required="required" value="France" />#}
+        {#</div>#}
+        {#<div>#}
+            {#<label for="fos_user_profile_form_ville" class="required">Ville</label>#}
+            {#<input type="text" id="fos_user_profile_form_ville" name="fos_user_profile_form[ville]" required="required" value="Frais" />#}
+        {#</div>#}
+        {#<div>#}
+            {#<label for="fos_user_profile_form_age" class="required">Age</label>#}
+            {#<input type="number" id="fos_user_profile_form_age" name="fos_user_profile_form[age]" required="required" value="22" />#}
+        {#</div>#}
+        {#<div>#}
+            {#<label for="fos_user_profile_form_nom" class="required">Nom</label>#}
+            {#<input type="text" id="fos_user_profile_form_nom" name="fos_user_profile_form[nom]" required="required" maxlength="255" pattern=".{3,}" value="Bisous" />#}
+        {#</div>#}
+        {#<div>#}
+            {#<label for="fos_user_profile_form_prenom" class="required">Prenom</label>#}
+            {#<input type="text" id="fos_user_profile_form_prenom" name="fos_user_profile_form[prenom]" required="required" maxlength="255" pattern=".{3,}" value="Sophie" />#}
+        {#</div>#}
+        {#<input type="hidden" id="fos_user_profile_form__token" name="fos_user_profile_form[_token]" value="sDUH6a8umTHNKIcMBPa9bTW-oJudQySGH-1SYHNyDhU" />#}
+    {#</div>#}
+    {#<div>#}
+        {#<input type="submit" value="Mettre à jour" class="btn btn-success"/>#}
+        {#<a href="/private/BarathonNew/web/app_dev.php/profile/" class="btn btn-danger"> annuler</a>#}
+
+    {#</div>#}
+
+{#</form>#}
+
+{#{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}#}
+    {#{{ form_widget(form) }}#}
+{#<div>#}
+    {#<input type="submit" value="{{ 'profile.edit.submit'|trans }}" class="btn btn-success"/>#}
+    {#<a href="{{ path('fos_user_profile_show') }}" class="btn btn-danger"> annuler</a>#}
+{#</div>#}
+
+{#{{ form_end(form) }}#}

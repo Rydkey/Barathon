@@ -1,0 +1,34 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="container-fluid well span6">
+    <div class="row-fluid">
+        <div class="span2" >
+            <img src="https://secure.gravatar.com/avatar/de9b11d0f9c0569ba917393ed5e5b3ab?s=140&r=g&d=mm" class="img-circle">
+        </div>
+
+        <div class="span8">
+            <h3>{{ 'profile.show.username'|trans }}: {{ user.username }}</h3>
+            <h6>{{ 'profile.show.email'|trans }}: {{ user.email }}</h6>
+            <h6>{{ 'profile.show.famillyname'|trans }}: {{ user.nom }}</h6>
+            <h6>{{ 'profile.show.name'|trans }}: {{ user.prenom }}</h6>
+            <h6>{{ 'profile.show.age'|trans }}: {{ user.age }}</h6>
+            <h6>{{ 'profile.show.country'|trans }}: {{ user.pays }}</h6>
+            <h6>{{ 'profile.show.city'|trans }}: {{ user.ville }}</h6>
+            <h6>{{ group.name }}</h6>
+        </div>
+
+        <div class="span2">
+            <div class="btn-group">
+                <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                    Action
+                    <span class="icon-cog icon-white"></span><span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu dropdown">
+                    <li><a href="{{ path('fos_user_profile_edit') }}">Modifier le profil</a></li>
+                    <li><a href="{{ path('fos_user_change_password') }}">Changer de mot de passe</a></li>
+                    <li><a href="{{ path('fos_user_security_logout') }}">déconnexion</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+{% extends "@FOSUser/connectionLayout.html.twig" %}
+
+{% block fos_user_content %}
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+    {% else %}
+        {% include "@FOSUser/Registration/register_content.html.twig" %}
+    {% endif %}
+
+{% endblock fos_user_content %}

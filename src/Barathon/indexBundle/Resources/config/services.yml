@@ -1,0 +1,4 @@
+services:
+#    barathonindex.example:
+#        class: Barathon\indexBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

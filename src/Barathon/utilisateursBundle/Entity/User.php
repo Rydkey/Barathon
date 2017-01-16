@@ -68,6 +68,12 @@ class User extends BaseUser
      */
     protected $age;
 
+    /**
+     * @ORM\OneToOne(targetEntity="Barathon\barBundle\Entity\Bar")
+     * @ORM\JoinColumn(name="bar_id", referencedColumnName="id", nullable=true)
+     **/
+    protected $bar_id;
+
     public function __construct()
     {
         parent::__construct();
@@ -192,5 +198,29 @@ class User extends BaseUser
     public function getAge()
     {
         return $this->age;
+    }
+
+    /**
+     * Set barId
+     *
+     * @param \Barathon\utilisateursBundle\Entity\Bar $barId
+     *
+     * @return User
+     */
+    public function setBarId(\Barathon\utilisateursBundle\Entity\Bar $barId = null)
+    {
+        $this->bar_id = $barId;
+
+        return $this;
+    }
+
+    /**
+     * Get barId
+     *
+     * @return \Barathon\utilisateursBundle\Entity\Bar
+     */
+    public function getBarId()
+    {
+        return $this->bar_id;
     }
 }

@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Barathon\utilisateursBundle\BarathonutilisateursBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new Barathon\barBundle\BarathonbarBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

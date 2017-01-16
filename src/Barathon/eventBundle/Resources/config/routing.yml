@@ -1,0 +1,3 @@
+barathonevent_homepage:
+    path:     /
+    defaults: { _controller: BarathoneventBundle:Default:index }

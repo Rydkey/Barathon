@@ -71,8 +71,6 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
     user_class: Barathon\utilisateursBundle\Entity\User
-    group:
-        group_class: Barathon\utilisateursBundle\Entity\Group
     registration:
             form:
                 type: Barathon\utilisateursBundle\Form\RegistrationType

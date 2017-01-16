@@ -26,15 +26,6 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Barathon\utilisateursBundle\Entity\Group")
-     * @ORM\JoinTable(name="fos_user_user_group",
-     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
-     * )
-     */
-    protected $groups;
-
-    /**
      * @ORM\Column(type="string", length=255)
      *
      * @Assert\NotBlank(message="Entrez un nom s'il vous plait", groups={"Registration", "Profile"})
@@ -202,17 +193,4 @@ class User extends BaseUser
     {
         return $this->age;
     }
-
-    public function getGroups(){
-        return $this->groups;
-    }
-
-    /**
-     * @param mixed $groups
-     */
-    public function setGroups($groups)
-    {
-        $this->groups = $groups;
-    }
-    
 }

@@ -14,7 +14,10 @@
             <h6>{{ 'profile.show.age'|trans }}: {{ user.age }}</h6>
             <h6>{{ 'profile.show.country'|trans }}: {{ user.pays }}</h6>
             <h6>{{ 'profile.show.city'|trans }}: {{ user.ville }}</h6>
-            <h6>votre bar : {{ user.barId }}</h6>
+            {% if user.barId != NULL %}
+                <h6>votre bar : {{ user.barId }}</h6>
+            {% endif %}
+
         </div>
 
         <div class="span2">

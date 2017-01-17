@@ -17,9 +17,10 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Barathon\indexBundle\BarathonindexBundle(),
             new Barathon\utilisateursBundle\BarathonutilisateursBundle(),
+            new Barathon\barBundle\BarathonbarBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
-            new Barathon\barBundle\BarathonbarBundle(),
+            new Barathon\eventBundle\BarathoneventBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

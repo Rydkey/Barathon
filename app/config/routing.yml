@@ -1,10 +1,13 @@
+barathonevent:
+    resource: "@BarathoneventBundle/Resources/config/routing.yml"
+    prefix:   /evenements
+
 barathonbar:
     resource: "@BarathonbarBundle/Resources/config/routing.yml"
-    prefix:   /bar
+    prefix:   /bars
 
 barathonutilisateurs:
     resource: "@BarathonutilisateursBundle/Resources/config/routing.yml"
-    prefix:   /utilisateurs
 
 barathonindex:
     resource: "@BarathonindexBundle/Resources/config/routing.yml"

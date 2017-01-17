@@ -74,10 +74,19 @@ class User extends BaseUser
      **/
     protected $bar_id;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Barathon\eventBundle\Entity\Event")
+     * @ORM\JoinTable(name="events",
+     *      joinColumns={@ORM\JoinColumn(name="id", referencedColumnName="id",nullable=true)},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="id_event", referencedColumnName="id_event", unique=true)},
+     *      )
+     */
+    private $events;
+
     public function __construct()
     {
         parent::__construct();
-        // your own logic
+        $this->events = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -222,5 +231,39 @@ class User extends BaseUser
     public function getBarId()
     {
         return $this->bar_id;
+    }
+
+    /**
+     * Add event
+     *
+     * @param \Barathon\eventBundle\Entity\Event $event
+     *
+     * @return User
+     */
+    public function addEvent(\Barathon\eventBundle\Entity\Event $event)
+    {
+        $this->events[] = $event;
+
+        return $this;
+    }
+
+    /**
+     * Remove event
+     *
+     * @param \Barathon\eventBundle\Entity\Event $event
+     */
+    public function removeEvent(\Barathon\eventBundle\Entity\Event $event)
+    {
+        $this->events->removeElement($event);
+    }
+
+    /**
+     * Get events
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEvents()
+    {
+        return $this->events;
     }
 }

@@ -1,3 +1,3 @@
 barathonutilisateurs_homepage:
-    path:     /
+    path:     /utilisateurs
     defaults: { _controller: BarathonutilisateursBundle:Default:index }

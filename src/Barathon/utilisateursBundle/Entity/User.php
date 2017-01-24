@@ -70,7 +70,7 @@ class User extends BaseUser
 
     /**
      * @ORM\OneToOne(targetEntity="Barathon\barBundle\Entity\Bar")
-     * @ORM\JoinColumn(name="bar_id", referencedColumnName="id", nullable=true)
+     * @ORM\JoinColumn(name="bar_id", referencedColumnName="bar_id", nullable=true)
      **/
     protected $bar_id;
 
@@ -210,21 +210,21 @@ class User extends BaseUser
     }
 
     /**
-     * Set barId
+     * Set bar_id
      *
-     * @param \Barathon\utilisateursBundle\Entity\Bar $barId
+     * @param \Barathon\utilisateursBundle\Entity\Bar $bar_id
      *
      * @return User
      */
-    public function setBarId(\Barathon\utilisateursBundle\Entity\Bar $barId = null)
+    public function setBarId(\Barathon\utilisateursBundle\Entity\Bar $bar_id = null)
     {
-        $this->bar_id = $barId;
+        $this->bar_id = $bar_id;
 
         return $this;
     }
 
     /**
-     * Get barId
+     * Get bar_id
      *
      * @return \Barathon\utilisateursBundle\Entity\Bar
      */

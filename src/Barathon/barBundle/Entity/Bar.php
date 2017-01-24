@@ -21,7 +21,7 @@ class Bar{
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    protected $bar_id;
 
     /**
      * @ORM\Column(type="string")
@@ -32,20 +32,7 @@ class Bar{
      * @ORM\Column(type="string")
      */
     protected $ville;
-
-
-
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
+    
     /**
      * Set name
      *
@@ -97,5 +84,15 @@ class Bar{
     public function __toString()
     {
         return $this->getName();
+    }
+
+    /**
+     * Get bar_id
+     *
+     * @return integer
+     */
+    public function getBarId()
+    {
+        return $this->bar_id;
     }
 }

@@ -15,11 +15,11 @@
             <h6>{{ 'profile.show.country'|trans }}: {{ user.pays }}</h6>
             <h6>{{ 'profile.show.city'|trans }}: {{ user.ville }}</h6>
             {% if user.barId != NULL %}
-                <h6>votre bar : {{ user.barId.name }}</h6>
-                {% for event in user.events%}
-                    <h6>{{ event.libelleEvent}} dans le bar {{ event.barId }} a la date du {{ event.dateEvent | date('D-M-Y') }}</h6>
-                {% endfor %}
+                <h6>{{ 'profile.show.bar'|trans }} : {{ user.barId.name }}</h6>
             {% endif %}
+            {% for event in user.events%}
+                <h6>{{ event.libelleEvent}} dans le bar {{ event.barId }} a la date du {{ event.dateEvent | date('d/m/Y') }}</h6>
+            {% endfor %}
             {{ dump(user) }}
 
         </div>

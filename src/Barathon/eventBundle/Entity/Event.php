@@ -35,8 +35,8 @@ class Event
     protected $date_event;
 
     /**
-     * @ORM\OneToOne(targetEntity="Barathon\barBundle\Entity\Bar")
-     * @ORM\JoinColumn(name="bar_id", referencedColumnName="id", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Barathon\barBundle\Entity\Bar", cascade={"persist"})
+     * @ORM\JoinColumn(name="bar_id", referencedColumnName="bar_id")
      **/
     protected $bar_id;
 
@@ -99,21 +99,21 @@ class Event
     }
 
     /**
-     * Set barId
+     * Set bar_id
      *
-     * @param \Barathon\barBundle\Entity\Bar $barId
+     * @param \Barathon\barBundle\Entity\Bar $bar_id
      *
      * @return Event
      */
-    public function setBarId(\Barathon\barBundle\Entity\Bar $barId = null)
+    public function setBarId(\Barathon\barBundle\Entity\Bar $bar_id = null)
     {
-        $this->bar_id = $barId;
+        $this->bar_id = $bar_id;
 
         return $this;
     }
 
     /**
-     * Get barId
+     * Get bar_id
      *
      * @return \Barathon\barBundle\Entity\Bar
      */
@@ -125,5 +125,36 @@ class Event
     public function __toString()
     {
         return $this->getLibelleEvent();
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->bar_id = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add bar_id
+     *
+     * @param \Barathon\barBundle\Entity\Bar $bar_id
+     *
+     * @return Event
+     */
+    public function addBarId(\Barathon\barBundle\Entity\Bar $bar_id)
+    {
+        $this->bar_id[] = $bar_id;
+
+        return $this;
+    }
+
+    /**
+     * Remove bar_id
+     *
+     * @param \Barathon\barBundle\Entity\Bar $bar_id
+     */
+    public function removeBarId(\Barathon\barBundle\Entity\Bar $bar_id)
+    {
+        $this->bar_id->removeElement($bar_id);
     }
 }

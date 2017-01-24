@@ -16,11 +16,9 @@
             <h6>{{ 'profile.show.city'|trans }}: {{ user.ville }}</h6>
             {% if user.barId != NULL %}
                 <h6>votre bar : {{ user.barId.name }}</h6>
-                <td>
-                    {% for event in user.events%}
-                        <li>{{ event.libelleEvent}} dans le bar {{ event.barId }} a la date du {{ event.dateEvent | date('D-M-Y') }}</li>
-                    {% endfor %}
-                </td>
+                {% for event in user.events%}
+                    <h6>{{ event.libelleEvent}} dans le bar {{ event.barId }} a la date du {{ event.dateEvent | date('D-M-Y') }}</h6>
+                {% endfor %}
             {% endif %}
             {{ dump(user) }}
 

@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46495395-1fbc-4e04-b0b1-e2ceb292d5af" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/bar/edit.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/bar/index.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/bar/new.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/bar/show.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Barathon/barBundle/Controller/BarController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Barathon/barBundle/Form/BarType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Barathon/barBundle/Resources/config/routing/bar.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Barathon/barBundle/Tests/Controller/BarControllerTest.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Barathon/barBundle/Controller/DefaultController.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show_content.html.twig" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show_content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/Utilisateurs/utilisateursLayout.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/Utilisateurs/utilisateursLayout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Barathon/barBundle/Entity/Bar.php" afterPath="$PROJECT_DIR$/src/Barathon/barBundle/Entity/Bar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Barathon/barBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/Barathon/barBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app_dev.php" afterPath="$PROJECT_DIR$/web/app_dev.php" />
     </list>
     <ignored path="BarathonNew.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -377,7 +360,7 @@
       <workItem from="1485786729791" duration="77000" />
       <workItem from="1485789858610" duration="674000" />
       <workItem from="1485868789680" duration="15000" />
-      <workItem from="1485952746872" duration="31000" />
+      <workItem from="1485952746872" duration="120000" />
     </task>
     <task id="LOCAL-00001" summary="add git ignore">
       <created>1484572461041</created>
@@ -421,11 +404,18 @@
       <option name="project" value="LOCAL" />
       <updated>1485251459321</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="CRUD bar modifications">
+      <created>1485952812506</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1485952812506</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84291000" />
+    <option name="totallyTimeSpent" value="84380000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-4" width="1922" height="1085" extended-state="6" />
@@ -433,6 +423,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30202776" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23425826" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -440,7 +431,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -469,7 +459,8 @@
     <MESSAGE value="Ajout de event dans user" />
     <MESSAGE value="Ajout des traductions française (app/Ressources/translations/FOSUserBundle.fr.yml)" />
     <MESSAGE value="Possibilité de s'inscrire à plusieurs évènements pour un utilisateur.&#10;Possibilité de faire plusieurs évènements dans un seul et même bar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Possibilité de s'inscrire à plusieurs évènements pour un utilisateur.&#10;Possibilité de faire plusieurs évènements dans un seul et même bar" />
+    <MESSAGE value="CRUD bar modifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRUD bar modifications" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -22,7 +22,7 @@ class Event
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    protected $event_id;
 
     /**
      * @ORM\Column(type="string")
@@ -36,7 +36,7 @@ class Event
 
     /**
      * @ORM\ManyToOne(targetEntity="Barathon\barBundle\Entity\Bar", cascade={"persist"})
-     * @ORM\JoinColumn(name="bar_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="bar_id", referencedColumnName="bar_id")
      **/
     protected $bar_id;
 
@@ -45,9 +45,9 @@ class Event
      *
      * @return integer
      */
-    public function getIdEvent()
+    public function getEventId()
     {
-        return $this->id_event;
+        return $this->event_id;
     }
 
     /**
@@ -163,8 +163,17 @@ class Event
      *
      * @return integer
      */
-    public function getId()
-    {
-        return $this->id;
+//    public function getIdEvent()
+//    {
+//        return $this->id_event;
+//    }
+
+    public function getevent_idEvent(){
+        return $this->event_id;
+    }
+
+    public function getid(){
+        return $this->event_id;
+
     }
 }

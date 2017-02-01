@@ -70,7 +70,7 @@ class User extends BaseUser
 
     /**
      * @ORM\OneToOne(targetEntity="Barathon\barBundle\Entity\Bar")
-     * @ORM\JoinColumn(name="bar_id", referencedColumnName="id", nullable=true)
+     * @ORM\JoinColumn(name="bar_id", referencedColumnName="bar_id", nullable=true)
      **/
     protected $bar_id;
 
@@ -78,7 +78,7 @@ class User extends BaseUser
      * @ORM\ManyToMany(targetEntity="Barathon\eventBundle\Entity\Event")
      * @ORM\JoinTable(name="events",
      *      joinColumns={@ORM\JoinColumn(name="id", referencedColumnName="id",nullable=true)},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="id_event", referencedColumnName="id", unique=true)},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="event_id", referencedColumnName="event_id", unique=true)},
      *      )
      */
     private $events;

@@ -1,3 +1,7 @@
+barathonbar_bar:
+    resource: "@BarathonbarBundle/Resources/config/routing/bar.yml"
+    prefix:   /
+
 barathonbar_homepage:
     path:     /
     defaults: { _controller: BarathonbarBundle:Default:index }

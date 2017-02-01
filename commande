@@ -1,0 +1,5 @@
+php bin/console doctrine:generate:entities Barathon/IndexBundle/Entity/User
+
+php bin/console doctrine:schema:update --force
+
+php bin/console generate:doctrine:crud

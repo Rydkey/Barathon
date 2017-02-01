@@ -22,7 +22,7 @@ class Event
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id_event;
+    protected $id;
 
     /**
      * @ORM\Column(type="string")
@@ -36,7 +36,7 @@ class Event
 
     /**
      * @ORM\ManyToOne(targetEntity="Barathon\barBundle\Entity\Bar", cascade={"persist"})
-     * @ORM\JoinColumn(name="bar_id", referencedColumnName="bar_id")
+     * @ORM\JoinColumn(name="bar_id", referencedColumnName="id")
      **/
     protected $bar_id;
 
@@ -156,5 +156,15 @@ class Event
     public function removeBarId(\Barathon\barBundle\Entity\Bar $bar_id)
     {
         $this->bar_id->removeElement($bar_id);
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }

@@ -1,0 +1,40 @@
+{% extends '::Utilisateurs/utilisateursLayout.html.twig' %}
+{% block page %}
+    <h1>Bars list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Bar_id</th>
+                <th>Name</th>
+                <th>Ville</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bar in bars %}
+            <tr>
+                <td><a href="{{ path('bar_show', { 'id': bar.bar_id }) }}">{{ bar.bar_id }}</a></td>
+                <td>{{ bar.name }}</td>
+                <td>{{ bar.ville }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('bar_show', { 'id': bar.bar_id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('bar_edit', { 'id': bar.bar_id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('bar_new') }}">Create a new bar</a>
+        </li>
+    </ul>
+{% endblock %}

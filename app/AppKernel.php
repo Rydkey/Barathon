@@ -18,9 +18,9 @@ class AppKernel extends Kernel
             new Barathon\indexBundle\BarathonindexBundle(),
             new Barathon\utilisateursBundle\BarathonutilisateursBundle(),
             new Barathon\barBundle\BarathonbarBundle(),
+            new Barathon\eventBundle\BarathoneventBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
-            new Barathon\eventBundle\BarathoneventBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

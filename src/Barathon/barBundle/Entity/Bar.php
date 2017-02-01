@@ -21,7 +21,7 @@ class Bar{
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    protected $bar_id;
 
     /**
      * @ORM\Column(type="string")
@@ -85,13 +85,23 @@ class Bar{
     {
         return $this->getName();
     }
+
     /**
-     * Get id
+     * Get bar_id
      *
      * @return integer
      */
-    public function getId()
+    public function getbarId()
     {
-        return $this->id;
+        return $this->bar_id;
+    }
+    /**
+     * Get bar_id
+     *
+     * @return integer
+     */
+    public function getbar_Id()
+    {
+        return $this->bar_id;
     }
 }

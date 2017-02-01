@@ -1,6 +1,6 @@
 barathonevent_event:
     resource: "@BarathoneventBundle/Resources/config/routing/event.yml"
-    prefix:   /
+    prefix:   /event
 
 barathonevent_homepage:
     path:     /

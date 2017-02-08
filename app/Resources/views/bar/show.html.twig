@@ -1,0 +1,35 @@
+{% extends 'Utilisateurs/utilisateursLayout.html.twig' %}
+{% block page %}
+    <h1>Bar</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Bar_id</th>
+                <td>{{ bar.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ bar.name }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ bar.ville }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('bar_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('bar_edit', { 'id': bar.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

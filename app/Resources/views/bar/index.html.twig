@@ -1,0 +1,45 @@
+{% extends 'Utilisateurs/utilisateursLayout.html.twig' %}
+{% block page %}
+    <h1>Bars list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Bar_id</th>
+                <th>Name</th>
+                <th>Ville</th>
+                {% if is_granted("ROLE_ADMIN") %}
+                <th>Actions</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+        {% for bar in bars %}
+            <tr>
+                <td><a href="{{ path('bar_show', { 'id': bar.id }) }}">{{ bar.id }}</a></td>
+                <td>{{ bar.name }}</td>
+                <td>{{ bar.ville }}</td>
+                <td>
+                    {% if is_granted("ROLE_ADMIN") %}
+                    <ul>
+                        <li>
+                            <a href="{{ path('bar_show', { 'id': bar.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('bar_edit', { 'id': bar.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% if is_granted("ROLE_ADMIN") %}
+    <ul>
+        <li>
+            <a href="{{ path('bar_new') }}">Create a new bar</a>
+        </li>
+    </ul>
+{% endif %}
+{% endblock %}

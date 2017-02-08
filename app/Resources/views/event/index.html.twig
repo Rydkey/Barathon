@@ -9,7 +9,7 @@
                 <th>Libelle_event</th>
                 <th>Date_event</th>
                 <th>bar</th>
-                {% if is_granted("ROLE_ADMIN") %}
+                {% if is_granted("ROLE_PROR") %}
                     <th>Actions</th>
                 {% endif %}
             </tr>
@@ -22,7 +22,7 @@
                 <td>{% if event.dateevent %}{{ event.dateevent|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ event.barid }}</td>
                 <td>
-                    {% if is_granted("ROLE_ADMIN") %}
+                    {% if is_granted("ROLE_PROR") %}
                     <ul>
                         <li>
                             <a href="{{ path('event_show', { 'id': event.id }) }}">show</a>
@@ -39,7 +39,7 @@
     </table>
 
     <ul>
-        {% if is_granted("ROLE_ADMIN") %}
+        {% if is_granted("ROLE_PROR") %}
         <li>
             <a href="{{ path('event_new') }}">Create a new event</a>
         </li>

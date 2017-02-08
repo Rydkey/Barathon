@@ -8,7 +8,7 @@
                 <th>Bar_id</th>
                 <th>Name</th>
                 <th>Ville</th>
-                {% if is_granted("ROLE_ADMIN") %}
+                {% if is_granted("ROLE_PROR") %}
                 <th>Actions</th>
                 {% endif %}
             </tr>
@@ -20,7 +20,7 @@
                 <td>{{ bar.name }}</td>
                 <td>{{ bar.ville }}</td>
                 <td>
-                    {% if is_granted("ROLE_ADMIN") %}
+                    {% if is_granted("ROLE_PROR") %}
                     <ul>
                         <li>
                             <a href="{{ path('bar_show', { 'id': bar.id }) }}">show</a>
@@ -35,7 +35,7 @@
         {% endfor %}
         </tbody>
     </table>
-{% if is_granted("ROLE_ADMIN") %}
+{% if is_granted("ROLE_PROR") %}
     <ul>
         <li>
             <a href="{{ path('bar_new') }}">Create a new bar</a>

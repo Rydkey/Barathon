@@ -24,7 +24,7 @@ class BarController extends Controller
 
         $bars = $em->getRepository('BarathonbarBundle:Bar')->findAll();
 
-        return $this->render('bar/index.html.twig', array(
+        return $this->render('BarathonbarBundle:bar:index.html.twig', array(
             'bars' => $bars,
         ));
     }
@@ -47,7 +47,7 @@ class BarController extends Controller
             return $this->redirectToRoute('bar_index');
         }
 
-        return $this->render('bar/new.html.twig', array(
+        return $this->render('BarathonbarBundle:bar:new.html.twig', array(
             'bar' => $bar,
             'form' => $form->createView(),
         ));
@@ -61,7 +61,7 @@ class BarController extends Controller
     {
         $deleteForm = $this->createDeleteForm($bar);
 
-        return $this->render('bar/show.html.twig', array(
+        return $this->render('bar:show.html.twig', array(
             'bar' => $bar,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -83,7 +83,7 @@ class BarController extends Controller
             return $this->redirectToRoute('bar_edit', array('id' => $bar->getId()));
         }
 
-        return $this->render('bar/edit.html.twig', array(
+        return $this->render('BarathonbarBundle:bar:edit.html.twig', array(
             'bar' => $bar,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

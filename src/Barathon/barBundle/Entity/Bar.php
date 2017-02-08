@@ -104,4 +104,13 @@ class Bar{
     {
         return $this->bar_id;
     }
+    /**
+     * Get bar_id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->bar_id;
+    }
 }

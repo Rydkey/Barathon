@@ -8,19 +8,47 @@
             <h3 class="form-title text-center">Inscription</h3>
             <div class="form-group">
                 <div id="fos_user_registration_form">
-                    {{ form_start
-                    (form, {'method': 'post', 'action':
-                        path('fos_user_registration_register'),
-                        'attr': {'class': 'fos_user_registration_register'}
-                    })
-                    }}
-                    {{ form_widget(form) }}
+                    {{ form_start (form)}}
+                    <div class="row-fluid">
+                        <input type="text" id="fos_user_registration_form_nom" name="fos_user_registration_form[nom]" required="required" maxlength="255" pattern=".{3,}" placeholder="Nom" />
+                        {{ form_errors(form.nom) }}
+
+                        <input type="text" id="fos_user_registration_form_prenom" name="fos_user_registration_form[prenom]" required="required" maxlength="255" pattern=".{3,}"  placeholder="prenom"/>
+                        {{ form_errors(form.prenom) }}
+                        <br>
+                        <input type="text" id="fos_user_registration_form_pays" name="fos_user_registration_form[pays]" required="required" placeholder="Pays" />
+                        {{ form_errors(form.pays) }}
+                        <br>
+                        <input type="text" id="fos_user_registration_form_ville" name="fos_user_registration_form[ville]" required="required" placeholder="Ville" />
+                        {{ form_errors(form.ville) }}
+                        <br>
+                        {{ form_label(form.age) }}
+                        {{ form_widget(form.age) }}
+                        {{ form_errors(form.age) }}
+                    </div>
+                    {{ form_label(form.username) }}
+                    {{ form_widget(form.username) }}
+                    {{ form_errors(form.username) }}
+                    <br>
+                    {{ form_label(form.email) }}
+                    {{ form_widget(form.email) }}
+                    {{ form_errors(form.email) }}
+                    <br>
+                    {{ form_label(form.plainPassword.first) }}
+                    {{ form_widget(form.plainPassword.first) }}
+                    {{ form_errors(form.plainPassword.first) }}
+                    <br>
+                    {{ form_label(form.plainPassword.second) }}
+                    {{ form_widget(form.plainPassword.second) }}
+                    <br>
+
+                    {{ form_end(form)}}
                     <br>
                     <div class="form-group last">
                         <input type="submit" value="{{ 'registration.submit'|trans }}" class="btn btn-warning btn-block btn-lg" />
                     </div>
                     <br>
-                    {{ form_end(form) }}
+
                 </div>
             </div>
         </div>

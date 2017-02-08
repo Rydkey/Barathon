@@ -17,3 +17,8 @@
 Supprimerait .idea/vcs.xml
 Supprimerait app/bootstrap.php.cache
 Supprimerait var/
+/app/bootstrap.php.cache
+Supprimerait .idea/dataSources.ids
+Supprimerait .idea/dataSources.local.xml
+Supprimerait src/Barathon/barBundle/Entity/Bar.php~
+Supprimerait src/Barathon/eventBundle/Entity/Event.php~

@@ -1,40 +1,46 @@
 {% extends '::Utilisateurs/utilisateursLayout.html.twig' %}
 {% block page %}
-    <h1>Events list</h1>
+    <h1>Listes des évènements </h1><br>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Libelle_event</th>
-                <th>Date_event</th>
-                <th>Actions bites</th>
-            </tr>
-        </thead>
-        <tbody>
         {% for event in events %}
-            <tr>
-                <td><a href="{{ path('event_show', { 'id': event.id }) }}">{{ event.id }}</a></td>
-                <td>{{ event.libelleevent }}</td>
-                <td>{% if event.dateevent %}{{ event.dateevent|date('Y-m-d') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('event_show', { 'id': event.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('event_edit', { 'id': event.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
+            <div class="container col-lg-6">
+                <div class="well">
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="http://placekitten.com/150/150">
+                        </a>
+                        <div class="media-body">
+                            <h1 class="media-heading">{{ event.libelleevent }} au {{ event.barId }}</h1>
+                            <h6>{{ event.dateevent|date('D-M-Y') }}</h6><br>
+                            <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus, accusantium aspernatur beatae consectetur dolorum ducimus ea, excepturi illo ipsum itaque magnam necessitatibus non nulla numquam odit quaerat repudiandae, sit?</p>
+                            <p class="text-right">By Francisco</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {#<tr>#}
+                {#<td><a href="{{ path('event_show', { 'id': event.id }) }}">{{ event.id }}</a></td>#}
+                {#<td>{{ event.libelleevent }}</td>#}
+                {#<td>{% if event.dateevent %}{{ event.dateevent|date('Y-m-d') }}{% endif %}</td>#}
+                {#<td>#}
+                    {#<ul>#}
+                        {#<li>#}
+                            {#<a href="{{ path('event_show', { 'id': event.id }) }}">show</a>#}
+                        {#</li>#}
+                        {#<li>#}
+                            {#<a href="{{ path('event_edit', { 'id': event.id }) }}">edit</a>#}
+                        {#</li>#}
+                    {#</ul>#}
+                {#</td>#}
+            {#</tr>#}
         {% endfor %}
         </tbody>
     </table>
+    {#<ul>#}
+        {#<li>#}
+            {#<a href="{{ path('event_new') }}">Create a new event</a>#}
+        {#</li>#}
+    {#</ul>#}
 
-    <ul>
-        <li>
-            <a href="{{ path('event_new') }}">Create a new event</a>
-        </li>
-    </ul>
+
 {% endblock %}

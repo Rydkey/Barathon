@@ -3009,3 +3009,8 @@ ul.messagesList li span.date {
     width:380px ;
     height:270px
 }
+
+.navbar .nav.pull-right{
+	margin: auto;
+	padding: 10px;
+}

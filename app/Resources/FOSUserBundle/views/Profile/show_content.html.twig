@@ -20,8 +20,6 @@
             {% for event in user.events%}
                 <h6>{{ event.libelleEvent}} dans le bar {{ event.barId }} a la date du {{ event.dateEvent | date('d/m/Y') }}</h6>
             {% endfor %}
-            {{ dump(user) }}
-
         </div>
 
         <div class="span2">
@@ -35,6 +33,18 @@
                     <li><a href="{{ path('fos_user_security_logout') }}">déconnexion</a></li>
                 </ul>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-12 well">
+    <div class="col-lg-6">
+        <div class="col-md-3">
+            <img src="http://placekitten.com/150/150" alt="">
+        </div>
+        <div class="col-md-3">
+            <h1>{{ user.username }}</h1>
+            <h6>{{ user.email }}</h6>
         </div>
     </div>
 </div>

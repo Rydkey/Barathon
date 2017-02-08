@@ -219,7 +219,6 @@ class User extends BaseUser
     public function setBarId(\Barathon\utilisateursBundle\Entity\Bar $bar_id = null)
     {
         $this->bar_id = $bar_id;
-
         return $this;
     }
 

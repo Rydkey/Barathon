@@ -40,6 +40,13 @@ class Bar{
      *
      * @return Bar
      */
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Barathon\utilisateursBundle\Entity\User", cascade={"persist"})
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     **/
+    protected $user_id;
+    
     public function setName($name)
     {
         $this->name = $name;

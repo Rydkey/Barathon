@@ -13,7 +13,7 @@ class BarType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('ville')        ;
+        $builder->add('name')->add('ville')->add('user_id')        ;
     }
     
     /**

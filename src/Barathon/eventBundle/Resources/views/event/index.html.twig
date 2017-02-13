@@ -10,12 +10,12 @@
                             <img class="media-object" src="{{ asset('assets/Utilisateurs/img/gallery/bar1.jpg') }}" style="height:150px; width: 150px;">
                         </a>
                         <div class="media-body">
-                            <h1 class="media-heading">{{ event.libelleevent }} au {{ event.barId }}</h1>
+                            <h1 class="media-heading">{{ event.libelleevent }} au {{ event.barId.name}}</h1>
                             <h6>{{ event.dateevent|date('D-M-Y') }}</h6>
                             <span class="btn-sm alert-info">Bière Belges</span>
                             <span class="btn-sm alert-warning">Étudiants</span>
                             <hr>
-                            <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus, accusantium aspernatur beatae consectetur dolorum ducimus ea, excepturi illo ipsum itaque magnam necessitatibus non nulla numquam odit quaerat repudiandae, sit?</p>
+                            <p class="text-left">{{ dump(event) }}</p>
                             <p class="text-right">
                                 <a href="{{ path('event_show', { 'id': event.id }) }}">
                                     <span class="btn btn-lg btn-info"><span class="glyphicon glyphicon-info-sign"></span>Détails</span>

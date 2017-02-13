@@ -69,7 +69,7 @@ class User extends BaseUser
     protected $age;
 
     /**
-     * @ORM\OneToOne(targetEntity="Barathon\barBundle\Entity\Bar")
+     * @ORM\ManyToOne(targetEntity="Barathon\barBundle\Entity\Bar", cascade={"all"})
      * @ORM\JoinColumn(name="bar_id", referencedColumnName="bar_id", nullable=true)
      **/
     protected $bar_id;
@@ -210,19 +210,6 @@ class User extends BaseUser
     }
 
     /**
-     * Set bar_id
-     *
-     * @param \Barathon\utilisateursBundle\Entity\Bar $bar_id
-     *
-     * @return User
-     */
-    public function setBarId(\Barathon\utilisateursBundle\Entity\Bar $bar_id = null)
-    {
-        $this->bar_id = $bar_id;
-        return $this;
-    }
-
-    /**
      * Get bar_id
      *
      * @return \Barathon\utilisateursBundle\Entity\Bar
@@ -264,5 +251,25 @@ class User extends BaseUser
     public function getEvents()
     {
         return $this->events;
+    }
+
+    /**
+     * Set bar_id
+     *
+     * @param \Barathon\barBundle\Entity\Bar $bar_id
+     *
+     * @return User
+     */
+    public function setBarId(\Barathon\barBundle\Entity\Bar $bar_id = null)
+    {
+        $this->bar_id = $bar_id->setUserId($this);
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->getNom();
     }
 }

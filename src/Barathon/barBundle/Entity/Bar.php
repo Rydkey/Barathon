@@ -32,6 +32,13 @@ class Bar{
      * @ORM\Column(type="string")
      */
     protected $ville;
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="Barathon\utilisateursBundle\Entity\User", cascade={"persist"})
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     **/
+    protected $user_id;
     
     /**
      * Set name
@@ -40,13 +47,6 @@ class Bar{
      *
      * @return Bar
      */
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Barathon\utilisateursBundle\Entity\User", cascade={"persist"})
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
-     **/
-    protected $user_id;
-    
     public function setName($name)
     {
         $this->name = $name;
@@ -88,11 +88,6 @@ class Bar{
         return $this->ville;
     }
 
-    public function __toString()
-    {
-        return $this->getName();
-    }
-
     /**
      * Get bar_id
      *
@@ -102,6 +97,7 @@ class Bar{
     {
         return $this->bar_id;
     }
+
     /**
      * Get bar_id
      *
@@ -112,12 +108,42 @@ class Bar{
         return $this->bar_id;
     }
     /**
-     * Get bar_id
+     * Get id
      *
      * @return integer
      */
     public function getId()
     {
         return $this->bar_id;
+    }
+
+    /**
+     * Get user_id
+     *
+     * @return \Barathon\utilisateursBundle\Entity\User
+     */
+    public function getuserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Set user_id
+     *
+     * @param \Barathon\utilisateursBundle\Entity\User $user_id
+     *
+     * @return Bar
+     */
+    public function setUserId(\Barathon\utilisateursBundle\Entity\User $user_id = null)
+    {
+        $this->user_id = $user_id;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->getName();
     }
 }

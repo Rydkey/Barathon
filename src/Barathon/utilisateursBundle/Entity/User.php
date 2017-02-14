@@ -69,7 +69,7 @@ class User extends BaseUser
     protected $age;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Barathon\barBundle\Entity\Bar", cascade={"all"})
+     * @ORM\ManyToOne(targetEntity="Barathon\barBundle\Entity\Bar", cascade={"persist"})
      * @ORM\JoinColumn(name="bar_id", referencedColumnName="bar_id", nullable=true)
      **/
     protected $bar_id;
@@ -82,13 +82,6 @@ class User extends BaseUser
      *      )
      */
     private $events;
-
-    public function __construct()
-    {
-        parent::__construct();
-        $this->events = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
     /**
      * Set nom
      *
@@ -220,6 +213,25 @@ class User extends BaseUser
     }
 
     /**
+     * Add bar_id
+     *
+     * @param \Barathon\barBundle\Entity\Bar $bar_id
+     *
+     * @return User
+     */
+    public function addBarId(\Barathon\barBundle\Entity\Bar $bar_id)
+    {
+        $this->bar_id[] = $bar_id;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getNom();
+    }
+
+    /**
      * Add event
      *
      * @param \Barathon\eventBundle\Entity\Event $event
@@ -253,23 +265,25 @@ class User extends BaseUser
         return $this->events;
     }
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->events = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+
+
     /**
-     * Set bar_id
+     * Set barId
      *
-     * @param \Barathon\barBundle\Entity\Bar $bar_id
+     * @param \Barathon\barBundle\Entity\Bar $barId
      *
      * @return User
      */
-    public function setBarId(\Barathon\barBundle\Entity\Bar $bar_id = null)
+    public function setBarId(\Barathon\barBundle\Entity\Bar $barId = null)
     {
-        $this->bar_id = $bar_id->setUserId($this);
+        $this->bar_id = $barId;
 
         return $this;
-    }
-
-    public function __toString()
-    {
-        // TODO: Implement __toString() method.
-        return $this->getNom();
     }
 }

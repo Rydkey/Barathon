@@ -32,10 +32,11 @@
                     {% endif %}
                 </td>
             </tr>
+            {{ dump(bar) }}
         {% endfor %}
         </tbody>
     </table>
-{% if is_granted("ROLE_PROR") %}
+{% if is_granted("ROLE_PROP") %}
     <ul>
         <li>
             <a href="{{ path('bar_new') }}">Create a new bar</a>

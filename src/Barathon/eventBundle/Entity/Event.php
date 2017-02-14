@@ -41,6 +41,12 @@ class Event
     protected $bar_id;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Barathon\utilisateursBundle\Entity\User", cascade={"persist"})
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="user_id")
+     **/
+    protected $user_id;
+
+    /**
      * Get idEvent
      *
      * @return integer
@@ -175,5 +181,53 @@ class Event
     public function getid(){
         return $this->event_id;
 
+    }
+
+    /**
+     * Set userId
+     *
+     * @param \Barathon\utilisateursBundle\Entity\User $userId
+     *
+     * @return Event
+     */
+    public function setUserId(\Barathon\utilisateursBundle\Entity\User $userId = null)
+    {
+        $this->user_id = $userId;
+
+        return $this;
+    }
+
+    /**
+     * Get userId
+     *
+     * @return \Barathon\utilisateursBundle\Entity\User
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Add userId
+     *
+     * @param \Barathon\utilisateursBundle\Entity\User $userId
+     *
+     * @return Event
+     */
+    public function addUserId(\Barathon\utilisateursBundle\Entity\User $userId)
+    {
+        $this->user_id[] = $userId;
+
+        return $this;
+    }
+
+    /**
+     * Remove userId
+     *
+     * @param \Barathon\utilisateursBundle\Entity\User $userId
+     */
+    public function removeUserId(\Barathon\utilisateursBundle\Entity\User $userId)
+    {
+        $this->user_id->removeElement($userId);
     }
 }

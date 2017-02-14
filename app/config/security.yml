@@ -34,9 +34,11 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/evenements/, role: [ROLE_PROP, ROLE_ADMIN, ROLE_USER]}
         - { path: ^/evenements/new, role: [ROLE_PROP, ROLE_ADMIN]}
         - { path: ^/evenements/edit, role:[ROLE_PROP, ROLE_ADMIN]}
         - { path: ^/evenements/delete, role: [ROLE_PROP, ROLE_ADMIN] }
-        - { path: ^/bars/new, role: [ROLE_PROP, ROLE_ADMIN]}
-        - { path: ^/bars/edit, role: [ROLE_PROP, ROLE_ADMIN] }
-        - { path: ^/bars/edit, role: [ROLE_PROP, ROLE_ADMIN] }
+        - { path: ^/bar/, role: [ROLE_PROP, ROLE_ADMIN, ROLE_USER]}
+        - { path: ^/bar/new, role: [ROLE_PROP, ROLE_ADMIN]}
+        - { path: ^/bar/edit, role: [ROLE_PROP, ROLE_ADMIN] }
+        - { path: ^/bar/delete, role: [ROLE_PROP, ROLE_ADMIN] }

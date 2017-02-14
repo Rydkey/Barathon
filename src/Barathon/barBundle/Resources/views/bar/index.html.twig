@@ -36,11 +36,21 @@
         {% endfor %}
         </tbody>
     </table>
-{% if is_granted("ROLE_PROP") %}
+    {% if is_granted("ROLE_PROP") %}
     <ul>
         <li>
             <a href="{{ path('bar_new') }}">Create a new bar</a>
         </li>
+    </ul>
+    {% endif %}
+    {% if is_granted("ROLE_ADMIN") %}
+    <ul>
+        <li>
+            <a href="{{ path('bar_new') }}">Create a new bar</a>
+        </li>
+        {#<li>#}
+            {#<a href="{{ path('bar_delete') }}">Create a new bar</a>#}
+        {#</li>#}
     </ul>
 {% endif %}
 {% endblock %}

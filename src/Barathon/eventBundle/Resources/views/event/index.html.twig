@@ -2,52 +2,69 @@
 {% block page %}
     <h1>Listes des évènements </h1><br>
 
-        {% for event in events %}
-            <div class="container">
-                <div class="well">
-                    <div class="media">
-                        <a class="pull-left" href="#">
-                            <img class="media-object" src="{{ asset('assets/Utilisateurs/img/gallery/bar1.jpg') }}" style="height:150px; width: 150px;">
-                        </a>
-                        <div class="media-body">
-                            <h1 class="media-heading">{{ event.libelleevent }} au {{ event.barId.name}}</h1>
-                            <h6>{{ event.dateevent|date('D-M-Y') }}</h6>
-                            <span class="btn-sm alert-info">Bière Belges</span>
-                            <span class="btn-sm alert-warning">Étudiants</span>
-                            <hr>
-                            <p class="text-left">{{ dump(event) }}</p>
-                            <p class="text-right">
+    {% for event in events %}
+        <div class="container">
+            <div class="well">
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="{{ asset('assets/Utilisateurs/img/gallery/bar1.jpg') }}" style="height:150px; width: 150px;">
+                    </a>
+                    <div class="media-body">
+                        <h1 class="media-heading">{{ event.libelleevent }} au {{ event.barId.name}}</h1>
+                        <h6>{{ event.dateevent|date('D-M-Y') }}</h6>
+                        <span class="btn-sm alert-info">Bière Belges</span>
+                        <span class="btn-sm alert-warning">Étudiants</span>
+                        <hr>
+                        <p class="text-left">{{ dump(event) }}</p>
+                        <div class="text-right">
+                            {% if is_granted('ROLE_USER') %}
                                 <a href="{{ path('event_show', { 'id': event.id }) }}">
                                     <span class="btn btn-lg btn-info"><span class="glyphicon glyphicon-info-sign"></span>Détails</span>
                                 </a>
-                                <span class="btn btn-lg btn-success"><span class="glyphicon glyphicon-plus"></span>s'inscrire</span>
-                            </p>
+                                <a href="{{ path('event_addUser', { 'id': event.id }) }}">
+                                    <span class="btn btn-lg btn-success"><span class="glyphicon glyphicon-info-sign"></span>S'inscrire</span>
+                                </a>
+                            {% endif %}
+                            {% if is_granted('ROLE_PROP') and "{{ event.barId.barId}}"=="{{ event.barId.userId.barId }}" %}
+                                <a href="{{ path('event_edit', { 'id': event.id }) }}">
+                                    <span class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-info-sign"></span>Modifier</span>
+                                </a>
+                            {% endif %}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a href="{{ path('event_edit', { 'id': event.id }) }}">
+                                    <span class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-pencil"></span>Modifier</span>
+                                </a>
+                                <a href="{{ path('event_delete', { 'id': event.id }) }}">
+                                    <span class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-info-sign"></span>Supprimer</span>
+                                </a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
             </div>
-            {#<tr>#}
-                {#<td><a href="{{ path('event_show', { 'id': event.id }) }}">{{ event.id }}</a></td>#}
-                {#<td>{{ event.libelleevent }}</td>#}
-                {#<td>{% if event.dateevent %}{{ event.dateevent|date('Y-m-d') }}{% endif %}</td>#}
-                {#<td>#}
-                    {#<ul>#}
-                        {#<li>#}
-                            {#<a href="{{ path('event_show', { 'id': event.id }) }}">show</a>#}
-                        {#</li>#}
-                        {#<li>#}
-                            {#<a href="{{ path('event_edit', { 'id': event.id }) }}">edit</a>#}
-                        {#</li>#}
-                    {#</ul>#}
-                {#</td>#}
-            {#</tr>#}
-        {% endfor %}
-        </tbody>
+        </div>
+        {#<tr>#}
+        {#<td><a href="{{ path('event_show', { 'id': event.id }) }}">{{ event.id }}</a></td>#}
+        {#<td>{{ event.libelleevent }}</td>#}
+        {#<td>{% if event.dateevent %}{{ event.dateevent|date('Y-m-d') }}{% endif %}</td>#}
+        {#<td>#}
+        {#<ul>#}
+        {#<li>#}
+        {#<a href="{{ path('event_show', { 'id': event.id }) }}">show</a>#}
+        {#</li>#}
+        {#<li>#}
+        {#<a href="{{ path('event_edit', { 'id': event.id }) }}">edit</a>#}
+        {#</li>#}
+        {#</ul>#}
+        {#</td>#}
+        {#</tr>#}
+    {% endfor %}
+    </tbody>
     </table>
     {#<ul>#}
-        {#<li>#}
-            <a href="{{ path('event_new') }}">Create a new event</a>
-        {#</li>#}
+    {#<li>#}
+    <a href="{{ path('event_new') }}">Create a new event</a>
+    {#</li>#}
     {#</ul>#}
 
 

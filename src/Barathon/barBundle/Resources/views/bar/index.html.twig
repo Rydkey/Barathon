@@ -1,4 +1,4 @@
-{% extends '::Utilisateurs/utilisateursLayout.html.twig' %}
+{% extends 'Utilisateurs/utilisateursLayout.html.twig' %}
 {% block page %}
     <h1>Bars list</h1>
 
@@ -8,34 +8,39 @@
                 <th>Bar_id</th>
                 <th>Name</th>
                 <th>Ville</th>
+                {% if is_granted("ROLE_PROR") %}
                 <th>Actions</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
         {% for bar in bars %}
             <tr>
-                <td><a href="{{ path('bar_show', { 'id': bar.bar_id }) }}">{{ bar.bar_id }}</a></td>
+                <td><a href="{{ path('bar_show', { 'id': bar.id }) }}">{{ bar.id }}</a></td>
                 <td>{{ bar.name }}</td>
                 <td>{{ bar.ville }}</td>
                 <td>
+                    {% if is_granted("ROLE_PROR") %}
                     <ul>
                         <li>
-                            <a href="{{ path('bar_show', { 'id': bar.bar_id }) }}">show</a>
+                            <a href="{{ path('bar_show', { 'id': bar.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('bar_edit', { 'id': bar.bar_id }) }}">edit</a>
+                            <a href="{{ path('bar_edit', { 'id': bar.id }) }}">edit</a>
                         </li>
                     </ul>
+                    {% endif %}
                 </td>
             </tr>
             {{ dump(bar) }}
         {% endfor %}
         </tbody>
     </table>
-
+{% if is_granted("ROLE_PROP") %}
     <ul>
         <li>
             <a href="{{ path('bar_new') }}">Create a new bar</a>
         </li>
     </ul>
+{% endif %}
 {% endblock %}

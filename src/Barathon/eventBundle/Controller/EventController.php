@@ -3,6 +3,8 @@
 namespace Barathon\eventBundle\Controller;
 
 use Barathon\eventBundle\Entity\Event;
+use Barathon\utilisateursBundle\BarathonutilisateursBundle;
+use Barathon\utilisateursBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -92,16 +94,18 @@ class EventController extends Controller
      * Deletes a event entity.
      *
      */
-    public function deleteAction(Request $request, Event $event)
+    public function deleteAction(Event $event)
     {
-        $form = $this->createDeleteForm($event);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($event);
-            $em->flush($event);
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('BarathoneventBundle:Event')->find($event);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Preisliste entity.');
         }
+
+        $em->remove($entity);
+        $em->flush();
 
         return $this->redirectToRoute('event_index');
     }
@@ -120,5 +124,14 @@ class EventController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+    public function addUserAction(User $user,Event $event){
+//        $em = $this->getDoctrine()->getManager();
+//        $entity = $em->getRepository('BarathoneventBundle:Event')->find($event);
+//        if (!$entity) {
+//            throw $this->createNotFoundException('Unable to find Preisliste entity.');
+//        }
+//        $event->setUserId($user);
     }
 }

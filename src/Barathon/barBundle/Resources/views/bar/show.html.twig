@@ -1,4 +1,4 @@
-{% extends '::Utilisateurs/utilisateursLayout.html.twig' %}
+{% extends 'Utilisateurs/utilisateursLayout.html.twig' %}
 {% block page %}
     <h1>Bar</h1>
 
@@ -6,7 +6,7 @@
         <tbody>
             <tr>
                 <th>Bar_id</th>
-                <td>{{ bar.barid }}</td>
+                <td>{{ bar.id }}</td>
             </tr>
             <tr>
                 <th>Name</th>
@@ -24,7 +24,7 @@
             <a href="{{ path('bar_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('bar_edit', { 'id': bar.bar_id }) }}">Edit</a>
+            <a href="{{ path('bar_edit', { 'id': bar.id }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

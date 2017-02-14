@@ -39,4 +39,4 @@ security:
         - { path: ^/evenements/delete, role: ROLE_PROP }
         - { path: ^/bars/new, role: ROLE_PROP }
         - { path: ^/bars/edit, role: ROLE_PROP }
-        - { path: ^/bars/edit, role: ROLE_PROP }
+         - { path: ^/bars/edit, role: ROLE_PROP }

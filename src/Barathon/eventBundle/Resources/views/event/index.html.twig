@@ -1,6 +1,12 @@
 {% extends '::Utilisateurs/utilisateursLayout.html.twig' %}
 {% block page %}
     <h1>Listes des évènements </h1><br>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('event_new') }}">Create a new event</a>
+    {% endif %}
+    {% if is_granted('ROLE_PROP') %}
+        <a href="{{ path('event_new') }}">Create a new event</a>
+    {% endif %}
 
     {% for event in events %}
         <div class="container">
@@ -29,14 +35,16 @@
                                 <a href="{{ path('event_edit', { 'id': event.id }) }}">
                                     <span class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-info-sign"></span>Modifier</span>
                                 </a>
+                                <a href="{{ path('event_new') }}">Create a new event</a>
+
                             {% endif %}
                             {% if is_granted('ROLE_ADMIN') %}
                                 <a href="{{ path('event_edit', { 'id': event.id }) }}">
                                     <span class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-pencil"></span>Modifier</span>
                                 </a>
                                 <a href="{{ path('event_delete', { 'id': event.id }) }}">
-                                    <span class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-info-sign"></span>Supprimer</span>
                                 </a>
+                                <a href="{{ path('event_new') }}">Create a new event</a>
                             {% endif %}
                         </div>
                     </div>
@@ -63,7 +71,6 @@
     </table>
     {#<ul>#}
     {#<li>#}
-    <a href="{{ path('event_new') }}">Create a new event</a>
     {#</li>#}
     {#</ul>#}
 

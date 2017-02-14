@@ -41,17 +41,28 @@ class Event
     protected $bar_id;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Barathon\utilisateursBundle\Entity\User", cascade={"persist"})
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="user_id")
+     * @ORM\ManyToOne(targetEntity="Barathon\utilisateursBundle\Entity\User", cascade={"persist"})
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id",nullable=true)
      **/
     protected $user_id;
 
+
     /**
-     * Get idEvent
+     * Get eventId
      *
      * @return integer
      */
     public function getEventId()
+    {
+        return $this->event_id;
+    }
+
+    /**
+     * Get eventId
+     *
+     * @return integer
+     */
+    public function getId()
     {
         return $this->event_id;
     }
@@ -105,82 +116,27 @@ class Event
     }
 
     /**
-     * Set bar_id
+     * Set barId
      *
-     * @param \Barathon\barBundle\Entity\Bar $bar_id
+     * @param \Barathon\barBundle\Entity\Bar $barId
      *
      * @return Event
      */
-    public function setBarId(\Barathon\barBundle\Entity\Bar $bar_id = null)
+    public function setBarId(\Barathon\barBundle\Entity\Bar $barId = null)
     {
-        $this->bar_id = $bar_id;
+        $this->bar_id = $barId;
 
         return $this;
     }
 
     /**
-     * Get bar_id
+     * Get barId
      *
      * @return \Barathon\barBundle\Entity\Bar
      */
     public function getBarId()
     {
         return $this->bar_id;
-    }
-
-    public function __toString()
-    {
-        return $this->getLibelleEvent();
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->bar_id = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add bar_id
-     *
-     * @param \Barathon\barBundle\Entity\Bar $bar_id
-     *
-     * @return Event
-     */
-    public function addBarId(\Barathon\barBundle\Entity\Bar $bar_id)
-    {
-        $this->bar_id[] = $bar_id;
-
-        return $this;
-    }
-
-    /**
-     * Remove bar_id
-     *
-     * @param \Barathon\barBundle\Entity\Bar $bar_id
-     */
-    public function removeBarId(\Barathon\barBundle\Entity\Bar $bar_id)
-    {
-        $this->bar_id->removeElement($bar_id);
-    }
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-//    public function getIdEvent()
-//    {
-//        return $this->id_event;
-//    }
-
-    public function getevent_idEvent(){
-        return $this->event_id;
-    }
-
-    public function getid(){
-        return $this->event_id;
-
     }
 
     /**
@@ -205,29 +161,5 @@ class Event
     public function getUserId()
     {
         return $this->user_id;
-    }
-
-    /**
-     * Add userId
-     *
-     * @param \Barathon\utilisateursBundle\Entity\User $userId
-     *
-     * @return Event
-     */
-    public function addUserId(\Barathon\utilisateursBundle\Entity\User $userId)
-    {
-        $this->user_id[] = $userId;
-
-        return $this;
-    }
-
-    /**
-     * Remove userId
-     *
-     * @param \Barathon\utilisateursBundle\Entity\User $userId
-     */
-    public function removeUserId(\Barathon\utilisateursBundle\Entity\User $userId)
-    {
-        $this->user_id->removeElement($userId);
     }
 }

@@ -75,13 +75,11 @@ class User extends BaseUser
     protected $bar_id;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Barathon\eventBundle\Entity\Event")
-     * @ORM\JoinTable(name="events",
-     *      joinColumns={@ORM\JoinColumn(name="id", referencedColumnName="id",nullable=true)},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="event_id", referencedColumnName="event_id", unique=true)},
-     *      )
+     * @ORM\ManyToOne(targetEntity="Barathon\eventBundle\Entity\Event")
+     * @ORM\JoinColumn(name="events",referencedColumnName="event_id", nullable=true)
      */
     private $events;
+
     /**
      * Set nom
      *
@@ -203,77 +201,6 @@ class User extends BaseUser
     }
 
     /**
-     * Get bar_id
-     *
-     * @return \Barathon\utilisateursBundle\Entity\Bar
-     */
-    public function getBarId()
-    {
-        return $this->bar_id;
-    }
-
-    /**
-     * Add bar_id
-     *
-     * @param \Barathon\barBundle\Entity\Bar $bar_id
-     *
-     * @return User
-     */
-    public function addBarId(\Barathon\barBundle\Entity\Bar $bar_id)
-    {
-        $this->bar_id[] = $bar_id;
-
-        return $this;
-    }
-
-    public function __toString()
-    {
-        return $this->getNom();
-    }
-
-    /**
-     * Add event
-     *
-     * @param \Barathon\eventBundle\Entity\Event $event
-     *
-     * @return User
-     */
-    public function addEvent(\Barathon\eventBundle\Entity\Event $event)
-    {
-        $this->events[] = $event;
-
-        return $this;
-    }
-
-    /**
-     * Remove event
-     *
-     * @param \Barathon\eventBundle\Entity\Event $event
-     */
-    public function removeEvent(\Barathon\eventBundle\Entity\Event $event)
-    {
-        $this->events->removeElement($event);
-    }
-
-    /**
-     * Get events
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getEvents()
-    {
-        return $this->events;
-    }
-
-    public function __construct()
-    {
-        parent::__construct();
-        $this->events = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-
-
-    /**
      * Set barId
      *
      * @param \Barathon\barBundle\Entity\Bar $barId
@@ -285,5 +212,39 @@ class User extends BaseUser
         $this->bar_id = $barId;
 
         return $this;
+    }
+
+    /**
+     * Get barId
+     *
+     * @return \Barathon\barBundle\Entity\Bar
+     */
+    public function getBarId()
+    {
+        return $this->bar_id;
+    }
+
+    /**
+     * Set events
+     *
+     * @param \Barathon\eventBundle\Entity\Event $events
+     *
+     * @return User
+     */
+    public function setEvents(\Barathon\eventBundle\Entity\Event $events = null)
+    {
+        $this->events = $events;
+
+        return $this;
+    }
+
+    /**
+     * Get events
+     *
+     * @return \Barathon\eventBundle\Entity\Event
+     */
+    public function getEvents()
+    {
+        return $this->events;
     }
 }

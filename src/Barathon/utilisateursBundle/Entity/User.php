@@ -27,7 +27,6 @@ class User extends BaseUser
 
     /**
      * @ORM\Column(type="string", length=255)
-     *
      * @Assert\NotBlank(message="Entrez un nom s'il vous plait", groups={"Registration", "Profile"})
      * @Assert\Length(
      *     min=3,
@@ -70,15 +69,14 @@ class User extends BaseUser
 
     /**
      * @ORM\ManyToOne(targetEntity="Barathon\barBundle\Entity\Bar", cascade={"persist"})
-     * @ORM\JoinColumn(name="bar_id", referencedColumnName="bar_id", nullable=true)
      **/
     protected $bar_id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Barathon\eventBundle\Entity\Event")
-     * @ORM\JoinColumn(name="events",referencedColumnName="event_id", nullable=true)
+     * @ORM\ManyToMany(targetEntity="Barathon\eventBundle\Entity\Event", cascade={"persist"})
      */
-    private $events;
+    protected $events;
+
 
     /**
      * Set nom
@@ -225,23 +223,33 @@ class User extends BaseUser
     }
 
     /**
-     * Set events
+     * Add event
      *
-     * @param \Barathon\eventBundle\Entity\Event $events
+     * @param \Barathon\eventBundle\Entity\Event $event
      *
      * @return User
      */
-    public function setEvents(\Barathon\eventBundle\Entity\Event $events = null)
+    public function addEvent(\Barathon\eventBundle\Entity\Event $event)
     {
-        $this->events = $events;
+        $this->events[] = $event;
 
         return $this;
     }
 
     /**
+     * Remove event
+     *
+     * @param \Barathon\eventBundle\Entity\Event $event
+     */
+    public function removeEvent(\Barathon\eventBundle\Entity\Event $event)
+    {
+        $this->events->removeElement($event);
+    }
+
+    /**
      * Get events
      *
-     * @return \Barathon\eventBundle\Entity\Event
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getEvents()
     {

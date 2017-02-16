@@ -21,7 +21,7 @@ class Bar{
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $bar_id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string")
@@ -39,7 +39,17 @@ class Bar{
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      **/
     protected $user_id;
-    
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
     /**
      * Set name
      *
@@ -89,61 +99,26 @@ class Bar{
     }
 
     /**
-     * Get bar_id
+     * Set userId
      *
-     * @return integer
-     */
-    public function getbarId()
-    {
-        return $this->bar_id;
-    }
-
-    /**
-     * Get bar_id
-     *
-     * @return integer
-     */
-    public function getbar_Id()
-    {
-        return $this->bar_id;
-    }
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->bar_id;
-    }
-
-    /**
-     * Get user_id
-     *
-     * @return \Barathon\utilisateursBundle\Entity\User
-     */
-    public function getuserId()
-    {
-        return $this->user_id;
-    }
-
-    /**
-     * Set user_id
-     *
-     * @param \Barathon\utilisateursBundle\Entity\User $user_id
+     * @param \Barathon\utilisateursBundle\Entity\User $userId
      *
      * @return Bar
      */
-    public function setUserId(\Barathon\utilisateursBundle\Entity\User $user_id = null)
+    public function setUserId(\Barathon\utilisateursBundle\Entity\User $userId = null)
     {
-        $this->user_id = $user_id;
+        $this->user_id = $userId;
 
         return $this;
     }
 
-    public function __toString()
+    /**
+     * Get userId
+     *
+     * @return \Barathon\utilisateursBundle\Entity\User
+     */
+    public function getUserId()
     {
-        // TODO: Implement __toString() method.
-        return $this->getName();
+        return $this->user_id;
     }
 }

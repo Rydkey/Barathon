@@ -23,7 +23,7 @@
                         <hr>
                         <p class="text-left">{{ dump(event) }}</p>
                         <div class="text-right">
-                            {% if is_granted('ROLE_USER') %}
+                            {% if is_granted('ROLE_USER') and not is_granted('ROLE_ADMIN') %}
                                 <a href="{{ path('event_show', { 'id': event.id }) }}">
                                     <span class="btn btn-lg btn-info"><span class="glyphicon glyphicon-info-sign"></span> Détails</span>
                                 </a>
@@ -31,7 +31,7 @@
                                     <span class="btn btn-lg btn-success"><span class="glyphicon glyphicon-check"></span> S'inscrire</span>
                                 </a>
                             {% endif %}
-                            {% if is_granted('ROLE_PROP') and "{{ event.barId.barId}}"=="{{ event.barId.userId.barId }}" %}
+                            {% if is_granted('ROLE_PROP') %}
                                 <a href="{{ path('event_edit', { 'id': event.id }) }}">
                                     <span class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-info-sign"></span> Modifier</span>
                                 </a>

@@ -44,7 +44,7 @@ class EventController extends Controller
             $em->persist($event);
             $em->flush($event);
 
-            return $this->redirectToRoute('event_show', array('id' => $event->getEventId()));
+            return $this->redirectToRoute('event_show', array('id' => $event->getId()));
         }
 
         return $this->render('BarathoneventBundle:event:new.html.twig', array(
@@ -80,7 +80,7 @@ class EventController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('event_edit', array('id' => $event->getEventId()));
+            return $this->redirectToRoute('event_edit', array('id' => $event->getId()));
         }
 
         return $this->render('BarathoneventBundle:event:edit.html.twig', array(
@@ -120,18 +120,38 @@ class EventController extends Controller
     private function createDeleteForm(Event $event)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('event_delete', array('id' => $event->getEventId())))
+            ->setAction($this->generateUrl('event_delete', array('id' => $event->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;
     }
 
     public function addUserAction(User $user,Event $event){
+//        TODO : completer méthode
+
 //        $em = $this->getDoctrine()->getManager();
-//        $entity = $em->getRepository('BarathoneventBundle:Event')->find($event);
-//        if (!$entity) {
-//            throw $this->createNotFoundException('Unable to find Preisliste entity.');
+//
+//        // On récupère l'annonce $id
+//        $advert = $em->getRepository('Barathon:Advert')->find($id);
+//
+//        if (null === $advert) {
+//            throw new NotFoundHttpException("L'annonce d'id ".$id." n'existe pas.");
 //        }
-//        $event->setUserId($user);
+//
+//        // La méthode findAll retourne toutes les catégories de la base de données
+//        $listCategories = $em->getRepository('OCPlatformBundle:Category')->findAll();
+//
+//        // On boucle sur les catégories pour les lier à l'annonce
+//        foreach ($listCategories as $category) {
+//            $advert->addCategory($category);
+//        }
+//
+//        // Pour persister le changement dans la relation, il faut persister l'entité propriétaire
+//        // Ici, Advert est le propriétaire, donc inutile de la persister car on l'a récupérée depuis Doctrine
+//
+//        // Étape 2 : On déclenche l'enregistrement
+//        $em->flush();
+//
+//        // … reste de la méthode
     }
 }

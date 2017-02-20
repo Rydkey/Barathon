@@ -121,4 +121,12 @@ class Bar{
     {
         return $this->user_id;
     }
+
+    /**
+     * return the bar name to string
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

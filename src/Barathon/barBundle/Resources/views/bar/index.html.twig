@@ -13,6 +13,8 @@
                 {% endif %}
             </tr>
         </thead>
+
+
         <tbody>
         {% for bar in bars %}
             <tr>
@@ -36,6 +38,54 @@
         {% endfor %}
         </tbody>
     </table>
+    <body>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+            #map {
+                height: 400px;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="floating-panel">
+        <input id="address" type="textbox" value="Sydney, NSW">
+        <input id="submit" type="button" value="Geocode">
+    </div>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: {lat: -34.397, lng: 150.644}
+            });
+            var geocoder = new google.maps.Geocoder();
+
+            document.getElementById('submit').addEventListener('click', function() {
+                geocodeAddress(geocoder, map);
+            });
+        }
+
+        function geocodeAddress(geocoder, resultsMap) {
+            var address = document.getElementById('address').value;
+            geocoder.geocode({'address': address}, function(results, status) {
+                if (status === google.maps.GeocoderStatus.OK) {
+                    resultsMap.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        map: resultsMap,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+        }
+
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCjQF0jXVa3CpSscQuUMAwn_LbcGGdfDM&callback=initMap"></script>
+    </body>
     {% if is_granted("ROLE_PROP") %}
     <ul>
         <li>
@@ -52,5 +102,6 @@
             {#<a href="{{ path('bar_delete') }}">Create a new bar</a>#}
         {#</li>#}
     </ul>
+
 {% endif %}
 {% endblock %}

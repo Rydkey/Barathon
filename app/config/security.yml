@@ -3,8 +3,8 @@ security:
         FOS\UserBundle\Model\UserInterface: bcrypt
 
     role_hierarchy:
-        ROLE_USER:       ROLE_USER
-        ROLE_PROP:        ROLE_PROR
+        ROLE_USER: ROLE_USER
+        ROLE_PROP: ROLE_PROR
         ROLE_SUPER_ADMIN: ROLE_ADMIN
 
     providers:
@@ -22,8 +22,8 @@ security:
                 always_use_default_target_path : true
                 default_target_path: /utilisateurs
                 use_referer : true
-            logout:       true
-            anonymous:    true
+            logout: true
+            anonymous: true
 
 
 

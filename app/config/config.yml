@@ -77,6 +77,9 @@ fos_user:
     profile:
             form:
                 type: Barathon\utilisateursBundle\Form\EditProfileType
+    from_email:
+            address: antoine.py@univ-fcomte.fr
+            sender_name: Antoine
 assetic:
     debug:          '%kernel.debug%'
     use_controller: '%kernel.debug%'

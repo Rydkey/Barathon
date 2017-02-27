@@ -1,9 +1,13 @@
 <?php
 namespace Barathon\barBundle\Controller;
+use Barathon\barBundle\BarathonbarBundle;
 use Barathon\barBundle\Entity\Bar;
 use Barathon\barBundle\Form\BarType;
+use Barathon\utilisateursBundle\BarathonutilisateursBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 /**
  * Bar controller.
  *
@@ -32,7 +36,14 @@ class BarController extends Controller
         $form = $this->createForm('Barathon\barBundle\Form\BarType', $bar);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+            $em = $this->getDoctrine()
+                ->getManager()
+                ->getRepository('BarathonutilisateursBundle:User');
+            $user = $em->find($bar->getUserId()->getId());
+
+            if(null === $user){
+                throw new NotFoundHttpException("l'utilisateur".$user."n'éxiste pas");
+            }
             $em->persist($bar);
             $em->flush($bar);
             return $this->redirectToRoute('bar_index');

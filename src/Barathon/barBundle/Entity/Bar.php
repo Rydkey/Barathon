@@ -109,6 +109,7 @@ class Bar{
     {
         $this->user_id = $userId;
 
+
         return $this;
     }
 

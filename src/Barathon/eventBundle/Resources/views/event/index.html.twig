@@ -1,6 +1,6 @@
 {% extends '::Utilisateurs/utilisateursLayout.html.twig' %}
 {% block page %}
-    <h1>Listes des évènements </h1><br>
+    <h1>Listes des événements </h1><br>
     {% if is_granted('ROLE_ADMIN') %}
         <a href="{{ path('event_new') }}">Create a new event</a>
     {% endif %}
@@ -27,7 +27,7 @@
                                 <a href="{{ path('event_show', { 'id': event.id }) }}">
                                     <span class="btn btn-lg btn-info"><span class="glyphicon glyphicon-info-sign"></span> Détails</span>
                                 </a>
-                                <a href="{{ path('event_addUser', { 'id': event.id }) }}">
+                                <a href="{{ path('event_addUser',{'user': app.user.id,'event': event.id }) }}">
                                     <span class="btn btn-lg btn-success"><span class="glyphicon glyphicon-check"></span> S'inscrire</span>
                                 </a>
                             {% endif %}

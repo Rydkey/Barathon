@@ -24,6 +24,6 @@ event_delete:
     methods:  [GET, POST, DELETE]
 
 event_addUser:
-    path:     /{id}/add
+    path:     /{user}/{event}/add
     defaults: { _controller: "BarathoneventBundle:Event:addUser" }
     methods:  [GET, POST]

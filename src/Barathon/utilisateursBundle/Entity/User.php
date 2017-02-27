@@ -77,6 +77,15 @@ class User extends BaseUser
      */
     protected $events;
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set nom

@@ -4,7 +4,7 @@ security:
 
     role_hierarchy:
         ROLE_USER: ROLE_USER
-        ROLE_PROP: ROLE_PROR
+        ROLE_PROP: ROLE_PROP
         ROLE_SUPER_ADMIN: ROLE_ADMIN
 
     providers:
@@ -39,6 +39,6 @@ security:
         - { path: ^/evenements/edit, role:[ROLE_PROP, ROLE_ADMIN]}
         - { path: ^/evenements/delete, role: [ROLE_PROP, ROLE_ADMIN] }
         - { path: ^/bar/, role: [ROLE_PROP, ROLE_ADMIN, ROLE_USER]}
-        - { path: ^/bar/new, role: [ROLE_PROP, ROLE_ADMIN]}
+        - { path: ^/bar/new, role: ROLE_ADMIN}
         - { path: ^/bar/edit, role: [ROLE_PROP, ROLE_ADMIN] }
-        - { path: ^/bar/delete, role: [ROLE_PROP, ROLE_ADMIN] }
+        - { path: ^/bar/delete, role: ROLE_ADMIN}

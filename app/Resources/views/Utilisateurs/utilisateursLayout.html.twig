@@ -15,7 +15,7 @@
     <!-- end: Mobile Specific -->
     <!-- start: CSS -->
     {% block stylesheets %}
-        {% stylesheets 'assets/Utilisateurs/css' filter='cssrewrite' %}
+        {% stylesheets 'assets/Utilisateurs/css' %}
             <link id="bootstrap-style" href="{{ asset('assets/Utilisateurs/css/bootstrap.min.css') }}" rel="stylesheet">
             <link href="{{ asset('assets/Utilisateurs/css/bootstrap.css') }}" rel="stylesheet">
             <link href="{{ asset('assets/Utilisateurs/css/bootstrap-responsive.min.css') }}" rel="stylesheet">
@@ -246,8 +246,7 @@
                     <li class="dropdown">
                         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="halflings-icon white user"></i>
-                            {#{{user.username}}#}
-                            <span class="caret"></span>
+                            {{app.user.username}}
                         </a>
                         <ul class="dropdown-menu">
                             <li class="dropdown-menu-title">

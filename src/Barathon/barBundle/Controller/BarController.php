@@ -49,7 +49,7 @@ class BarController extends Controller
     public function showAction(Bar $bar)
     {
         $deleteForm = $this->createDeleteForm($bar);
-        return $this->render('bar:show.html.twig', array(
+        return $this->render('BarathonbarBundle:bar:show.html.twig', array(
             'bar' => $bar,
             'delete_form' => $deleteForm->createView(),
         ));

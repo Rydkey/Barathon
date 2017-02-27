@@ -35,6 +35,11 @@ class Event
     protected $date_event;
 
     /**
+     * @ORM\Column(type="text")
+     */
+    protected $descrition_event;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Barathon\barBundle\Entity\Bar", cascade={"persist"})
      **/
     protected $bar_id;
@@ -148,5 +153,29 @@ class Event
     public function getUserId()
     {
         return $this->user_id;
+    }
+
+    /**
+     * Set descritionEvent
+     *
+     * @param string $descritionEvent
+     *
+     * @return Event
+     */
+    public function setDescritionEvent($descritionEvent)
+    {
+        $this->descrition_event = $descritionEvent;
+
+        return $this;
+    }
+
+    /**
+     * Get descritionEvent
+     *
+     * @return string
+     */
+    public function getDescritionEvent()
+    {
+        return $this->descrition_event;
     }
 }

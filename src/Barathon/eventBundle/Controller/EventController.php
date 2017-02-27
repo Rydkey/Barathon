@@ -128,30 +128,21 @@ class EventController extends Controller
 
     public function addUserAction(User $user,Event $event){
 //        TODO : completer méthode
+        $em = $this->getDoctrine()->getManager();
 
-//        $em = $this->getDoctrine()->getManager();
-//
-//        // On récupère l'annonce $id
-//        $advert = $em->getRepository('Barathon:Advert')->find($id);
-//
-//        if (null === $advert) {
-//            throw new NotFoundHttpException("L'annonce d'id ".$id." n'existe pas.");
-//        }
-//
-//        // La méthode findAll retourne toutes les catégories de la base de données
-//        $listCategories = $em->getRepository('OCPlatformBundle:Category')->findAll();
-//
-//        // On boucle sur les catégories pour les lier à l'annonce
-//        foreach ($listCategories as $category) {
-//            $advert->addCategory($category);
-//        }
-//
-//        // Pour persister le changement dans la relation, il faut persister l'entité propriétaire
-//        // Ici, Advert est le propriétaire, donc inutile de la persister car on l'a récupérée depuis Doctrine
-//
-//        // Étape 2 : On déclenche l'enregistrement
-//        $em->flush();
-//
-//        // … reste de la méthode
+        // On récupère l'annonce $id
+        $User = $em->getRepository('BarathonutilisateursBundle:User')->find($user);
+        $Event = $em->getRepository('BarathoneventBundle:Event')->find($event);
+
+        if (null === $User) {
+            throw new NotFoundHttpException("L'utilisateur ".$id." n'existe pas.");
+        }
+        if (null === $Event) {
+            throw new NotFoundHttpException("L'Event ".$id." n'existe pas.");
+        }
+
+        $User->addEvent($Event);
+        $em->flush();
+        return $this->redirectToRoute('event_index');
     }
 }

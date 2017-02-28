@@ -30,6 +30,10 @@
                                 <a href="{{ path('event_addUser',{'user': app.user.id,'event': event.id }) }}">
                                     <span class="btn btn-lg btn-success"><span class="glyphicon glyphicon-check"></span> S'inscrire</span>
                                 </a>
+                               {# {% if is_granted('') %}#}
+{#                                <a href=""{{ path('event_removeUser','user': app.user.id,'event':event.id }) }}">
+                                    <span class="btn btn-lg btn-success"><span class="glyphicon glyphicon-check"></span> Se désinscrire</span>
+                                </a>#}
                             {% endif %}
                             {% if is_granted('ROLE_PROP') and app.user.id == event.barId.userId.id %}
                                 <a href="{{ path('event_edit', { 'id': event.id }) }}">

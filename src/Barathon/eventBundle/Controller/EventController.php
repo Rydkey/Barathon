@@ -145,4 +145,25 @@ class EventController extends Controller
         $em->flush();
         return $this->redirectToRoute('event_index');
     }
+
+public function deleteUserAction(User $user,Event $event){
+//        TODO : completer méthode
+    $em = $this->getDoctrine()->getManager();
+
+    // On récupère l'annonce $id
+    $User = $em->getRepository('BarathonutilisateursBundle:User')->find($user);
+    $Event = $em->getRepository('BarathoneventBundle:Event')->find($event);
+
+    if (null === $User) {
+        throw new NotFoundHttpException("L'utilisateur ".$id." n'existe pas.");
+    }
+    if (null === $Event) {
+        throw new NotFoundHttpException("L'Event ".$id." n'existe pas.");
+    }
+
+    $User->removeEvent($Event);
+    $em->flush();
+    return $this->redirectToRoute('event_index');
 }
+}
+

@@ -7,6 +7,9 @@
     {% if is_granted('ROLE_PROP') %}
         <a href="{{ path('event_new') }}">Create a new event</a>
     {% endif %}
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+
+    {% endfor %}
 
     {% for event in events %}
         <div class="container">
@@ -17,7 +20,7 @@
                     </a>
                     <div class="media-body">
                         <h1 class="media-heading">{{ event.libelleevent }} au {{ event.barId.name}}</h1>
-                        <h6>{{ event.dateevent|date('D-M-Y') }}</h6>
+                        <h6>{{ event.dateevent|date('dd-mm-yyyy') }}</h6>
                         <span class="btn-sm alert-info">Bière Belges</span>
                         <span class="btn-sm alert-warning">Étudiants</span>
                         <hr>
@@ -27,13 +30,15 @@
                                 <a href="{{ path('event_show', { 'id': event.id }) }}">
                                     <span class="btn btn-lg btn-info"><span class="glyphicon glyphicon-info-sign"></span> Détails</span>
                                 </a>
-                                <a href="{{ path('event_addUser',{'user': app.user.id,'event': event.id }) }}">
-                                    <span class="btn btn-lg btn-success"><span class="glyphicon glyphicon-check"></span> S'inscrire</span>
-                                </a>
-                               {# {% if is_granted('') %}#}
-{#                                <a href=""{{ path('event_removeUser','user': app.user.id,'event':event.id }) }}">
-                                    <span class="btn btn-lg btn-success"><span class="glyphicon glyphicon-check"></span> Se désinscrire</span>
-                                </a>#}
+                                {% if event not in app.user.events %}
+                                    <a href="{{ path('event_addUser',{'user': app.user.id,'event': event.id }) }}">
+                                        <span class="btn btn-lg btn-success"><span class="glyphicon glyphicon glyphicon-log-in"></span> S'inscrire</span>
+                                    </a>
+                                {% else %}
+                                    <a href="{{ path('event_removeUser',{'user': app.user.id,'event': event.id }) }}">
+                                        <span class="btn btn-lg btn-alert"><span class="glyphicon glyphicon glyphicon-log-out"></span> Se désinscrire</span>
+                                    </a>
+                                {% endif %}
                             {% endif %}
                             {% if is_granted('ROLE_PROP') and app.user.id == event.barId.userId.id %}
                                 <a href="{{ path('event_edit', { 'id': event.id }) }}">

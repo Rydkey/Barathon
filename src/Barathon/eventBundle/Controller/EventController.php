@@ -143,10 +143,14 @@ class EventController extends Controller
 
         $User->addEvent($Event);
         $em->flush();
+        $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Vous êtes inscrit'
+        );
         return $this->redirectToRoute('event_index');
     }
 
-public function deleteUserAction(User $user,Event $event){
+public function removeUserAction(User $user,Event $event){
 //        TODO : completer méthode
     $em = $this->getDoctrine()->getManager();
 
@@ -163,6 +167,10 @@ public function deleteUserAction(User $user,Event $event){
 
     $User->removeEvent($Event);
     $em->flush();
+    $this->get('session')->getFlashBag()->add(
+        'notice',
+        'Vous vous êtes désinscrit'
+    );
     return $this->redirectToRoute('event_index');
 }
 }

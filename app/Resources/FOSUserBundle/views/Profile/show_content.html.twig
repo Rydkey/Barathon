@@ -26,6 +26,17 @@
         </div>
     </div>
 </div>
+
+
+{% if not app.user.events.empty %}
+    <p>
+        inscrit dans les évènements suivant :
+        {% for event in app.user.events %}
+            {{ event.libelleEvent }}{% if not loop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
 {{ dump(user) }}
 
 {#<div class="container-fluid well span6">#}

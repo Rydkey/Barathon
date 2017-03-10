@@ -4,4 +4,4 @@ barathonbar_bar:
 
 barathonbar_homepage:
     path:     /
-    defaults: { _controller: BarathonbarBundle:Default:index }
+    defaults: {_controller: BarathonbarBundle:Default:index }

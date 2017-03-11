@@ -6,69 +6,95 @@
             width: 100%;
         }
     </style>
-    <h1>Bar</h1>
-
+    <h1>{{ bar.name }}</h1>
+    <h4>Descriptif : </h4>
     <table>
         <tbody>
-            <tr>
+{#            <tr>
                 <th>Bar_id</th>
                 <td>{{ bar.id }}</td>
-            </tr>
-            <tr>
+            </tr>#}
+{#            <tr>
                 <th>Name</th>
                 <td>{{ bar.name }}</td>
-            </tr>
-            <tr>
+            </tr>#}
+{#            <tr>
                 <th>Ville</th>
                 <td>{{ bar.ville }}</td>
-            </tr>
+            </tr>#}
         </tbody>
     </table>
-
-    <div id="floating-panel">
-        <input id="address" type="textbox" value="Sydney, NSW">
-        <input id="submit" type="button" value="Geocode">
-    </div>
-    <div id="map"></div>
+    <h2>Horaires : </h2>
+    <table class = "table table-bordered">
+        <thead>
+        <tr>
+            <th>Jour</th>
+            <th>Heures</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Lundi</td>
+            <td>8h-12h</td>
+        </tr>
+        <tr>
+            <td>Mardi</td>
+            <td>8h-12h</td>
+        </tr>
+        </tbody>
+    </table>
+    <h3>Plan : </h3>
     <script>
-        function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 15,
-                center: {lat: -34.397, lng: 150.644}
-            });
-            var geocoder = new google.maps.Geocoder();
-
-            document.getElementById('submit').addEventListener('click', function() {
-                geocodeAddress(geocoder, map);
-            });
+        var geocoder;
+        var map;
+        function initialize() {
+            geocoder = new google.maps.Geocoder();
+            var latlng = new google.maps.LatLng(-34.397, 150.644);
+            var mapOptions = {
+                zoom: 10,
+                center: latlng
+            }
+            map = new google.maps.Map(document.getElementById("map"), mapOptions);
         }
 
-        function geocodeAddress(geocoder, resultsMap) {
-            var address = document.getElementById('address').value;
-            geocoder.geocode({'address': address}, function(results, status) {
-                if (status === google.maps.GeocoderStatus.OK) {
-                    resultsMap.setCenter(results[0].geometry.location);
+        function codeAddress() {
+            var address = document.getElementById("address").value;
+            geocoder.geocode( { 'address': address}, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    map.setCenter(results[0].geometry.location);
                     var marker = new google.maps.Marker({
-                        map: resultsMap,
+                        map: map,
                         position: results[0].geometry.location
                     });
                 } else {
-                    alert('Geocode was not successful for the following reason: ' + status);
+                    alert("Geocode was not successful for the following reason: " + status);
                 }
             });
         }
+
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCjQF0jXVa3CpSscQuUMAwn_LbcGGdfDM&callback=initMap"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCjQF0jXVa3CpSscQuUMAwn_LbcGGdfDM&callback=initMap">
+    </script>
+    <body onload="initialize(); codeAddress()">
+    <div id="map" style="height: 480px;"></div>
+    <div>
+        <input disabled id="address" type="textbox" value={{ bar.ville }}>
+        {#<input type="button" value="Encode" onclick="codeAddress()">#}
+    </div>
+    </body>
     <ul>
         <li>
-            <a href="{{ path('bar_index') }}">Back to the list</a>
+            <a class="btn btn-info" role="button" href="{{ path('bar_index') }}">Back to the list</a>
         </li>
+        </br>
         <li>
-            <a href="{{ path('bar_edit', { 'id': bar.id }) }}">Edit</a>
+            <a class="btn btn-info" role="button" href="{{ path('bar_edit', { 'id': bar.id }) }}">Edit</a>
         </li>
+        </br>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input class="btn btn-danger" role="button" type="submit" value="Delete">
             {{ form_end(delete_form) }}
         </li>
     </ul>

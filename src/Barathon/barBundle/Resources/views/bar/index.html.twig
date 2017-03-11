@@ -1,16 +1,16 @@
 {% extends 'Utilisateurs/utilisateursLayout.html.twig' %}
 {% block page %}
-    <h1>Bars list</h1>
+    <h1>Liste des bars</h1>
 
-    <table>
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Bar_id</th>
-                <th>Name</th>
-                <th>Ville</th>
-                {% if is_granted("ROLE_PROR") %}
-                <th>Actions</th>
-                {% endif %}
+                <th>Nom</th>
+                <th>Adresse</th>
+{#                {% if is_granted("ROLE_PROR") %}#}
+                <th>Détails</th>
+{#                {% endif %}#}
             </tr>
         </thead>
 
@@ -24,7 +24,7 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('bar_show', { 'id': bar.id }) }}">show</a>
+                            <a href="{{ path('bar_show', { 'id': bar.id }) }}">Voir les détails</a>
                         </li>
                         {% if is_granted("ROLE_PROP") and app.user.id==bar.userId.id %}
                             <li>

@@ -3,7 +3,6 @@
  */
 var geocoder;
 var map;
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCjQF0jXVa3CpSscQuUMAwn_LbcGGdfDM&callback=initMap">
 
 function initialize() {
     geocoder = new google.maps.Geocoder();
@@ -30,3 +29,4 @@ function codeAddress() {
         }
     });
 }
+

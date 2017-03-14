@@ -26,15 +26,6 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Barathon\utilisateursBundle\Entity\Group")
-     * @ORM\JoinTable(name="fos_user_user_group",
-     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
-     * )
-     */
-    protected $groups;
-
-    /**
      * @ORM\Column(type="string", length=255)
      *
      * @Assert\NotBlank(message="Entrez un nom s'il vous plait", groups={"Registration", "Profile"})
@@ -77,133 +68,15 @@ class User extends BaseUser
      */
     protected $age;
 
-    public function __construct()
-    {
-        parent::__construct();
-        // your own logic
-    }
+    /**
+     * @ORM\ManyToOne(targetEntity="Barathon\barBundle\Entity\Bar", cascade={"persist"})
+     * @ORM\JoinColumn(name="bar_id", referencedColumnName="bar_id", nullable=true)
+     **/
+    protected $bar_id;
 
     /**
-     * Set nom
-     *
-     * @param string $nom
-     *
-     * @return User
+     * @ORM\ManyToMany(targetEntity="Barathon\eventBundle\Entity\Event", cascade={"persist"})
      */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
+    protected $events;
 
-        return $this;
-    }
-
-    /**
-     * Get nom
-     *
-     * @return string
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
-
-    /**
-     * Set prenom
-     *
-     * @param string $prenom
-     *
-     * @return User
-     */
-    public function setPrenom($prenom)
-    {
-        $this->prenom = $prenom;
-
-        return $this;
-    }
-
-    /**
-     * Get prenom
-     *
-     * @return string
-     */
-    public function getPrenom()
-    {
-        return $this->prenom;
-    }
-
-    /**
-     * Set pays
-     *
-     * @param string $pays
-     *
-     * @return User
-     */
-    public function setPays($pays)
-    {
-        $this->pays = $pays;
-
-        return $this;
-    }
-
-    /**
-     * Get pays
-     *
-     * @return string
-     */
-    public function getPays()
-    {
-        return $this->pays;
-    }
-
-    /**
-     * Set ville
-     *
-     * @param string $ville
-     *
-     * @return User
-     */
-    public function setVille($ville)
-    {
-        $this->ville = $ville;
-
-        return $this;
-    }
-
-    /**
-     * Get ville
-     *
-     * @return string
-     */
-    public function getVille()
-    {
-        return $this->ville;
-    }
-
-    /**
-     * Set age
-     *
-     * @param integer $age
-     *
-     * @return User
-     */
-    public function setAge($age)
-    {
-        $this->age = $age;
-
-        return $this;
-    }
-
-    /**
-     * Get age
-     *
-     * @return integer
-     */
-    public function getAge()
-    {
-        return $this->age;
-    }
-
-    public function getGroups(){
-        return 'bite';
-    }
 }

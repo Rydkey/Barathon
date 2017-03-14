@@ -31,6 +31,7 @@
                                     <span class="btn btn-lg btn-info"><span class="glyphicon glyphicon-info-sign"></span>Détails</span>
                                 </a>
                             {% endif %}
+
                             {% if event in app.user.events %}
                                 <a href="{{ path('event_addUser',{'user': app.user.id,'event': event.id }) }}">
                                     <a href="{{ path('event_removeUser',{'user': app.user.id,'event': event.id }) }}">

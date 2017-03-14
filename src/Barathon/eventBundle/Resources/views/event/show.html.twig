@@ -2,12 +2,12 @@
 {% block page %}
     <h1>Event</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ event.id }}</td>
-            </tr>
+    <table class="table table-condensed">
+        <tbody>      <tr>
+            <th>Bar</th>
+            <td>{{ event.barid}}</td>
+        </tr>
+        <tr>
             <tr>
                 <th>Libelle_event</th>
                 <td>{{ event.libelleevent }}</td>
@@ -16,20 +16,42 @@
                 <th>Date_event</th>
                 <td>{% if event.dateevent %}{{ event.dateevent|date('Y-m-d') }}{% endif %}</td>
             </tr>
+            <tr>
+                <th>descrition_event</th>
+                <td>{{ event.descritionevent }}</td>
+            </tr>
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('event_index') }}">Back to the list</a>
+
+            <a href="{{ path('event_index') }}" button type="button" class="btn btn-info">
+            <span class="glyphicon glyphicon-circle-arrow-left"></span>
+                Back to the list
+            </a>
+            </button>
         </li>
+        </br>
+        {% if is_granted('ROLE_PROP') or is_granted('ROLE_ADMIN') %}
         <li>
-            <a href="{{ path('event_edit', { 'id': event.id }) }}">Edit</a>
+            <a href="{{ path('event_edit', { 'id': event.id }) }}"button type="button" class="btn btn-info">
+                <span class="glyphicon glyphicon-pencil"></span>
+                Edit
+            </a>
+            </button>
         </li>
+        {% endif %}
+        </br>
+        {% if is_granted('ROLE_PROP') or is_granted('ROLE_ADMIN') %}
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <button class="btn btn-info"input type="submit" value="Delete">
+                    <span class="glyphicon glyphicon-minus"></span>
+                    Delete
+                </button>
             {{ form_end(delete_form) }}
         </li>
+        {% endif %}
     </ul>
 {% endblock %}

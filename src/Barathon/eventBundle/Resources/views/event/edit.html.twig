@@ -1,7 +1,6 @@
 {% extends 'Utilisateurs/utilisateursLayout.html.twig' %}
 {% block page %}
     <h1>Event edit</h1>
-
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
         <input type="submit" value="Edit" />
@@ -13,7 +12,10 @@
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <button class="btn btn-info"input type="submit" value="Delete">
+                    <span class="glyphicon glyphicon-minus"></span>
+                    Delete
+                </button>
             {{ form_end(delete_form) }}
         </li>
     </ul>

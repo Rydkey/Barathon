@@ -3,3 +3,7 @@ php bin/console doctrine:generate:entities Barathon/IndexBundle/Entity/User
 php bin/console doctrine:schema:update --force
 
 php bin/console generate:doctrine:crud
+
+php bin/console fos:user:promote user ROLE_ADMIN
+
+php bin/console debug:router

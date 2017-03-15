@@ -52,7 +52,7 @@
                                     <span class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-pencil"></span> Modifier</span>
                                 </a>
                             {% endif %}
-                                    <br/>
+
                             {% if is_granted('ROLE_ADMIN') %}
                                 <a href="{{ path('event_edit', { 'id': event.id }) }}">
                                     <span class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-pencil"></span> Modifier</span>

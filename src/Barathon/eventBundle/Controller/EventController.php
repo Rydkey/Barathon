@@ -143,9 +143,11 @@ class EventController extends Controller
 
         $User->addEvent($Event);
         $em->flush();
-        return $this->render('BarathoneventBundle:event:event_addUser.html.twig', array(
-            'event' => $event
-        ));
+        $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Vous êtes inscrit'
+        );
+        return $this->redirectToRoute('event_index');
     }
 
 public function removeUserAction(User $user,Event $event){

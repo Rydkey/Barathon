@@ -1,16 +1,1 @@
-{% extends 'Utilisateurs/utilisateursLayout.html.twig' %}
-{% block page %}
-    <h1>Félicitations, vous avez inscrit avec succès</h1>
-    <br/>
-    <a href="{{ path('event_show', { 'id': event.id }) }}">
-        <span class="btn btn-lg btn-info"><span class="glyphicon glyphicon-info-sign"></span>Détails</span>
-    </a>
-    <br/>
-    <br/>
-    <br/>
-    <a href="{{ path('event_index') }}" button type="button" class="btn btn-info">
-        <span class="glyphicon glyphicon-circle-arrow-left"></span>
-        Back to the list
-    </a>
-    </button>
-{% endblock %}
+{% extends '::Utilisateurs/utilisateursLayout.html.twig' %}

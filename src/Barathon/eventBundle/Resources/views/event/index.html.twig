@@ -38,7 +38,7 @@
                                     <span class="btn btn-lg btn-success"><span class="glyphicon glyphicon-check"></span>Se déinscrire</span>
                                 </a>
                             {% endif %}
-                            {% if is_granted('ROLE_USER') and not is_granted('ROLE_ADMIN') and app.user.id != event.barId.userId.id and event not in app.user.events%}
+                            {% if is_granted('ROLE_USER') and not is_granted('ROLE_ADMIN') and not is_granted('ROLE_PROP') and event not in app.user.events%}
                                 <a href="{{ path('event_addUser',{'user': app.user.id,'event': event.id }) }}">
                                     <span class="btn btn-lg btn-success"><span class="glyphicon glyphicon-check"></span> S'inscrire</span>
                                 </a>

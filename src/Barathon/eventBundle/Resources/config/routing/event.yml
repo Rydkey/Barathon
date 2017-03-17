@@ -3,6 +3,11 @@ event_index:
     defaults: { _controller: "BarathoneventBundle:Event:index" }
     methods:  GET
 
+event_index_prop:
+    path:     /vosevent
+    defaults: { _controller: "BarathoneventBundle:Event:indexProp" }
+    methods:  GET
+
 event_show:
     path:     /{id}/show
     defaults: { _controller: "BarathoneventBundle:Event:show" }

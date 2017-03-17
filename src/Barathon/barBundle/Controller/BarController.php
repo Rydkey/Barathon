@@ -22,6 +22,19 @@ class BarController extends Controller
             'bars' => $bars,
         ));
     }
+
+    /**
+     * Lists all bar entities.
+     *
+     */
+    public function indexPropAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $bars = $em->getRepository('BarathonbarBundle:Bar')->findAll();
+        return $this->render('BarathonbarBundle:bar:Index_Prop.html.twig', array(
+            'bars' => $bars,
+        ));
+    }
     /**
      * Creates a new bar entity.
      *

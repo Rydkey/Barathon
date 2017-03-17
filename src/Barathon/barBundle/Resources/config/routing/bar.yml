@@ -3,6 +3,11 @@ bar_index:
     defaults: { _controller: "BarathonbarBundle:Bar:index" }
     methods:  GET
 
+bar_index_prop:
+    path:     /barProp
+    defaults: { _controller: "BarathonbarBundle:Bar:indexProp" }
+    methods:  GET
+
 bar_show:
     path:     /{id}/show
     defaults: { _controller: "BarathonbarBundle:Bar:show" }

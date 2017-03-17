@@ -107,140 +107,125 @@
                         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="icon-calendar"></i>
 								<span class="badge green">
-								4 </span>
+								{{ app.user.events|length }}  </span>
                         </a>
                         <ul class="dropdown-menu notifications">
-                            <li class="dropdown-menu-title">
-                                <span>Vous avez 4 évènements à venir</span>
-                                <a href="#refresh"><i class="icon-repeat"></i></a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="icon green"><i class="icon-calendar"></i></span>
-                                    <span class="message">bar name</span>
-                                    <span class="time">dans 2 jours</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="icon green"><i class="icon-calendar"></i></span>
-                                    <span class="message">bar name</span>
-                                    <span class="time">dans 2 jours</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="icon green"><i class="icon-calendar"></i></span>
-                                    <span class="message">bar name</span>
-                                    <span class="time">dans 2 jours</span>
-                                </a>
-                            </li> <li>
-                                <a href="#">
-                                    <span class="icon green"><i class="icon-calendar"></i></span>
-                                    <span class="message">bar name</span>
-                                    <span class="time">dans 2 jours</span>
-                                </a>
+                                <li class="dropdown-menu-title">
+                                    <span>vous avez {{ app.user.events|length }} évènements prévue</span>
+                                    <a href="#refresh"><i class="icon-repeat"></i></a>
+                                </li>
+                            {% for event in app.user.events %}
+                                <li>
+                                    <a href="{{ path('event_show', { 'id': event.id }) }}">
+                                        <span class="icon green"><i class="icon-calendar"></i></span>
+                                        <span class="message">{{ event.libelleevent}}</span>
+                                        <span class="time">{{ event.dateevent|date('D-M-Y') }}</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                            <li class="dropdown-menu-sub-footer">
+                                <a href="{{ path('event_index') }}">Voir tous les événements </a>
                             </li>
                         </ul>
                     </li>
                     <!-- end: Notifications Dropdown -->
                     <!-- start: Message Dropdown -->
-                    <li class="dropdown hidden-phone">
-                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="icon-envelope"></i>
-								<span class="badge blue">
-								4 </span>
-                        </a>
-                        <ul class="dropdown-menu messages">
-                            <li class="dropdown-menu-title">
-                                <span>Vous avez 4 messages</span>
-                                <a href="#refresh"><i class="icon-repeat"></i></a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
-										<span class="header">
-											<span class="from">
+                    {#<li class="dropdown hidden-phone">#}
+                        {#<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">#}
+                            {#<i class="icon-envelope"></i>#}
+								{#<span class="badge blue">#}
+								{#4 </span>#}
+                        {#</a>#}
+                        {#<ul class="dropdown-menu messages">#}
+                            {#<li class="dropdown-menu-title">#}
+                                {#<span>Vous avez 4 messages</span>#}
+                                {#<a href="#refresh"><i class="icon-repeat"></i></a>#}
+                            {#</li>#}
+                            {#<li>#}
+                                {#<a href="#">#}
+                                    {#<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>#}
+										{#<span class="header">#}
+											{#<span class="from">#}
 										    	{#{{user.username}}#}
-										     </span>
-											<span class="time">
-										    	6 min
-										    </span>
-										</span>
-                                        <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                        </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
-										<span class="header">
-											<span class="from">
+										     {#</span>#}
+											{#<span class="time">#}
+										    	{#6 min#}
+										    {#</span>#}
+										{#</span>#}
+                                        {#<span class="message">#}
+                                            {#Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore#}
+                                        {#</span>#}
+                                {#</a>#}
+                            {#</li>#}
+                            {#<li>#}
+                                {#<a href="#">#}
+                                    {#<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>#}
+										{#<span class="header">#}
+											{#<span class="from">#}
 										    	{#{{user.username}}#}
-										     </span>
-											<span class="time">
-										    	56 min
-										    </span>
-										</span>
-                                        <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                        </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
-										<span class="header">
-											<span class="from">
+										     {#</span>#}
+											{#<span class="time">#}
+										    	{#56 min#}
+										    {#</span>#}
+										{#</span>#}
+                                        {#<span class="message">#}
+                                            {#Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore#}
+                                        {#</span>#}
+                                {#</a>#}
+                            {#</li>#}
+                            {#<li>#}
+                                {#<a href="#">#}
+                                    {#<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>#}
+										{#<span class="header">#}
+											{#<span class="from">#}
 										    	{#{{user.username}}#}
-										     </span>
-											<span class="time">
-										    	3 hours
-										    </span>
-										</span>
-                                        <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                        </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
-										<span class="header">
-											<span class="from">
+										     {#</span>#}
+											{#<span class="time">#}
+										    	{#3 hours#}
+										    {#</span>#}
+										{#</span>#}
+                                        {#<span class="message">#}
+                                            {#Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore#}
+                                        {#</span>#}
+                                {#</a>#}
+                            {#</li>#}
+                            {#<li>#}
+                                {#<a href="#">#}
+                                    {#<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>#}
+										{#<span class="header">#}
+											{#<span class="from">#}
 										    	{#{{user.username}}#}
-										     </span>
-											<span class="time">
-										    	yesterday
-										    </span>
-										</span>
-                                        <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                        </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
-										<span class="header">
-											<span class="from">
+										     {#</span>#}
+											{#<span class="time">#}
+										    	{#yesterday#}
+										    {#</span>#}
+										{#</span>#}
+                                        {#<span class="message">#}
+                                            {#Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore#}
+                                        {#</span>#}
+                                {#</a>#}
+                            {#</li>#}
+                            {#<li>#}
+                                {#<a href="#">#}
+                                    {#<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>#}
+										{#<span class="header">#}
+											{#<span class="from">#}
 										    	{#{{user.username}}#}
-										     </span>
-											<span class="time">
-										    	Jul 25, 2012
-										    </span>
-										</span>
-                                        <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                        </span>
-                                </a>
-                            </li>
-                            <li>
+										     {#</span>#}
+											{#<span class="time">#}
+										    	{#Jul 25, 2012#}
+										    {#</span>#}
+										{#</span>#}
+                                        {#<span class="message">#}
+                                            {#Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore#}
+                                        {#</span>#}
+                                {#</a>#}
+                            {#</li>#}
+                            {#<li>#}
                                 {#<a href="{{ path('message_user') }}" class="dropdown-menu-sub-footer">Voir tout les messages</a>#}
-                            </li>
-                        </ul>
-                    </li>
+                            {#</li>#}
+                        {#</ul>#}
+                    {#</li>#}
 
                     <!-- start: User Dropdown -->
                     <li class="dropdown">
@@ -276,7 +261,13 @@
                     <li><a href="{{ path('fos_user_profile_show') }}"><i class="icon-user"></i><span class="hidden-tablet"> Profil</span></a></li>
                     {#<li><a href="{{ path('message_user') }}"><i class="icon-envelope"></i><span class="hidden-tablet"> Messages</span></a></li>#}
                     <li><a href="{{ path('event_index') }}"><i class="icon-calendar"></i><span class="hidden-tablet"> Évènements</span></a></li>
+                    {% if is_granted('ROLE_PROP') %}
+                        <li><a href="{{ path('event_index_prop') }}"><i class="icon-eye-open"></i><span class="hidden-tablet">Vos événements </span></a></li>
+                    {% endif %}
                     <li><a href="{{ path('bar_index') }}"><img style="width: 20px; height: 20px;" src="{{ asset('assets/Utilisateurs/img/beer_logo_sidebar.png') }}" alt=""><span class="hidden-tablet"> Bar près de chez vous</span></a></li>
+                    {% if is_granted('ROLE_PROP') %}
+                        <li><a href="{{ path('bar_index_prop') }}"><i class="icon-star"></i><span class="hidden-tablet">Votre Bar</span></a></li>
+                    {% endif %}
                     {#<li><a href="{{ path('test_front_page') }}"><i class="icon-eye-open"></i><span class="hidden-tablet"> À propos</span></a></li>#}
                 </ul>
             </div>

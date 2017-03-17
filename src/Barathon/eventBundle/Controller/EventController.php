@@ -28,6 +28,20 @@ class EventController extends Controller
             'events' => $events,
         ));
     }
+    /**
+     * Lists all event from owner entities.
+     *
+     */
+    public function indexPropAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $events = $em->getRepository('BarathoneventBundle:Event')->findAll();
+
+        return $this->render('BarathoneventBundle:event:index_Prop.html.twig', array(
+            'events' => $events,
+        ));
+    }
 
     /**
      * Creates a new event entity.

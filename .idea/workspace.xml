@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46495395-1fbc-4e04-b0b1-e2ceb292d5af" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BarathonNew.iws" />
@@ -189,7 +188,7 @@
         <option value="Rydkey" />
       </list>
     </option>
-    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -458,7 +457,7 @@
       <workItem from="1488185406886" duration="13479000" />
       <workItem from="1488218774757" duration="550000" />
       <workItem from="1488219332654" duration="1425000" />
-      <workItem from="1489829654361" duration="151000" />
+      <workItem from="1489829654361" duration="222000" />
     </task>
     <task id="LOCAL-00001" summary="add git ignore">
       <created>1484572461041</created>
@@ -607,11 +606,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488219012221</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="commit">
+      <created>1489829819901</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1489829819901</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138897000" />
+    <option name="totallyTimeSpent" value="138968000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
@@ -672,7 +678,8 @@
     <MESSAGE value="Amélioration de la sécurité" />
     <MESSAGE value="Ajout des description d'event" />
     <MESSAGE value="maintenant, les propriétaire n'ont accès qu'à leurs bar&#10;La route de userAdd dans event est correct" />
-    <option name="LAST_COMMIT_MESSAGE" value="maintenant, les propriétaire n'ont accès qu'à leurs bar&#10;La route de userAdd dans event est correct" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

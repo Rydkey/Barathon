@@ -2,56 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46495395-1fbc-4e04-b0b1-e2ceb292d5af" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
-    <ignored path="BarathonNew.iws" />
-    <ignored path=".idea/workspace.xml" />
-    <ignored path=".idea/dataSources.local.xml" />
-    <ignored path=".idea/dataSources/407848d6-ae77-4cdd-83d1-dcc20f04485e.xml" />
-    <ignored path=".idea/dataSources/407848d6-ae77-4cdd-83d1-dcc20f04485e/storage.xml" />
-    <ignored path=".idea/dataSources/407848d6-ae77-4cdd-83d1-dcc20f04485e/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="DatabaseView">
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_TABLE_DETAILS" value="true" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Barathon@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Barathon@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="fos_user" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -146,8 +107,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="281">
+              <caret line="24" column="20" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -165,86 +126,9 @@
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Twig Page" />
-        <option value="twig" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>__con</find>
-      <find>PROP</find>
-      <find>bar_id</find>
-      <find>getId</find>
-    </findStrings>
-  </component>
-  <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="rydkey &lt;remyrisser@hotmail.fr&gt;" />
-        <option value="Rydkey" />
-      </list>
-    </option>
-    <option name="UPDATE_TYPE" value="REBASE" />
-    <option name="PUSH_AUTO_UPDATE" value="true" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Barathon/indexBundle/Resources/views/Index/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/config_dev.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/ChangePassword/change_password.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/ChangePassword/change_password_content.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/edit_content.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/connectionLayout.html.twig" />
-        <option value="$PROJECT_DIR$/src/Barathon/utilisateursBundle/Form/RegistrationType.php" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/services.yml" />
-        <option value="$PROJECT_DIR$/src/Barathon/utilisateursBundle/Controller/RegistrationController.php" />
-        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" />
-        <option value="$PROJECT_DIR$/src/Barathon/utilisateursBundle/Entity/Group.php" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/src/Barathon/indexBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/Barathon/utilisateursBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/translations/FOSUserBundle.fr.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/bar/new.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/bar/show.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/bar/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Barathon/barBundle/Tests/Controller/BarControllerTest.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/bar/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/Barathon/barBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/web/app_dev.php" />
-        <option value="$PROJECT_DIR$/web/config.php" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/src/Barathon/eventBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/event/edit.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/event/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/event/new.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/event/show.html.twig" />
-        <option value="$PROJECT_DIR$/web/assets/Utilisateurs/js/jquery-1.9.1.min.js" />
-        <option value="$PROJECT_DIR$/web/assets/Utilisateurs/js/jquery-migrate-1.0.0.min.js" />
-        <option value="$PROJECT_DIR$/web/assets/Utilisateurs/css/style.css" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" />
-        <option value="$PROJECT_DIR$/src/Barathon/eventBundle/Resources/views/event/event_addUser.html.twig" />
-        <option value="$PROJECT_DIR$/src/Barathon/barBundle/Resources/views/bar/show.html.twig" />
-        <option value="$PROJECT_DIR$/src/Barathon/eventBundle/Form/EventType.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/Utilisateurs/utilisateursLayout.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/security.yml" />
-        <option value="$PROJECT_DIR$/src/Barathon/barBundle/Resources/views/bar/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Barathon/eventBundle/Entity/Event.php" />
-        <option value="$PROJECT_DIR$/src/Barathon/utilisateursBundle/Entity/User.php" />
-        <option value="$PROJECT_DIR$/src/Barathon/barBundle/Entity/Bar.php" />
-        <option value="$PROJECT_DIR$/src/Barathon/barBundle/Controller/BarController.php" />
-        <option value="$PROJECT_DIR$/src/Barathon/eventBundle/Resources/config/routing/event.yml" />
-        <option value="$PROJECT_DIR$/src/Barathon/eventBundle/Resources/views/event/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Barathon/eventBundle/Controller/EventController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show_content.html.twig" />
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
@@ -255,36 +139,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="PhpServers">
-    <servers />
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="y" value="24" />
     <option name="width" value="1920" />
     <option name="height" value="1056" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>Code StylePHP</id>
-          </State>
-          <State>
-            <id>PHP</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>PhpUnnecessaryFullyQualifiedNameInspection</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -322,312 +180,24 @@
       <pane id="Scope" />
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="database.main" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL&#10;DB2 (JTOpen)" />
-    <property name="js.eslint.eslintPackage" value="" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Barathon/eventBundle/Controller" />
-      <recent name="$PROJECT_DIR$/src/Barathon/eventBundle/Resources/views" />
-      <recent name="$PROJECT_DIR$/app/Resources/translations" />
-      <recent name="$PROJECT_DIR$/app/Resources/views/FOSUserBundle/views" />
-      <recent name="$PROJECT_DIR$/app/Resources/views/Utilisateurs" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Barathon/barBundle/Resources/views" />
-      <recent name="$PROJECT_DIR$/src/Barathon/eventBundle/Resources/views" />
-      <recent name="$PROJECT_DIR$/src/Barathon/eventBundle/Resources/views/event" />
-      <recent name="$PROJECT_DIR$/web/assets/Utilisateurs/css" />
-      <recent name="$PROJECT_DIR$/app/Resources/FOSUserBundle" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
-      <method />
-    </configuration>
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
-      <BehatRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
-      <PhpTestRunnerSettings />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory />
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui />
-      <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory />
-      <recursive>false</recursive>
-      <method />
-    </configuration>
-  </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="46495395-1fbc-4e04-b0b1-e2ceb292d5af" name="Default" comment="" />
-      <created>1484399317616</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1484399317616</updated>
-      <workItem from="1484399318794" duration="27685000" />
-      <workItem from="1484440091670" duration="2199000" />
-      <workItem from="1484469309534" duration="22893000" />
-      <workItem from="1484570510314" duration="1527000" />
-      <workItem from="1484572405405" duration="14000" />
-      <workItem from="1484572427117" duration="7905000" />
-      <workItem from="1484595289855" duration="21000" />
-      <workItem from="1484596960033" duration="15000" />
-      <workItem from="1484601907483" duration="14000" />
-      <workItem from="1484637916974" duration="13000" />
-      <workItem from="1484638047787" duration="702000" />
-      <workItem from="1484658484452" duration="1285000" />
-      <workItem from="1485186754504" duration="28000" />
-      <workItem from="1485188172941" duration="2068000" />
-      <workItem from="1485190254941" duration="1285000" />
-      <workItem from="1485245679756" duration="99000" />
-      <workItem from="1485245789264" duration="91000" />
-      <workItem from="1485245904035" duration="5163000" />
-      <workItem from="1485264226352" duration="8000" />
-      <workItem from="1485501677723" duration="6033000" />
-      <workItem from="1485780095898" duration="2966000" />
-      <workItem from="1485784099381" duration="1480000" />
-      <workItem from="1485786729791" duration="77000" />
-      <workItem from="1485789858610" duration="674000" />
-      <workItem from="1485868789680" duration="15000" />
-      <workItem from="1485952746872" duration="2359000" />
-      <workItem from="1486030124556" duration="2373000" />
-      <workItem from="1486557662405" duration="13240000" />
-      <workItem from="1486642041946" duration="1677000" />
-      <workItem from="1486982271726" duration="8141000" />
-      <workItem from="1487009434544" duration="742000" />
-      <workItem from="1487010432496" duration="4000" />
-      <workItem from="1487010731934" duration="7582000" />
-      <workItem from="1487056216209" duration="687000" />
-      <workItem from="1487101982090" duration="13000" />
-      <workItem from="1487102003462" duration="2024000" />
-      <workItem from="1488188809387" duration="190000" />
-      <workItem from="1488185406886" duration="13479000" />
-      <workItem from="1488218774757" duration="550000" />
-      <workItem from="1488219332654" duration="1425000" />
-      <workItem from="1489829654361" duration="222000" />
-    </task>
-    <task id="LOCAL-00001" summary="add git ignore">
-      <created>1484572461041</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1484572461041</updated>
-    </task>
-    <task id="LOCAL-00002" summary="On répare cette merde">
-      <created>1484575118674</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1484575118674</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Ajout de l'entité Bar !!!!">
-      <created>1484581710675</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1484581710675</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Ajout de event dans user">
-      <created>1485191487338</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1485191487338</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Ajout des traductions française (app/Ressources/translations/FOSUserBundle.fr.yml)">
-      <created>1485246246683</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1485246246683</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Possibilité de s'inscrire à plusieurs évènements pour un utilisateur.&#10;Possibilité de faire plusieurs évènements dans un seul et même bar">
-      <created>1485251459321</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1485251459321</updated>
-    </task>
-    <task id="LOCAL-00007" summary="CRUD bar modifications">
-      <created>1485952812506</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1485952812506</updated>
-    </task>
-    <task id="LOCAL-00008" summary="CRUD bar modifications">
-      <created>1485952874834</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1485952874834</updated>
-    </task>
-    <task id="LOCAL-00009" summary="modification du nom de l'id dans barBundle/Entity/Bar.php">
-      <created>1485953578874</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1485953578874</updated>
-    </task>
-    <task id="LOCAL-00010" summary="ajout de avent à la bar de taches&#10;">
-      <created>1485954908643</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1485954908643</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Modification des vues&#10;">
-      <created>1486557810799</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1486557810799</updated>
-    </task>
-    <task id="LOCAL-00012" summary="/!\ Changement de l'emplacement des vues dans les Bundles /!\">
-      <created>1486558603672</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1486558603672</updated>
-    </task>
-    <task id="LOCAL-00013" summary="1er modifications de l'affichage des évenments">
-      <created>1486564811651</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1486564811651</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Lien entre User et Bar">
-      <created>1486571062963</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1486571062963</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Style vitrine events">
-      <created>1486643078738</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1486643078739</updated>
-    </task>
-    <task id="LOCAL-00016" summary="modification des entités bar et User">
-      <created>1487009509228</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1487009509228</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Possibilité de supprimer et modifier les évènements pour les ADMIN">
-      <created>1487018791973</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1487018791973</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Possibilité modifier seulement les évènements pour un utilisateur">
-      <created>1487056871917</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1487056871917</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Amélioration de la sécurité">
-      <created>1487103306707</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1487103306707</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Ajout des description d'event">
-      <created>1488191326272</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1488191326272</updated>
-    </task>
-    <task id="LOCAL-00021" summary="maintenant, les propriétaire n'ont accès qu'à leurs bar&#10;La route de userAdd dans event est correct">
-      <created>1488219012221</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1488219012221</updated>
-    </task>
-    <task id="LOCAL-00022" summary="commit">
-      <created>1489829819901</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1489829819901</updated>
-    </task>
-    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138968000" />
+    <option name="totallyTimeSpent" value="45000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22411953" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23425826" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33870968" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33870968" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16129032" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -642,44 +212,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
-  </component>
-  <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
-      <collection />
-    </option>
-    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-      <collection />
-    </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="add git ignore" />
-    <MESSAGE value="On répare cette merde" />
-    <MESSAGE value="Ajout de l'entité Bar !!!!" />
-    <MESSAGE value="Ajout de event dans user" />
-    <MESSAGE value="Ajout des traductions française (app/Ressources/translations/FOSUserBundle.fr.yml)" />
-    <MESSAGE value="Possibilité de s'inscrire à plusieurs évènements pour un utilisateur.&#10;Possibilité de faire plusieurs évènements dans un seul et même bar" />
-    <MESSAGE value="CRUD bar modifications" />
-    <MESSAGE value="modification du nom de l'id dans barBundle/Entity/Bar.php" />
-    <MESSAGE value="ajout de avent à la bar de taches&#10;" />
-    <MESSAGE value="Modification des vues&#10;" />
-    <MESSAGE value="/!\ Changement de l'emplacement des vues dans les Bundles /!\" />
-    <MESSAGE value="1er modifications de l'affichage des évenments" />
-    <MESSAGE value="Lien entre User et Bar" />
-    <MESSAGE value="Style vitrine events" />
-    <MESSAGE value="modification des entités bar et User" />
-    <MESSAGE value="Possibilité de supprimer et modifier les évènements pour les ADMIN" />
-    <MESSAGE value="Possibilité modifier seulement les évènements pour un utilisateur" />
-    <MESSAGE value="Amélioration de la sécurité" />
-    <MESSAGE value="Ajout des description d'event" />
-    <MESSAGE value="maintenant, les propriétaire n'ont accès qu'à leurs bar&#10;La route de userAdd dans event est correct" />
-    <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1032,8 +564,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="281">
+          <caret line="24" column="20" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
           <folding />
         </state>
       </provider>

@@ -8,10 +8,6 @@
     {% if is_granted('ROLE_PROP') %}
         <a href="{{ path('event_new') }}">Create a new event</a>
     {% endif %}
-    {% for flashMessage in app.session.flashbag.get('notice') %}
-
-    {% endfor %}
-
     {% for event in events %}
         <div class="container">
             <div class="well">
@@ -25,7 +21,7 @@
                         <span class="btn-sm alert-info">Bière Belges</span>
                         <span class="btn-sm alert-warning">Étudiants</span>
                         <hr>
-                        <p class="text-left">{{ dump(event) }}</p>
+                        <p class="text-left">{{ event.descritionEvent }}</p>
                         <div class="text-right">
                             {% if is_granted('ROLE_USER') and not is_granted('ROLE_ADMIN') %}
                                 <a href="{{ path('event_show', { 'id': event.id }) }}">

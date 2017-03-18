@@ -158,7 +158,7 @@ class EventController extends Controller
         $User->addEvent($Event);
         $em->flush();
         $this->get('session')->getFlashBag()->add(
-            'notice',
+            'subcribe',
             'Vous êtes inscrit'
         );
         return $this->redirectToRoute('event_index');
@@ -182,7 +182,7 @@ public function removeUserAction(User $user,Event $event){
     $User->removeEvent($Event);
     $em->flush();
     $this->get('session')->getFlashBag()->add(
-        'notice',
+        'unsubscribe',
         'Vous vous êtes désinscrit'
     );
     return $this->redirectToRoute('event_index');

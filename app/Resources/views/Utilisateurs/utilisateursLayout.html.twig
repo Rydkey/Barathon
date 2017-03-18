@@ -67,7 +67,7 @@
                     <li class="dropdown hidden-phone">
                         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="icon-bell"></i>
-                            {% if app.session.flashbag.get('notice')|length != 0 %}
+                            {% if app.session.FlashBag.has('unsubscribe') or app.session.FlashBag.has('subscribe')  %}
 								<span class="badge red">
 								! </span>
                             {% endif %}
@@ -75,15 +75,23 @@
                         {#{% endfor %}#}
                         <ul class="dropdown-menu notifications">
                             <li class="dropdown-menu-title">
-                                <span>Vous avez {{ app.session.flashbag|length }} notifications</span>
-                                <a href="#refresh"><i class="icon-repeat"></i></a>
+                                <span>Notifications</span>
                             </li>
-                            {% for flashMessage in app.session.flashbag.get('notice') %}
+                            {% for flashMessage in app.session.FlashBag.get('unsubscribe') %}
                                 <li>
                                     <a href="#">
-                                        <span class="icon blue"><i class="icon-user"></i></span>
+                                        <span class="icon red"><i class="icon-ban-circle"></i></span>
                                         <span class="message">{{ flashMessage }}</span>
-                                        <span class="time">1 min</span>
+                                        <span class="time">à l'instant</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                            {% for flashMessage in app.session.FlashBag.get('subscribe') %}
+                                <li>
+                                    <a href="#">
+                                        <span class="icon green"><i class="icon-beer"></i></span>
+                                        <span class="message">{{ flashMessage }}</span>
+                                        <span class="time">à l'instant</span>
                                     </a>
                                 </li>
                             {% endfor %}

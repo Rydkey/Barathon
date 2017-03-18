@@ -67,39 +67,26 @@
                     <li class="dropdown hidden-phone">
                         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="icon-bell"></i>
+                            {% if app.session.flashbag.get('notice')|length != 0 %}
 								<span class="badge red">
-								3 </span>
+								! </span>
+                            {% endif %}
                         </a>
+                        {#{% endfor %}#}
                         <ul class="dropdown-menu notifications">
                             <li class="dropdown-menu-title">
-                                <span>Vous avez 3 notifications</span>
+                                <span>Vous avez {{ app.session.flashbag|length }} notifications</span>
                                 <a href="#refresh"><i class="icon-repeat"></i></a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <span class="icon blue"><i class="icon-user"></i></span>
-                                    <span class="message">Nouvelle demande d'amis</span>
-                                    <span class="time">1 min</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="icon green"><i class="icon-comment-alt"></i></span>
-                                    <span class="message">Nouveau commentaire</span>
-                                    <span class="time">7 min</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="icon green"><i class="icon-comment-alt"></i></span>
-                                    <span class="message">Nouveau commentaire</span>
-                                    <span class="time">8 min</span>
-                                </a>
-                            </li>
-
-                            <li class="dropdown-menu-sub-footer">
-                                <a>Voir Toutes les modifications</a>
-                            </li>
+                            {% for flashMessage in app.session.flashbag.get('notice') %}
+                                <li>
+                                    <a href="#">
+                                        <span class="icon blue"><i class="icon-user"></i></span>
+                                        <span class="message">{{ flashMessage }}</span>
+                                        <span class="time">1 min</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </li>
                     <!-- start: Notifications Dropdown -->

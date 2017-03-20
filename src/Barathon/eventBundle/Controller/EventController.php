@@ -158,7 +158,7 @@ class EventController extends Controller
         $User->addEvent($Event);
         $em->flush();
         $this->get('session')->getFlashBag()->add(
-            'subcribe',
+            'subscribe',
             'Vous êtes inscrit'
         );
         return $this->redirectToRoute('event_index');

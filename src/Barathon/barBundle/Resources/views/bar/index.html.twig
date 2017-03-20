@@ -3,47 +3,45 @@
     <h1>Liste des bars</h1>
 
     <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Bar_id</th>
-                <th>Nom</th>
-                <th>Adresse</th>
-{#                {% if is_granted("ROLE_PROR") %}#}
-                <th>Détails</th>
-{#                {% endif %}#}
-            </tr>
-        </thead>
-
-
-        <tbody>
-        {% for bar in bars %}
-            <tr>
-                <td><a href="{{ path('bar_show', { 'id': bar.id }) }}">{{ bar.id }}</a></td>
-                <td>{{ bar.name }}</td>
-                <td>{{ bar.ville }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('bar_show', { 'id': bar.id }) }}">Voir les détails</a>
-                        </li>
-                        {% if is_granted("ROLE_PROP") and app.user.id==bar.userId.id %}
-                            <li>
-                                <a href="{{ path('bar_edit', { 'id': bar.id }) }}">edit</a>
-                            </li>
-                        {% endif %}
-                        {% if is_granted("ROLE_ADMIN") %}
-                            <li>
-                                <a href="{{ path('bar_delete', { 'id': bar.id }) }}">Delete the bar</a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                </td>
-            </tr>
-{#
-            {{ dump(bar) }}
-#}
+        {% for bar in bars%}
+            <div class="container">
+                <div class="well">
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="{{ asset('assets/Utilisateurs/img/gallery/bar1.jpg') }}" style="height:150px; width: 150px;">
+                        </a>
+                        <div class="media-body">
+                            <h1 class="media-heading">{{ bar.name}}</h1>
+                            <h6>{{ bar.ville }}</h6>
+                            <span class="btn-sm alert-info">Bière Belges</span>
+                            <span class="btn-sm alert-warning">Étudiants</span>
+                            <hr>
+                            <p class="text-left">une description</p>
+                            <div class="text-right">
+                                {% if is_granted('ROLE_USER') and not is_granted('ROLE_ADMIN') %}
+                                    <a href="{{ path('bar_show', { 'id': bar.id }) }}">
+                                        <span class="btn btn-lg btn-info"><span class="glyphicon glyphicon-info-sign"></span> Détails</span>
+                                    </a>
+                                {% endif %}
+                                {% if is_granted("ROLE_PROP") and app.user.id==bar.userId.id %}
+                                    <a href="{{ path('bar_edit', { 'id': bar.id }) }}">
+                                        <span class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-info-sign"></span> Modifier</span>
+                                    </a>
+                                {% endif %}
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <a href="{{ path('bar_edit', { 'id': bar.id }) }}">
+                                        <span class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-pencil"></span> Modifier</span>
+                                    </a>
+                                    <a href="{{ path('bar_delete', { 'id': bar.id }) }}">
+                                        <span class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-minus"></span> Supprimer</span>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         {% endfor %}
-        </tbody>
     </table>
     {% if is_granted("ROLE_PROP") %}
     {% endif %}

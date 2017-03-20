@@ -41,6 +41,16 @@ class Bar{
     protected $user_id;
 
     /**
+     * @ORM\Column(type="text")
+     */
+    protected $description;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\Category", cascade={"persist"})
+     **/
+    protected $category;
+
+    /**
      * Get id
      *
      * @return integer
@@ -124,10 +134,68 @@ class Bar{
     }
 
     /**
-     * return the bar name to string
+     * Constructor
      */
-    public function __toString()
+    public function __construct()
     {
-        return $this->getName();
+        $this->category = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add category
+     *
+     * @param \Barathon\barBundle\Entity\Category $category
+     *
+     * @return Bar
+     */
+    public function addCategory(\Barathon\barBundle\Entity\Category $category)
+    {
+        $this->category[] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Remove category
+     *
+     * @param \Barathon\barBundle\Entity\Category $category
+     */
+    public function removeCategory(\Barathon\barBundle\Entity\Category $category)
+    {
+        $this->category->removeElement($category);
+    }
+
+    /**
+     * Get category
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Bar
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

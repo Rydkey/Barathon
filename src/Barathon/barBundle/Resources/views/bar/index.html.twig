@@ -1,7 +1,12 @@
 {% extends 'Utilisateurs/utilisateursLayout.html.twig' %}
 {% block page %}
     <h1>Liste des bars</h1>
-
+    {% if is_granted("ROLE_PROP") %}
+    {% endif %}
+    {% if is_granted("ROLE_ADMIN") %}
+            <a href="{{ path('bar_new') }}">crée un nouveau bar</a>
+    {% endif %}
+    <br>
     <table class="table table-bordered">
         {% for bar in bars%}
             <div class="container">
@@ -13,8 +18,9 @@
                         <div class="media-body">
                             <h1 class="media-heading">{{ bar.name}}</h1>
                             <h6>{{ bar.ville }}</h6>
-                            <span class="btn-sm alert-info">Bière Belges</span>
-                            <span class="btn-sm alert-warning">Étudiants</span>
+                                {% for category in bar.category %}
+                                    <span class="btn-sm btn-{{ category.type }}">{{ category.name }}</span>
+                                {% endfor %}
                             <hr>
                             <p class="text-left">une description</p>
                             <div class="text-right">
@@ -43,14 +49,4 @@
             </div>
         {% endfor %}
     </table>
-    {% if is_granted("ROLE_PROP") %}
-    {% endif %}
-    {% if is_granted("ROLE_ADMIN") %}
-    <ul>
-        <li>
-            <a href="{{ path('bar_new') }}">Create a new bar</a>
-        </li>
-    </ul>
-
-{% endif %}
 {% endblock %}

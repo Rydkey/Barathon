@@ -1,6 +1,6 @@
 {% extends '::Utilisateurs/utilisateursLayout.html.twig' %}
 {% block page %}
-    <h1>Listes des événements </h1><br>
+    <h1>Liste des événements </h1><br>
     {% if is_granted('ROLE_ADMIN') %}
         <a href="{{ path('event_new') }}">Create a new event</a>
     {% endif %}

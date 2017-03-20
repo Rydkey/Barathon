@@ -1,31 +1,31 @@
 {% extends 'Utilisateurs/utilisateursLayout.html.twig' %}
 {% block page %}
-    <h1>Bar creation</h1>
-
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
+    <h1>Création d'un Bar</h1>
+    <form name="barathon_barbundle_bar" method="post">
+        <div id="barathon_barbundle_bar">
+            <div>
+                <label for="barathon_barbundle_bar_name" class="required">Nom</label>
+                <input type="text" id="barathon_barbundle_bar_name" name="barathon_barbundle_bar[name]" required="required" />
+            </div>
+            <div>
+                <label for="barathon_barbundle_bar_ville" class="required">Ville</label>
+                <input type="text" id="barathon_barbundle_bar_ville" name="barathon_barbundle_bar[ville]" required="required" />
+            </div>
+            <div>
+                <label for="barathon_barbundle_bar_user_id">Propriétaire </label>
+                {{ form_widget(form.user_id) }}
+            </div>
+            <div>
+                <label for="barathon_barbundle_bar_category">Catégories</label>
+                {{ form_widget(form.category) }}
+            </div>
+            <div>
+                <label for="barathon_barbundle_bar_description" class="required">Déscription</label>
+                <textarea id="barathon_barbundle_bar_description" name="barathon_barbundle_bar[description]" required="required"></textarea>
+            </div>
+            {{ form_row(form._token) }}
+        </div>
         <input type="submit" value="Create" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('bar_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    </form>
 {% endblock %}
 
-
-{#<form name="barathon_barbundle_bar" method="post">#}
-    {#<div id="barathon_barbundle_bar">#}
-        {#<div>#}
-            {#<label for="barathon_barbundle_bar_name" class="required">Name</label>#}
-            {#<input type="text" id="barathon_barbundle_bar_name" name="barathon_barbundle_bar[name]" required="required" />#}
-        {#</div>#}
-        {#<div>#}
-            {#<label for="barathon_barbundle_bar_ville" class="required">Ville</label>#}
-            {#<input type="text" id="barathon_barbundle_bar_ville" name="barathon_barbundle_bar[ville]" required="required" />#}
-        {#</div><div><label for="barathon_barbundle_bar_user_id">User id</label>#}
-            {#<select id="barathon_barbundle_bar_user_id" name="barathon_barbundle_bar[user_id]">#}
-                {#<option value=""></option><option value="1">rydkey</option><option value="2">prop1</option><option value="3">prop2</option><option value="4">admin</option></select></div><input type="hidden" id="barathon_barbundle_bar__token" name="barathon_barbundle_bar[_token]" value="A0GuX-I-9z6Gb0QPZMOuBTfuMoZW9i1KelheK8zYr3A" /></div>#}
-    {#<input type="submit" value="Create" />#}
-{#</form>#}

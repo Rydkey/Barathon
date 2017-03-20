@@ -17,8 +17,9 @@
                     <div class="media-body">
                         <h1 class="media-heading">{{ event.libelleevent }} au {{ event.barId.name}}</h1>
                         <h6>{{ event.dateevent|date('d D-M-Y') }}</h6>
-                        <span class="btn-sm alert-info">Bière Belges</span>
-                        <span class="btn-sm alert-warning">Étudiants</span>
+                        {% for category in event.barId.category %}
+                            <span class="btn-sm btn-{{ category.type }}">{{ category.name }}</span>
+                        {% endfor %}
                         <hr>
                         <p class="text-left">{{ event.descritionEvent }}</p>
                         <div class="text-right">

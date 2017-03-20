@@ -18,11 +18,11 @@
                         <div class="media-body">
                             <h1 class="media-heading">{{ bar.name}}</h1>
                             <h6>{{ bar.ville }}</h6>
-                                {% for category in bar.category %}
-                                    <span class="btn-sm btn-{{ category.type }}">{{ category.name }}</span>
-                                {% endfor %}
+                            {% for category in bar.category %}
+                                <span class="btn-sm btn-{{ category.type }}">{{ category.name }}</span>
+                            {% endfor %}
                             <hr>
-                            <p class="text-left">une description</p>
+                            <p class="text-left">{{ bar.description }}</p>
                             <div class="text-right">
                                 {% if is_granted('ROLE_USER') and not is_granted('ROLE_ADMIN') %}
                                     <a href="{{ path('bar_show', { 'id': bar.id }) }}">

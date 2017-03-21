@@ -2,7 +2,7 @@
 {% block page %}
     <h1>Event</h1>
 
-    <table>
+    <table class="table table-hover">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -21,14 +21,16 @@
 
     <ul>
         <li>
-            <a href="{{ path('event_index') }}">Back to the list</a>
+            <a class="btn btn-info" role="button" href="{{ path('event_index') }}">Back to the list</a>
         </li>
+        <br/>
         <li>
-            <a href="{{ path('event_edit', { 'id': event.id }) }}">Edit</a>
+            <a class="btn btn-info" role="button" href="{{ path('event_edit', { 'id': event.id }) }}">Edit</a>
         </li>
+        <br/>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+            <input class="btn btn-danger" role="button" type="submit" value="Delete">
             {{ form_end(delete_form) }}
         </li>
     </ul>

@@ -5,8 +5,8 @@
     <table class="table table-hover">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ event.id }}</td>
+                <th>Bar</th>
+                <td>{{ event.barId.name }}</td>
             </tr>
             <tr>
                 <th>Libelle_event</th>
@@ -15,6 +15,11 @@
             <tr>
                 <th>Date_event</th>
                 <td>{% if event.dateevent %}{{ event.dateevent|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>photo_event</th>
+                <td>    <div class="item active">
+                        <img src="{{ asset(event.image) }}" alt="Chania" width="500"></div></td>
             </tr>
         </tbody>
     </table>

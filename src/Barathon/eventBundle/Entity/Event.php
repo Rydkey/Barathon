@@ -48,6 +48,10 @@ class Event
      * @ORM\ManyToOne(targetEntity="Barathon\utilisateursBundle\Entity\User", cascade={"persist"})
      **/
     protected $user_id;
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $image;
 
     /**
      * Get id
@@ -177,5 +181,30 @@ class Event
     public function getDescritionEvent()
     {
         return $this->descrition_event;
+    }
+
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Event
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

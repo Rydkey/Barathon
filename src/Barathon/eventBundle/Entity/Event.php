@@ -52,6 +52,42 @@ class Event
      * @ORM\Column(type="string")
      */
     protected $image;
+    /**
+     * @ORM\Column(type="string")
+     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireEvent", cascade={"persist"})
+
+     */
+    protected $lundiEvent;
+    /**
+     * @ORM\Column(type="string")
+     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireEvent", cascade={"persist"})
+
+     */
+    protected $mardiEvent;
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $mercrediEvent;
+    /**
+     * @ORM\Column(type="string")
+     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireEvent", cascade={"persist"})
+     */
+    protected $jeudiEvent;
+    /**
+     * @ORM\Column(type="string")
+     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireEvent", cascade={"persist"})
+     */
+    protected $vendrediEvent;
+    /**
+     * @ORM\Column(type="string")
+     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireEvent", cascade={"persist"})
+     */
+    protected $samediEvent;
+    /**
+     * @ORM\Column(type="string")
+     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireEvent", cascade={"persist"})
+     */
+    protected $dimancheEvent;
 
 
     public function __construct()
@@ -221,5 +257,173 @@ class Event
      */
     public function getVille(){
         return $this->getBarId()->getVille();
+    }
+
+    /**
+     * Set lundiEvent
+     *
+     * @param string $lundiEvent
+     *
+     * @return Event
+     */
+    public function setLundiEvent($lundiEvent)
+    {
+        $this->lundiEvent = $lundiEvent;
+
+        return $this;
+    }
+
+    /**
+     * Get lundiEvent
+     *
+     * @return string
+     */
+    public function getLundiEvent()
+    {
+        return $this->lundiEvent;
+    }
+
+    /**
+     * Set mardiEvent
+     *
+     * @param string $mardiEvent
+     *
+     * @return Event
+     */
+    public function setMardiEvent($mardiEvent)
+    {
+        $this->mardiEvent = $mardiEvent;
+
+        return $this;
+    }
+
+    /**
+     * Get mardiEvent
+     *
+     * @return string
+     */
+    public function getMardiEvent()
+    {
+        return $this->mardiEvent;
+    }
+
+    /**
+     * Set mercrediEvent
+     *
+     * @param string $mercrediEvent
+     *
+     * @return Event
+     */
+    public function setMercrediEvent($mercrediEvent)
+    {
+        $this->mercrediEvent = $mercrediEvent;
+
+        return $this;
+    }
+
+    /**
+     * Get mercrediEvent
+     *
+     * @return string
+     */
+    public function getMercrediEvent()
+    {
+        return $this->mercrediEvent;
+    }
+
+    /**
+     * Set jeudiEvent
+     *
+     * @param string $jeudiEvent
+     *
+     * @return Event
+     */
+    public function setJeudiEvent($jeudiEvent)
+    {
+        $this->jeudiEvent = $jeudiEvent;
+
+        return $this;
+    }
+
+    /**
+     * Get jeudiEvent
+     *
+     * @return string
+     */
+    public function getJeudiEvent()
+    {
+        return $this->jeudiEvent;
+    }
+
+    /**
+     * Set vendrediEvent
+     *
+     * @param string $vendrediEvent
+     *
+     * @return Event
+     */
+    public function setVendrediEvent($vendrediEvent)
+    {
+        $this->vendrediEvent = $vendrediEvent;
+
+        return $this;
+    }
+
+    /**
+     * Get vendrediEvent
+     *
+     * @return string
+     */
+    public function getVendrediEvent()
+    {
+        return $this->vendrediEvent;
+    }
+
+    /**
+     * Set samediEvent
+     *
+     * @param string $samediEvent
+     *
+     * @return Event
+     */
+    public function setSamediEvent($samediEvent)
+    {
+        $this->samediEvent = $samediEvent;
+
+        return $this;
+    }
+
+    /**
+     * Get samediEvent
+     *
+     * @return string
+     */
+    public function getSamediEvent()
+    {
+        return $this->samediEvent;
+    }
+
+    /**
+     * Set dimancheEvent
+     *
+     * @param string $dimancheEvent
+     *
+     * @return Event
+     */
+    public function setDimancheEvent($dimancheEvent)
+    {
+        $this->dimancheEvent = $dimancheEvent;
+
+        return $this;
+    }
+
+    /**
+     * Get dimancheEvent
+     *
+     * @return string
+     */
+    public function getDimancheEvent()
+    {
+        return $this->dimancheEvent;
     }
 }

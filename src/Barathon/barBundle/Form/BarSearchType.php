@@ -17,8 +17,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-class BarSearchType extends AbstractType
-{
+class BarSearchType extends AbstractType{
+
     public function buildForm(FormBuilderInterface $builder, array $options){
         $builder
             ->add('ville',      TextType::class)
@@ -33,6 +33,7 @@ class BarSearchType extends AbstractType
             ->add('search',  SubmitType::class, array(
                 'label' => 'Rechercher'
             ))
+            ->setMethod("POST")
         ;
     }
 
@@ -49,4 +50,5 @@ class BarSearchType extends AbstractType
     {
         return 'barathon_barbundle_bar';
     }
+
 }

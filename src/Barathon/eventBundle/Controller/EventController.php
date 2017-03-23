@@ -28,12 +28,6 @@ class EventController extends Controller
         $bar = new Bar();
         $form = $this->get('form.factory')->create(BarSearchType::class, $bar);
 
-        if ($form->get('search')->isClicked()){
-            return $this->render('BarathoneventBundle:event:index.html.twig', array(
-                'form' => $form->createView(), 'events' => $events,
-            ));
-        }
-
         return $this->render('BarathoneventBundle:event:index.html.twig', array(
             'form' => $form->createView(), 'events' => $events,
         ));

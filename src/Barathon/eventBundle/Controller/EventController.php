@@ -64,6 +64,7 @@ class EventController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $event->upload();
             $em = $this->getDoctrine()->getManager();
             $em->persist($event);

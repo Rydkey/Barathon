@@ -16,6 +16,7 @@ class EventType extends AbstractType
     {
         $builder->add('libelle_event')->add('date_event')->add('heureDebut')->add('heureFin')->add('bar_id')->add('descrition_event')
         ->add('file', FIleType::class);
+
     }
     
     /**

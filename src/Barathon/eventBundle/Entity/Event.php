@@ -323,6 +323,8 @@ class Event
     public function setHeureFin($heureFin)
     {
         $this->heureFin = $heureFin;
+
     }
+
 
 }

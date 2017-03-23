@@ -9,6 +9,7 @@
 namespace Barathon\eventBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -35,6 +36,16 @@ class Event
     protected $date_event;
 
     /**
+     * @ORM\Column(type="time")
+     */
+    protected $heureDebut;
+
+    /**
+     * @ORM\Column(type="time")
+     */
+    protected $heureFin;
+
+    /**
      * @ORM\Column(type="text")
      */
     protected $descrition_event;
@@ -51,7 +62,9 @@ class Event
     /**
      * @ORM\Column(type="string")
      */
-    protected $image;
+    protected $nameImage;
+
+    private $file;
 
 
     public function __construct()
@@ -222,4 +235,94 @@ class Event
     public function getVille(){
         return $this->getBarId()->getVille();
     }
+
+    /**
+     * @return mixed
+     */
+    public function getNameImage()
+    {
+        return $this->nameImage;
+    }
+
+    /**
+     * @param mixed $nameImage
+     */
+    public function setNameImage($nameImage)
+    {
+        $this->nameImage = $nameImage;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * @param mixed $file
+     */
+    public function setFile(UploadedFile $file)
+    {
+        $this->file = $file;
+    }
+    public function getUploadDir()
+    {
+        return 'uploads/images';
+    }
+    public function getAbsolutPath()
+    {
+        return $this->getUploadRoot().$this->nameImage;
+    }
+    public function getWebPath(){
+        return $this->getUploadDir().''.$this->nameImage;
+    }
+    public function getUploadRoot()
+    {
+        return __DIR__ .'/../../../../web/' .$this->getUploadDir() .'/';
+    }
+    public function upload()
+    {
+        if ($this->file === null){
+            return;
+        }
+        $this->nameImage = $this ->file->getClientOriginalName();
+        $this->file->move($this->getUploadRoot(),$this->nameImage);
+        unset($this->file);
+
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeureDebut()
+    {
+        return $this->heureDebut;
+    }
+
+    /**
+     * @param mixed $heureDebut
+     */
+    public function setHeureDebut($heureDebut)
+    {
+        $this->heureDebut = $heureDebut;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeureFin()
+    {
+        return $this->heureFin;
+    }
+
+    /**
+     * @param mixed $heureFin
+     */
+    public function setHeureFin($heureFin)
+    {
+        $this->heureFin = $heureFin;
+    }
+
 }

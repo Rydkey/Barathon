@@ -17,9 +17,8 @@
                 <td>{% if event.dateevent %}{{ event.dateevent|date('Y-m-d') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>photo_event</th>
-                <td>    <div class="item active">
-                        <img src="{{ asset(event.image) }}" alt="Chania" width="500"></div></td>
+                <th>photo</th>
+                <td> <img src="{{ asset('uploads/images/' ~ event.nameImage) }}" width="500"></td>
             </tr>
         </tbody>
     </table>

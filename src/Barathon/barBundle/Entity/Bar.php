@@ -311,7 +311,6 @@ class Bar{
     {
         return $this->imageCarousel3;
     }
-
     public function __toString(){
         return $this->getName();
     }

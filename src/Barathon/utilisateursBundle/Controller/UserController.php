@@ -77,7 +77,10 @@ class UserController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
+            $this->get('session')->getFlashBag()->add(
+                'modif',
+                'modification faite'
+            );
             return $this->redirectToRoute('user_edit', array('id' => $user->getId()));
         }
 

@@ -66,7 +66,7 @@
                     <li class="dropdown hidden-phone">
                         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="icon-bell"></i>
-                            {% if app.session.FlashBag.has('unsubscribe') or app.session.FlashBag.has('subscribe')  %}
+                            {% if app.session.FlashBag.has('unsubscribe') or app.session.FlashBag.has('subscribe') or app.session.FlashBag.has('modif') %}
 								<span class="badge red">
 								! </span>
                             {% endif %}
@@ -89,6 +89,15 @@
                                 <li>
                                     <a href="#">
                                         <span class="icon green"><i class="icon-beer"></i></span>
+                                        <span class="message">{{ flashMessage }}</span>
+                                        <span class="time">à l'instant</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                            {% for flashMessage in app.session.FlashBag.get('modif') %}
+                                <li>
+                                    <a href="#">
+                                        <span class="icon yellow"><i class="icon-pencil"></i></span>
                                         <span class="message">{{ flashMessage }}</span>
                                         <span class="time">à l'instant</span>
                                     </a>

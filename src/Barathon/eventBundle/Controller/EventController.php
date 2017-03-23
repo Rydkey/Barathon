@@ -106,8 +106,11 @@ class EventController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('event_edit', array('id' => $event->getId()));
+            $this->get('session')->getFlashBag()->add(
+                'modif',
+                'modification faite'
+            );
+            return $this->redirectToRoute('event_index');
         }
 
         return $this->render('BarathoneventBundle:event:edit.html.twig', array(

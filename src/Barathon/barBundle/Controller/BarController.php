@@ -86,7 +86,11 @@ class BarController extends Controller
         $editForm->handleRequest($request);
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-            return $this->redirectToRoute('bar_edit', array('id' => $bar->getId()));
+            $this->get('session')->getFlashBag()->add(
+                'modif',
+                'modification faite'
+            );
+            return $this->redirectToRoute('bar_index');
         }
         return $this->render('BarathonbarBundle:bar:edit.html.twig', array(
             'bar' => $bar,

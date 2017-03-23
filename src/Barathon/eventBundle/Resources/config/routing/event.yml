@@ -37,8 +37,3 @@ event_removeUser:
     path:     /{user}/{event}/remove
     defaults: { _controller: "BarathoneventBundle:Event:removeUser"}
     methods:  [GET, POST, DELETE]
-
-event_search:
-    path:     /{ville}/search
-    defaults: { _controller: "BarathoneventBundle:Event:eventSearch", ville: 'Paris'}
-    methods:  [POST]

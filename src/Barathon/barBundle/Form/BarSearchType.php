@@ -30,10 +30,6 @@ class BarSearchType extends AbstractType{
                 'required' => false,
                 'label' => 'Catégories'
             ))
-            ->add('search',  SubmitType::class, array(
-                'label' => 'Rechercher'
-            ))
-            ->setMethod("POST")
         ;
     }
 

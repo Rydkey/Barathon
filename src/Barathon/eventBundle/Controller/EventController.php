@@ -24,14 +24,16 @@ class EventController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $events = $em->getRepository('BarathoneventBundle:Event')->findAll();
-
         $bar = new Bar();
         $form = $this->get('form.factory')->create(BarSearchType::class, $bar);
+
 
         return $this->render('BarathoneventBundle:event:index.html.twig', array(
             'form' => $form->createView(), 'events' => $events,
         ));
     }
+
+
     /**
      * Lists all event from owner entities.
      *

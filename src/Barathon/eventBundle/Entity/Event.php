@@ -35,6 +35,16 @@ class Event
     protected $date_event;
 
     /**
+     * @ORM\Column(type="time")
+     */
+    protected $heureDebut;
+
+    /**
+     * @ORM\Column(type="time")
+     */
+    protected $heureFin;
+
+    /**
      * @ORM\Column(type="text")
      */
     protected $descrition_event;
@@ -52,43 +62,6 @@ class Event
      * @ORM\Column(type="string")
      */
     protected $image;
-    /**
-     * @ORM\Column(type="string")
-     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireEvent", cascade={"persist"})
-
-     */
-    protected $lundiEvent;
-    /**
-     * @ORM\Column(type="string")
-     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireEvent", cascade={"persist"})
-
-     */
-    protected $mardiEvent;
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $mercrediEvent;
-    /**
-     * @ORM\Column(type="string")
-     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireEvent", cascade={"persist"})
-     */
-    protected $jeudiEvent;
-    /**
-     * @ORM\Column(type="string")
-     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireEvent", cascade={"persist"})
-     */
-    protected $vendrediEvent;
-    /**
-     * @ORM\Column(type="string")
-     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireEvent", cascade={"persist"})
-     */
-    protected $samediEvent;
-    /**
-     * @ORM\Column(type="string")
-     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireEvent", cascade={"persist"})
-     */
-    protected $dimancheEvent;
-
 
     public function __construct()
     {
@@ -260,170 +233,50 @@ class Event
     }
 
     /**
-     * Set lundiEvent
+     * Set heureDebut
      *
-     * @param string $lundiEvent
+     * @param \DateTime $heureDebut
      *
      * @return Event
      */
-    public function setLundiEvent($lundiEvent)
+    public function setHeureDebut($heureDebut)
     {
-        $this->lundiEvent = $lundiEvent;
+        $this->heureDebut = $heureDebut;
 
         return $this;
     }
 
     /**
-     * Get lundiEvent
+     * Get heureDebut
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getLundiEvent()
+    public function getHeureDebut()
     {
-        return $this->lundiEvent;
+        return $this->heureDebut;
     }
 
     /**
-     * Set mardiEvent
+     * Set heureFin
      *
-     * @param string $mardiEvent
+     * @param \DateTime $heureFin
      *
      * @return Event
      */
-    public function setMardiEvent($mardiEvent)
+    public function setHeureFin($heureFin)
     {
-        $this->mardiEvent = $mardiEvent;
+        $this->heureFin = $heureFin;
 
         return $this;
     }
 
     /**
-     * Get mardiEvent
+     * Get heureFin
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getMardiEvent()
+    public function getHeureFin()
     {
-        return $this->mardiEvent;
-    }
-
-    /**
-     * Set mercrediEvent
-     *
-     * @param string $mercrediEvent
-     *
-     * @return Event
-     */
-    public function setMercrediEvent($mercrediEvent)
-    {
-        $this->mercrediEvent = $mercrediEvent;
-
-        return $this;
-    }
-
-    /**
-     * Get mercrediEvent
-     *
-     * @return string
-     */
-    public function getMercrediEvent()
-    {
-        return $this->mercrediEvent;
-    }
-
-    /**
-     * Set jeudiEvent
-     *
-     * @param string $jeudiEvent
-     *
-     * @return Event
-     */
-    public function setJeudiEvent($jeudiEvent)
-    {
-        $this->jeudiEvent = $jeudiEvent;
-
-        return $this;
-    }
-
-    /**
-     * Get jeudiEvent
-     *
-     * @return string
-     */
-    public function getJeudiEvent()
-    {
-        return $this->jeudiEvent;
-    }
-
-    /**
-     * Set vendrediEvent
-     *
-     * @param string $vendrediEvent
-     *
-     * @return Event
-     */
-    public function setVendrediEvent($vendrediEvent)
-    {
-        $this->vendrediEvent = $vendrediEvent;
-
-        return $this;
-    }
-
-    /**
-     * Get vendrediEvent
-     *
-     * @return string
-     */
-    public function getVendrediEvent()
-    {
-        return $this->vendrediEvent;
-    }
-
-    /**
-     * Set samediEvent
-     *
-     * @param string $samediEvent
-     *
-     * @return Event
-     */
-    public function setSamediEvent($samediEvent)
-    {
-        $this->samediEvent = $samediEvent;
-
-        return $this;
-    }
-
-    /**
-     * Get samediEvent
-     *
-     * @return string
-     */
-    public function getSamediEvent()
-    {
-        return $this->samediEvent;
-    }
-
-    /**
-     * Set dimancheEvent
-     *
-     * @param string $dimancheEvent
-     *
-     * @return Event
-     */
-    public function setDimancheEvent($dimancheEvent)
-    {
-        $this->dimancheEvent = $dimancheEvent;
-
-        return $this;
-    }
-
-    /**
-     * Get dimancheEvent
-     *
-     * @return string
-     */
-    public function getDimancheEvent()
-    {
-        return $this->dimancheEvent;
+        return $this->heureFin;
     }
 }

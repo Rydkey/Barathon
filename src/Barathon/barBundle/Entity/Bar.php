@@ -50,64 +50,30 @@ class Bar{
      **/
     protected $category;
 
+//    /**
+//     * @ORM\Column(type="string")
+//     */
+//    protected $imageFront=null;
+//    /**
+//     * @ORM\Column(type="string")
+//     */
+//    protected $imageCarousel1=null;
+//    /**
+//     * @ORM\Column(type="string")
+//     */
+//    protected $imageCarousel2=null;
+//
+//    /**
+//     * @ORM\Column(type="string")
+//     */
+//    protected $imageCarousel3=null;
+
+
     /**
      * Get id
      *
      * @return integer
      */
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $imageFront;
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $imageCarousel1;
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $imageCarousel2;
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $imageCarousel3;
-    /**
-     * @ORM\Column(type="string")
-     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireBar", cascade={"persist"})
-     */
-
-    protected $lundi;
-    /**
-     * @ORM\Column(type="string")
-     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireBar", cascade={"persist"})
-     */
-    protected $mardi;
-    /**
-     * @ORM\Column(type="string")
-     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireBar", cascade={"persist"})
-     */
-    protected $mercredi;
-    /**
-     * @ORM\Column(type="string")
-     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireBar", cascade={"persist"})
-     */
-    protected $jeudi;
-    /**
-     * @ORM\Column(type="string")
-     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireBar", cascade={"persist"})
-     */
-    protected $vendredi;
-    /**
-     * @ORM\Column(type="string")
-     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireBar", cascade={"persist"})
-     */
-    protected $samedi;
-    /**
-     * @ORM\Column(type="string")
-     * @ORM\ManyToMany(targetEntity="Barathon\barBundle\Entity\HoraireBar", cascade={"persist"})
-     */
-    protected $dimanche;
     public function getId()
     {
         return $this->id;
@@ -266,257 +232,89 @@ class Bar{
         return $this;
     }
 
-    /**
-     * Get imageFront
-     *
-     * @return string
-     */
-    public function getImageFront()
-    {
-        return $this->imageFront;
-    }
-
-    /**
-     * Set imageCarousel1
-     *
-     * @param string $imageCarousel1
-     *
-     * @return Bar
-     */
-    public function setImageCarousel1($imageCarousel1)
-    {
-        $this->imageCarousel1 = $imageCarousel1;
-
-        return $this;
-    }
-
-    /**
-     * Get imageCarousel1
-     *
-     * @return string
-     */
-    public function getImageCarousel1()
-    {
-        return $this->imageCarousel1;
-    }
-
-    /**
-     * Set imageCarousel2
-     *
-     * @param string $imageCarousel2
-     *
-     * @return Bar
-     */
-    public function setImageCarousel2($imageCarousel2)
-    {
-        $this->imageCarousel2 = $imageCarousel2;
-
-        return $this;
-    }
-
-    /**
-     * Get imageCarousel2
-     *
-     * @return string
-     */
-    public function getImageCarousel2()
-    {
-        return $this->imageCarousel2;
-    }
-
-    /**
-     * Set imageCarousel3
-     *
-     * @param string $imageCarousel3
-     *
-     * @return Bar
-     */
-    public function setImageCarousel3($imageCarousel3)
-    {
-        $this->imageCarousel3 = $imageCarousel3;
-
-        return $this;
-    }
-
-    /**
-     * Get imageCarousel3
-     *
-     * @return string
-     */
-    public function getImageCarousel3()
-    {
-        return $this->imageCarousel3;
-    }
+//    /**
+//     * Get imageFront
+//     *
+//     * @return string
+//     */
+//    public function getImageFront()
+//    {
+//        return $this->imageFront;
+//    }
+//
+//    /**
+//     * Set imageCarousel1
+//     *
+//     * @param string $imageCarousel1
+//     *
+//     * @return Bar
+//     */
+//    public function setImageCarousel1($imageCarousel1)
+//    {
+//        $this->imageCarousel1 = $imageCarousel1;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get imageCarousel1
+//     *
+//     * @return string
+//     */
+//    public function getImageCarousel1()
+//    {
+//        return $this->imageCarousel1;
+//    }
+//
+//    /**
+//     * Set imageCarousel2
+//     *
+//     * @param string $imageCarousel2
+//     *
+//     * @return Bar
+//     */
+//    public function setImageCarousel2($imageCarousel2)
+//    {
+//        $this->imageCarousel2 = $imageCarousel2;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get imageCarousel2
+//     *
+//     * @return string
+//     */
+//    public function getImageCarousel2()
+//    {
+//        return $this->imageCarousel2;
+//    }
+//
+//    /**
+//     * Set imageCarousel3
+//     *
+//     * @param string $imageCarousel3
+//     *
+//     * @return Bar
+//     */
+//    public function setImageCarousel3($imageCarousel3)
+//    {
+//        $this->imageCarousel3 = $imageCarousel3;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get imageCarousel3
+//     *
+//     * @return string
+//     */
+//    public function getImageCarousel3()
+//    {
+//        return $this->imageCarousel3;
+//    }
 
     public function __toString(){
         return $this->getName();
-    }
-
-    /**
-     * Set lundi
-     *
-     * @param string $lundi
-     *
-     * @return Bar
-     */
-    public function setLundi($lundi)
-    {
-        $this->lundi = $lundi;
-
-        return $this;
-    }
-
-    /**
-     * Get lundi
-     *
-     * @return string
-     */
-    public function getLundi()
-    {
-        return $this->lundi;
-    }
-
-    /**
-     * Set mardi
-     *
-     * @param string $mardi
-     *
-     * @return Bar
-     */
-    public function setMardi($mardi)
-    {
-        $this->mardi = $mardi;
-
-        return $this;
-    }
-
-    /**
-     * Get mardi
-     *
-     * @return string
-     */
-    public function getMardi()
-    {
-        return $this->mardi;
-    }
-
-    /**
-     * Set mercredi
-     *
-     * @param string $mercredi
-     *
-     * @return Bar
-     */
-    public function setMercredi($mercredi)
-    {
-        $this->mercredi = $mercredi;
-
-        return $this;
-    }
-
-    /**
-     * Get mercredi
-     *
-     * @return string
-     */
-    public function getMercredi()
-    {
-        return $this->mercredi;
-    }
-
-    /**
-     * Set jeudi
-     *
-     * @param string $jeudi
-     *
-     * @return Bar
-     */
-    public function setJeudi($jeudi)
-    {
-        $this->jeudi = $jeudi;
-
-        return $this;
-    }
-
-    /**
-     * Get jeudi
-     *
-     * @return string
-     */
-    public function getJeudi()
-    {
-        return $this->jeudi;
-    }
-
-    /**
-     * Set vendredi
-     *
-     * @param string $vendredi
-     *
-     * @return Bar
-     */
-    public function setVendredi($vendredi)
-    {
-        $this->vendredi = $vendredi;
-
-        return $this;
-    }
-
-    /**
-     * Get vendredi
-     *
-     * @return string
-     */
-    public function getVendredi()
-    {
-        return $this->vendredi;
-    }
-
-    /**
-     * Set samedi
-     *
-     * @param string $samedi
-     *
-     * @return Bar
-     */
-    public function setSamedi($samedi)
-    {
-        $this->samedi = $samedi;
-
-        return $this;
-    }
-
-    /**
-     * Get samedi
-     *
-     * @return string
-     */
-    public function getSamedi()
-    {
-        return $this->samedi;
-    }
-
-    /**
-     * Set dimanche
-     *
-     * @param string $dimanche
-     *
-     * @return Bar
-     */
-    public function setDimanche($dimanche)
-    {
-        $this->dimanche = $dimanche;
-
-        return $this;
-    }
-
-    /**
-     * Get dimanche
-     *
-     * @return string
-     */
-    public function getDimanche()
-    {
-        return $this->dimanche;
     }
 }

@@ -53,6 +53,12 @@ class Event
      */
     protected $image;
 
+
+    public function __construct()
+    {
+        $this->date_event = new \DateTime();
+    }
+
     /**
      * Get id
      *
@@ -206,5 +212,14 @@ class Event
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Get Ville
+     *
+     * @return string
+     */
+    public function getVille(){
+        return $this->getBarId()->getVille();
     }
 }

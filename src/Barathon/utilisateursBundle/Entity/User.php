@@ -68,11 +68,6 @@ class User extends BaseUser
     protected $age;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Barathon\barBundle\Entity\Bar", cascade={"persist"})
-     **/
-    protected $bar_id;
-
-    /**
      * @ORM\ManyToMany(targetEntity="Barathon\eventBundle\Entity\Event", cascade={"persist"})
      */
     protected $events;
@@ -205,30 +200,6 @@ class User extends BaseUser
     public function getAge()
     {
         return $this->age;
-    }
-
-    /**
-     * Set barId
-     *
-     * @param \Barathon\barBundle\Entity\Bar $barId
-     *
-     * @return User
-     */
-    public function setBarId(\Barathon\barBundle\Entity\Bar $barId = null)
-    {
-        $this->bar_id = $barId;
-
-        return $this;
-    }
-
-    /**
-     * Get barId
-     *
-     * @return \Barathon\barBundle\Entity\Bar
-     */
-    public function getBarId()
-    {
-        return $this->bar_id;
     }
 
     /**

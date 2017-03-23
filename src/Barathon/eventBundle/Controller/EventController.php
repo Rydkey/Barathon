@@ -2,8 +2,10 @@
 
 namespace Barathon\eventBundle\Controller;
 
+use Barathon\barBundle\Entity\Bar;
+use Barathon\barBundle\Entity\Category;
 use Barathon\eventBundle\Entity\Event;
-use Barathon\utilisateursBundle\BarathonutilisateursBundle;
+use Barathon\barBundle\Form\BarSearchType;
 use Barathon\utilisateursBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,14 +20,22 @@ class EventController extends Controller
      * Lists all event entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-
         $events = $em->getRepository('BarathoneventBundle:Event')->findAll();
 
+        $bar = new Bar();
+        $form = $this->get('form.factory')->create(BarSearchType::class, $bar);
+
+        if ($form->get('search')->isClicked()){
+            return $this->render('BarathoneventBundle:event:index.html.twig', array(
+                'form' => $form->createView(), 'events' => $events,
+            ));
+        }
+
         return $this->render('BarathoneventBundle:event:index.html.twig', array(
-            'events' => $events,
+            'form' => $form->createView(), 'events' => $events,
         ));
     }
     /**

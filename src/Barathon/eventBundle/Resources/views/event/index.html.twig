@@ -1,6 +1,22 @@
 {% extends '::Utilisateurs/utilisateursLayout.html.twig' %}
 {% block page %}
-    <h1>Liste des événements </h1><br>
+
+
+    <h3>Recherche d'évènement</h3>
+
+
+    <div class="well">
+
+        {{ form_start(form, {'action': path('event_index'), 'method': 'GET'}) }}
+        {{ form(form) }}
+        {{ form_end(form) }}
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <h1>Liste des événements récents </h1><br>
+        </div>
+    </div>
     {% if is_granted('ROLE_ADMIN') %}
         <a href="{{ path('event_new') }}">Create a new event</a>
     {% endif %}
@@ -17,6 +33,7 @@
                     <div class="media-body">
                         <h1 class="media-heading">{{ event.libelleevent }} au {{ event.barId.name}}</h1>
                         <h6>{{ event.dateevent|date('d D-M-Y') }}</h6>
+                        <h6>{{ event.barId.ville}}</h6>
                         {% for category in event.barId.category %}
                             <span class="btn-sm btn-{{ category.type }}">{{ category.name }}</span>
                         {% endfor %}
@@ -58,7 +75,4 @@
             </div>
         </div>
     {% endfor %}
-    </tbody>
-
-
 {% endblock %}

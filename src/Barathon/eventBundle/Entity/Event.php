@@ -324,6 +324,7 @@ class Event
     {
         $this->heureFin = $heureFin;
 
+
     }
 
 

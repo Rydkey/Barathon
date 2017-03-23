@@ -1,3 +1,7 @@
+barathonutilisateurs_user:
+    resource: "@BarathonutilisateursBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
 barathonutilisateurs_homepage:
     path:     /utilisateurs
     defaults: { _controller: BarathonutilisateursBundle:Default:index }

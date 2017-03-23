@@ -256,9 +256,9 @@
                     {#<li><a href="{{ path('message_user') }}"><i class="icon-envelope"></i><span class="hidden-tablet"> Messages</span></a></li>#}
                     <li><a href="{{ path('event_index') }}"><i class="icon-calendar"></i><span class="hidden-tablet"> Évènements</span></a></li>
                     {% if is_granted('ROLE_PROP') %}
-                        <li><a href="{{ path('event_index_prop') }}"><i class="icon-eye-open"></i><span class="hidden-tablet">Vos événements </span></a></li>
+                        <li><a href="{{ path('event_index_prop',{'id': app.user.id}) }}"><i class="icon-eye-open"></i><span class="hidden-tablet">Vos événements </span></a></li>
                     {% endif %}
-                    <li><a href="{{ path('bar_index') }}"><img style="width: 20px; height: 20px;" src="{{ asset('assets/Utilisateurs/img/beer_logo_sidebar.png') }}" alt=""><span class="hidden-tablet"> Bar près de chez vous</span></a></li>
+                    <li><a href="{{ path('bar_index') }}"><img style="width: 20px; height: 20px;" src="{{ asset('assets/Utilisateurs/img/beer_logo_sidebar.png') }}" alt=""><span class="hidden-tablet"> Rechercher un bar</span></a></li>
                     {% if is_granted('ROLE_PROP') %}
                         <li><a href="{{ path('bar_index_prop') }}"><i class="icon-star"></i><span class="hidden-tablet">Votre Bar</span></a></li>
                     {% endif %}

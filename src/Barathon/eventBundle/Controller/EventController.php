@@ -22,12 +22,15 @@ class EventController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
-        $events = $em->getRepository('BarathoneventBundle:Event')->findAll();
+        $repository = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('BarathoneventBundle:Event')
+        ;
+        $events = $repository->findAll();
+
         $bar = new Bar();
         $form = $this->get('form.factory')->create(BarSearchType::class, $bar);
-
-
         return $this->render('BarathoneventBundle:event:index.html.twig', array(
             'form' => $form->createView(), 'events' => $events,
         ));
@@ -38,11 +41,15 @@ class EventController extends Controller
      * Lists all event from owner entities.
      *
      */
-    public function indexPropAction()
+    public function indexPropAction($id)
     {
-        $em = $this->getDoctrine()->getManager();
+        $repository = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('BarathoneventBundle:Event')
+        ;
+        $events = $repository->getEventProp($id);
 
-        $events = $em->getRepository('BarathoneventBundle:Event')->findAll();
 
         return $this->render('BarathoneventBundle:event:index_Prop.html.twig', array(
             'events' => $events,

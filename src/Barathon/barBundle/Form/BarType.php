@@ -5,6 +5,8 @@ namespace Barathon\barBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
 
 class BarType extends AbstractType
 {
@@ -13,7 +15,19 @@ class BarType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('ville')->add('user_id')->add('category')->add('description')        ;
+        $builder
+            ->add('name')
+            ->add('ville')
+            ->add('user_id')
+            ->add('category',    EntityType::class, array(
+                'class' => 'Barathon\barBundle\Entity\Category',
+                'choice_label' => 'name',
+                'multiple' => true,
+                'expanded' => true,
+                'required' => false,
+                'label' => 'Catégories'
+            ))
+            ->add('description')    ;
     }
     
     /**

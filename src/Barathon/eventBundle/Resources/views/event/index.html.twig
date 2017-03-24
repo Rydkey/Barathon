@@ -6,10 +6,8 @@
 
 
     <div class="well">
-
-        {{ form_start(form, {'action': path('event_index'), 'method': 'GET'}) }}
         {{ form(form) }}
-        {{ form_end(form) }}
+        {#<a href="{{ path('event_search')}}"> rechercher</a>#}
     </div>
 
     <div class="row">

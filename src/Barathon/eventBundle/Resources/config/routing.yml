@@ -2,6 +2,4 @@ barathonevent_event:
     resource: "@BarathoneventBundle/Resources/config/routing/event.yml"
     prefix:   /
 
-barathonevent_homepage:
-    path:     /
-    defaults: { _controller: BarathoneventBundle:Default:index }
+

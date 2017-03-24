@@ -78,8 +78,6 @@ class EventController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-
             $event->upload();
             $em = $this->getDoctrine()->getManager();
             $em->persist($event);
@@ -119,6 +117,7 @@ class EventController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $event->upload();
             $this->getDoctrine()->getManager()->flush();
             $this->get('session')->getFlashBag()->add(
                 'modif',

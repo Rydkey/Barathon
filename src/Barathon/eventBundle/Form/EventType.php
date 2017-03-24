@@ -15,6 +15,7 @@ class EventType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
+
         $builder->add('libelle_event')->add('date_event')->add('heureDebut')->add('heureFin')->add('bar_id')->add('descrition_event')
         ->add('file', FIleType::class);
 

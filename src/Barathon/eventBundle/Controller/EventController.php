@@ -73,6 +73,7 @@ class EventController extends Controller
     public function newAction(Request $request)
     {
         $event = new Event();
+
         $form = $this->createForm('Barathon\eventBundle\Form\EventType', $event);
         $form->handleRequest($request);
 

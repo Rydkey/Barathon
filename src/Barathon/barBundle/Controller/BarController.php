@@ -16,8 +16,12 @@ class BarController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $bars = $em->getRepository('BarathonbarBundle:Bar')->findAll();
+        $repository = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('BarathonbarBundle:Bar')
+        ;
+        $bars = $repository->findAll();
         return $this->render('BarathonbarBundle:bar:index.html.twig', array(
             'bars' => $bars,
         ));
@@ -27,10 +31,14 @@ class BarController extends Controller
      * Lists all bar entities.
      *
      */
-    public function indexPropAction()
+    public function indexPropAction($id)
     {
-        $em = $this->getDoctrine()->getManager();
-        $bars = $em->getRepository('BarathonbarBundle:Bar')->findAll();
+        $repository = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('BarathonbarBundle:Bar')
+        ;
+        $bars = $repository->getBarProp($id);
         return $this->render('BarathonbarBundle:bar:Index_Prop.html.twig', array(
             'bars' => $bars,
         ));
@@ -78,7 +86,11 @@ class BarController extends Controller
         $editForm->handleRequest($request);
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-            return $this->redirectToRoute('bar_edit', array('id' => $bar->getId()));
+            $this->get('session')->getFlashBag()->add(
+                'modif',
+                'modification faite'
+            );
+            return $this->redirectToRoute('bar_index');
         }
         return $this->render('BarathonbarBundle:bar:edit.html.twig', array(
             'bar' => $bar,

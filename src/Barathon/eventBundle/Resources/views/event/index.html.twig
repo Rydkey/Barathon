@@ -1,18 +1,15 @@
 {% extends '::Utilisateurs/utilisateursLayout.html.twig' %}
 {% block page %}
-
-
-    <h3>Recherche d'évènement</h3>
-
-
+    <h1>Recherche d'évènement</h1>
     <div class="well">
-        {{ form(form) }}
-        {#<a href="{{ path('event_search')}}"> rechercher</a>#}
+        {{ form_start(search_form) }}
+            {{ form_widget(search_form) }}
+            <input type="submit" value="rechercher" />
+        {{ form_end(search_form) }}
     </div>
-
     <div class="row">
         <div class="col-lg-6">
-            <h1>Liste des événements récents </h1><br>
+            <h2>Liste des événements récents </h2><br>
         </div>
     </div>
     {% if is_granted('ROLE_ADMIN') %}
@@ -30,7 +27,7 @@
                     </a>
                     <div class="media-body">
                         <h1 class="media-heading">{{ event.libelleevent }} au {{ event.barId.name}}</h1>
-                        <h6>{{ event.dateevent|date('d D-M-Y') }}</h6>
+                        <h6>{{ event.dateevent|date('d/m/Y') }} de {{ event.heureDebut|date('H') }}h à {{ event.heureFin|date('H')}}h</h6>
                         <h6>{{ event.barId.ville}}</h6>
                         {% for category in event.barId.category %}
                             <span class="btn-sm btn-{{ category.type }}">{{ category.name }}</span>

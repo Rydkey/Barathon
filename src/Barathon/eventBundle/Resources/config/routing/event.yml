@@ -4,9 +4,9 @@ event_index:
     methods:  GET
 
 event_index_prop:
-    path:     /vosevent
+    path:     /vosevent/{id}
     defaults: { _controller: "BarathoneventBundle:Event:indexProp" }
-    methods:  GET
+    methods: [GET, POST]
 
 event_show:
     path:     /{id}/show

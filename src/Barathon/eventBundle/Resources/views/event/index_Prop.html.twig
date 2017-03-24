@@ -1,12 +1,8 @@
 {% extends '::Utilisateurs/utilisateursLayout.html.twig' %}
 {% block page %}
 {% if is_granted('ROLE_PROP') %}
-
     <h1>Listes de vos événements </h1><br>
         <a href="{{ path('event_new') }}">Create a new event</a>
-    {% for flashMessage in app.session.flashbag.get('notice') %}
-
-    {% endfor %}
     {% for event in events %}
         {% if app.user.id == event.barId.userId.id %}
             <div class="container">
@@ -17,7 +13,7 @@
                         </a>
                         <div class="media-body">
                             <h1 class="media-heading">{{ event.libelleevent }} au {{ event.barId.name}}</h1>
-                            <h6>{{ event.dateevent|date('d D-M-Y') }}</h6>
+                            <h6>{{ event.dateevent|date('d D-M-Y') }} de {{ event.heureDebut|date('H') }}h à {{ event.heureFin|date('H')}}h</h6>
                             <h6>{{ event.barId.ville}}</h6>
                             {% for category in event.barId.category %}
                                 <span class="btn-sm btn-{{ category.type }}">{{ category.name }}</span>
@@ -59,7 +55,7 @@
                     </div>
                 </div>
             </div>
-        {% endif %}
+            {% endif %}
     {% endfor %}
 {% endif %}
 {% endblock %}

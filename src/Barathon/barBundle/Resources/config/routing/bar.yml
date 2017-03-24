@@ -4,7 +4,7 @@ bar_index:
     methods:  GET
 
 bar_index_prop:
-    path:     /barProp
+    path:     /barProp/{id}
     defaults: { _controller: "BarathonbarBundle:Bar:indexProp" }
     methods:  GET
 

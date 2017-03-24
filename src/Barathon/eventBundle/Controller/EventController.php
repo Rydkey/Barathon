@@ -31,8 +31,18 @@ class EventController extends Controller
 
         $bar = new Bar();
         $form = $this->get('form.factory')->create(BarSearchType::class, $bar);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+            $this->get('session')->getFlashBag()->add(
+                'modif',
+                'Gros PD'
+            );
+            return $this->redirectToRoute('event_index');
+        }
+
         return $this->render('BarathoneventBundle:event:index.html.twig', array(
-            'form' => $form->createView(), 'events' => $events,
+            'search_form' => $form->createView(), 'events' => $events,
         ));
     }
 
@@ -164,13 +174,6 @@ class EventController extends Controller
         $User = $em->getRepository('BarathonutilisateursBundle:User')->find($user);
         $Event = $em->getRepository('BarathoneventBundle:Event')->find($event);
 
-        if (null === $User) {
-            throw new NotFoundHttpException("L'utilisateur ".$id." n'existe pas.");
-        }
-        if (null === $Event) {
-            throw new NotFoundHttpException("L'Event ".$id." n'existe pas.");
-        }
-
         $User->addEvent($Event);
         $em->flush();
         $this->get('session')->getFlashBag()->add(
@@ -187,13 +190,6 @@ public function removeUserAction(User $user,Event $event){
     // On récupère l'annonce $id
     $User = $em->getRepository('BarathonutilisateursBundle:User')->find($user);
     $Event = $em->getRepository('BarathoneventBundle:Event')->find($event);
-
-    if (null === $User) {
-        throw new NotFoundHttpException("L'utilisateur ".$id." n'existe pas.");
-    }
-    if (null === $Event) {
-        throw new NotFoundHttpException("L'Event ".$id." n'existe pas.");
-    }
 
     $User->removeEvent($Event);
     $em->flush();

@@ -13,7 +13,8 @@ class myEventRepository extends \Doctrine\ORM\EntityRepository
     public function findAll()
     {
         return $this
-            ->createQueryBuilder('a')
+            ->createQueryBuilder('e')
+            ->orderBy('e.date_event', 'DESC')
             ->getQuery()
             ->setMaxResults(5)
             ->getResult()

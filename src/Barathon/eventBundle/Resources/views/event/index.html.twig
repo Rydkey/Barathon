@@ -2,8 +2,10 @@
 {% block page %}
     <h1>Recherche d'évènement</h1>
     <div class="well">
-        {{ form(form) }}
-        {#<a href="{{ path('event_search')}}"> rechercher</a>#}
+        {{ form_start(search_form) }}
+            {{ form_widget(search_form) }}
+            <input type="submit" value="rechercher" />
+        {{ form_end(search_form) }}
     </div>
     <div class="row">
         <div class="col-lg-6">

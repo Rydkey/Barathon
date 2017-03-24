@@ -28,18 +28,32 @@ class myEventRepository extends \Doctrine\ORM\EntityRepository
             ->addSelect('b')
         ;
         return $qb
-
             ->getQuery()
-
             ->getResult()
-
             ;
     }
 
-    public function search($ville, array $category){
-        if(empty($category)){
-            return $this
-                ->findBy( array('ville' => $ville));
-        }
+    public function searchEventVille($ville){
+        $qb=$this
+            ->createQueryBuilder('e')
+            ->innerJoin('e.bar_id','b','WITH','b.ville=\''.$ville.'\'')
+            ->addSelect('b')
+        ;
+        return $qb
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function searchEventCategory($category){
+        $qb=$this
+            ->createQueryBuilder('e')
+            ->innerJoin('e.bar_id','b','WITH','b.category = '.$category)
+            ->addSelect('b')
+        ;
+        return $qb
+            ->getQuery()
+            ->getResult()
+            ;
     }
 }

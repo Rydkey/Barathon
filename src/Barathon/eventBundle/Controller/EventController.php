@@ -29,27 +29,24 @@ class EventController extends Controller
         ;
         $events = $repository->findAll();
 
-        $bar = new Bar();
-        $form = $this->get('form.factory')->create(BarSearchType::class, $bar);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-            $this->get('session')->getFlashBag()->add(
-                'modif',
-                'Gros PD'
-            );
-            return $this->redirectToRoute('event_index');
+        $form = $this->createForm('Barathon\barBundle\Form\BarSearchType');
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid() && $request->getMethod()=='POST') {
+            $requestEvent =  $repository->searchEventVille($form->getViewData()->getVille());
+//            $requestEvent[] =  $repository->searchEventCategory($form->getViewData()->getCategory());
+            return $this->render('BarathoneventBundle:event:index.html.twig', array(
+                'search_form' => $form->createView(), 'events' => $requestEvent
+            ));
         }
 
         return $this->render('BarathoneventBundle:event:index.html.twig', array(
-            'search_form' => $form->createView(), 'events' => $events,
+            'search_form' => $form->createView(), 'events' => $events
         ));
     }
 
 
     /**
      * Lists all event from owner entities.
-     *
      */
     public function indexPropAction($id)
     {

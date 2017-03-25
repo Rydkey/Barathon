@@ -52,29 +52,6 @@ class Bar{
     protected $category;
 
     /**
-     * Get id
-     *
-     * @return integer
-     */
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $imageFront;
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $imageCarousel1;
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $imageCarousel2;
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $imageCarousel3;
-
-    /**
      * @ORM\Column(type="string")
      */
     protected $nameImage;
@@ -138,6 +115,11 @@ class Bar{
 
     }
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
     public function getId()
     {
         return $this->id;
@@ -282,101 +264,7 @@ class Bar{
         return $this->description;
     }
 
-    /**
-     * Set imageFront
-     *
-     * @param string $imageFront
-     *
-     * @return Bar
-     */
-    public function setImageFront($imageFront)
-    {
-        $this->imageFront = $imageFront;
 
-        return $this;
-    }
-
-    /**
-     * Get imageFront
-     *
-     * @return string
-     */
-    public function getImageFront()
-    {
-        return $this->imageFront;
-    }
-
-    /**
-     * Set imageCarousel1
-     *
-     * @param string $imageCarousel1
-     *
-     * @return Bar
-     */
-    public function setImageCarousel1($imageCarousel1)
-    {
-        $this->imageCarousel1 = $imageCarousel1;
-
-        return $this;
-    }
-
-    /**
-     * Get imageCarousel1
-     *
-     * @return string
-     */
-    public function getImageCarousel1()
-    {
-        return $this->imageCarousel1;
-    }
-
-    /**
-     * Set imageCarousel2
-     *
-     * @param string $imageCarousel2
-     *
-     * @return Bar
-     */
-    public function setImageCarousel2($imageCarousel2)
-    {
-        $this->imageCarousel2 = $imageCarousel2;
-
-        return $this;
-    }
-
-    /**
-     * Get imageCarousel2
-     *
-     * @return string
-     */
-    public function getImageCarousel2()
-    {
-        return $this->imageCarousel2;
-    }
-
-    /**
-     * Set imageCarousel3
-     *
-     * @param string $imageCarousel3
-     *
-     * @return Bar
-     */
-    public function setImageCarousel3($imageCarousel3)
-    {
-        $this->imageCarousel3 = $imageCarousel3;
-
-        return $this;
-    }
-
-    /**
-     * Get imageCarousel3
-     *
-     * @return string
-     */
-    public function getImageCarousel3()
-    {
-        return $this->imageCarousel3;
-    }
     public function __toString(){
         return $this->getName();
     }

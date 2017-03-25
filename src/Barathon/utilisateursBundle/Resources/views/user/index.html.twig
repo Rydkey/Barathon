@@ -3,7 +3,7 @@
  {% if is_granted('ROLE_ADMIN') %}
     <h1>Users list</h1>
 
-    <table>
+    <table  class="table table-hover">
         <thead>
             <tr>
                 <th>Id</th>
@@ -17,6 +17,7 @@
         </thead>
         <tbody>
         {% for user in users %}
+        {% if app.user.id != user.id %}
             <tr>
                 <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
                 <td>{{ user.nom }}</td>
@@ -32,6 +33,7 @@
                     </ul>
                 </td>
             </tr>
+        {% endif %}
         {% endfor %}
         </tbody>
     </table>

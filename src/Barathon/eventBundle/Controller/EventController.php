@@ -32,11 +32,20 @@ class EventController extends Controller
         $form = $this->createForm('Barathon\barBundle\Form\BarSearchType');
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid() && $request->getMethod()=='POST') {
-            $requestEvent =  $repository->searchEventVille($form->getViewData()->getVille());
-//            $requestEvent[] =  $repository->searchEventCategory($form->getViewData()->getCategory());
-            return $this->render('BarathoneventBundle:event:index.html.twig', array(
-                'search_form' => $form->createView(), 'events' => $requestEvent
-            ));
+            if(empty($form->getViewData()->getCategory())){
+                $requestEvent =  $repository->searchEventVille($form->getViewData()->getVille());
+                return $this->render('BarathoneventBundle:event:index.html.twig', array(
+                    'search_form' => $form->createView(), 'events' => $requestEvent
+                ));
+            }else{
+                $requestEvent =  $repository->searchEventVille($form->getViewData()->getVille());
+                foreach($form->getViewData()->getCategory() as $name){
+                    $requestEvent =  $repository->searchEventCategory($name,$form->getViewData()->getVille());
+                }
+                return $this->render('BarathoneventBundle:event:index.html.twig', array(
+                    'search_form' => $form->createView(), 'events' => $requestEvent
+                ));
+            }
         }
 
         return $this->render('BarathoneventBundle:event:index.html.twig', array(

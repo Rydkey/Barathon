@@ -45,11 +45,12 @@ class myEventRepository extends \Doctrine\ORM\EntityRepository
             ;
     }
 
-    public function searchEventCategory($category){
+    public function searchEventCategory($name,$ville){
         $qb=$this
             ->createQueryBuilder('e')
-            ->innerJoin('e.bar_id','b','WITH','b.category = '.$category)
+            ->innerJoin('e.bar_id','b','WITH','b.ville=\''.$ville.'\'')
             ->addSelect('b')
+            ->innerJoin('b.category','c','WITH','c.name=\''.$name.'\'')
         ;
         return $qb
             ->getQuery()

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="46495395-1fbc-4e04-b0b1-e2ceb292d5af" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Barathon/utilisateursBundle/Resources/views/user/index.html.twig" afterPath="$PROJECT_DIR$/src/Barathon/utilisateursBundle/Resources/views/user/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Barathon/barBundle/Resources/views/bar/new.html.twig" afterPath="$PROJECT_DIR$/src/Barathon/barBundle/Resources/views/bar/new.html.twig" />
     </list>
     <ignored path="BarathonNew.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,41 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Barathon/barBundle/Resources/views/bar/new.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Barathon/utilisateursBundle/Resources/views/user/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Barathon/eventBundle/Resources/views/event/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="988">
-              <caret line="52" column="101" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="101" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="commande" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/commande">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="46" />
+            <state relative-caret-position="57">
+              <caret line="3" column="83" selection-start-line="3" selection-start-column="83" selection-end-line="3" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -220,10 +190,10 @@
         <option value="$PROJECT_DIR$/src/Barathon/eventBundle/Controller/EventController.php" />
         <option value="$PROJECT_DIR$/src/Barathon/barBundle/Form/BarType.php" />
         <option value="$PROJECT_DIR$/src/Barathon/barBundle/Controller/BarController.php" />
-        <option value="$PROJECT_DIR$/src/Barathon/barBundle/Resources/views/bar/new.html.twig" />
         <option value="$PROJECT_DIR$/src/Barathon/barBundle/Entity/Bar.php" />
         <option value="$PROJECT_DIR$/src/Barathon/barBundle/Resources/views/bar/show.html.twig" />
         <option value="$PROJECT_DIR$/src/Barathon/utilisateursBundle/Resources/views/user/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Barathon/barBundle/Resources/views/bar/new.html.twig" />
       </list>
     </option>
   </component>
@@ -627,7 +597,7 @@
       <workItem from="1490286065716" duration="6683000" />
       <workItem from="1490347664932" duration="512000" />
       <workItem from="1490356708263" duration="134000" />
-      <workItem from="1490463482125" duration="2936000" />
+      <workItem from="1490463482125" duration="3077000" />
     </task>
     <task id="LOCAL-00001" summary="add git ignore">
       <created>1484572461041</created>
@@ -881,11 +851,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490466120082</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="affiche que des prop et user">
+      <created>1490466441452</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1490466441452</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184373000" />
+    <option name="totallyTimeSpent" value="184514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -926,7 +903,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modification du nom de l'id dans barBundle/Entity/Bar.php" />
     <MESSAGE value="ajout de avent à la bar de taches&#10;" />
     <MESSAGE value="Modification des vues&#10;" />
     <MESSAGE value="/!\ Changement de l'emplacement des vues dans les Bundles /!\" />
@@ -951,7 +927,8 @@
     <MESSAGE value="Heure de début et heure de fin" />
     <MESSAGE value="upload des images pour EVENT" />
     <MESSAGE value="upload des images pour Bars , mais la creation de Bar marche pas" />
-    <option name="LAST_COMMIT_MESSAGE" value="upload des images pour Bars , mais la creation de Bar marche pas" />
+    <MESSAGE value="affiche que des prop et user" />
+    <option name="LAST_COMMIT_MESSAGE" value="affiche que des prop et user" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1272,6 +1249,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Barathon/utilisateursBundle/Resources/views/user/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Barathon/eventBundle/Resources/views/event/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="988">
@@ -1282,16 +1267,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Barathon/barBundle/Resources/views/bar/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Barathon/utilisateursBundle/Resources/views/user/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+        <state relative-caret-position="57">
+          <caret line="3" column="83" selection-start-line="3" selection-start-column="83" selection-end-line="3" selection-end-column="83" />
           <folding />
         </state>
       </provider>

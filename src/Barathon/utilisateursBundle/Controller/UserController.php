@@ -38,6 +38,7 @@ class UserController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $user->upload();
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush($user);
@@ -76,6 +77,7 @@ class UserController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $user->upload();
             $this->getDoctrine()->getManager()->flush();
             $this->get('session')->getFlashBag()->add(
                 'modif',

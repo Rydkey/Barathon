@@ -306,5 +306,8 @@ class Event
 
     }
 
+    public function __toString() {
+        return $this->libelle_event;
+    }
 
 }

@@ -264,6 +264,9 @@ class Event
             return;
         }
         $this->nameImage = $this ->file->getClientOriginalName();
+       // if(!is_dir($this->getUploadRoot())){
+         //   mkdir($this->getUploadRoot(),'0777',true);
+        //}
         $this->file->move($this->getUploadRoot(),$this->nameImage);
         unset($this->file);
 

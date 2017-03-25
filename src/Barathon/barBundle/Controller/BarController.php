@@ -53,6 +53,7 @@ class BarController extends Controller
         $form = $this->createForm('Barathon\barBundle\Form\BarType', $bar);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $bar->upload();
             $em = $this->getDoctrine()->getManager();
             $em->persist($bar);
             $em->flush($bar);
@@ -85,6 +86,7 @@ class BarController extends Controller
         $editForm = $this->createForm('Barathon\barBundle\Form\BarType', $bar);
         $editForm->handleRequest($request);
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $bar->upload();
             $this->getDoctrine()->getManager()->flush();
             $this->get('session')->getFlashBag()->add(
                 'modif',

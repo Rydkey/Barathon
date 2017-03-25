@@ -9,6 +9,7 @@
 namespace Barathon\barBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -72,6 +73,71 @@ class Bar{
      * @ORM\Column(type="string")
      */
     protected $imageCarousel3;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $nameImage;
+
+    private $file;
+
+    /**
+     * @return mixed
+     */
+    public function getNameImage()
+    {
+        return $this->nameImage;
+    }
+
+    /**
+     * @param mixed $nameImage
+     */
+    public function setNameImage($nameImage)
+    {
+        $this->nameImage = $nameImage;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * @param mixed $file
+     */
+    public function setFile(UploadedFile $file)
+    {
+        $this->file = $file;
+    }
+    public function getUploadDir()
+    {
+        return 'uploads/images';
+    }
+    public function getAbsolutPath()
+    {
+        return $this->getUploadRoot().$this->nameImage;
+    }
+    public function getWebPath(){
+        return $this->getUploadDir().''.$this->nameImage;
+    }
+    public function getUploadRoot()
+    {
+        return __DIR__ .'/../../../../web/' .$this->getUploadDir() .'/';
+    }
+    public function upload()
+    {
+        if ($this->file === null){
+            return;
+        }
+        $this->nameImage = $this ->file->getClientOriginalName();
+        $this->file->move($this->getUploadRoot(),$this->nameImage);
+        unset($this->file);
+
+    }
+
     public function getId()
     {
         return $this->id;

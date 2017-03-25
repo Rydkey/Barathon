@@ -23,6 +23,10 @@
                 <label for="barathon_barbundle_bar_description" class="required">Déscription</label>
                 <textarea id="barathon_barbundle_bar_description" name="barathon_barbundle_bar[description]" required="required"></textarea>
             </div>
+            <div>
+                <label >Photo</label>
+                {{ form_widget(form.file) }}
+            </div>
             {{ form_row(form._token) }}
         </div>
         <input type="submit" value="Create" />

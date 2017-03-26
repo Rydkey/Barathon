@@ -60,6 +60,7 @@ class Event
      * @ORM\ManyToOne(targetEntity="Barathon\utilisateursBundle\Entity\User", cascade={"persist"})
      **/
     protected $user_id;
+
     /**
      * @ORM\Column(type="string")
      */
@@ -241,7 +242,12 @@ class Event
      */
     public function setFile(UploadedFile $file)
     {
-        $this->file = $file;
+        if (!isset($this->file)){
+            $this->file = $file;
+        }
+        if (isset($this->file) && $file==null){
+            return $this->getFile();
+        }
     }
     public function getUploadDir()
     {
@@ -252,7 +258,7 @@ class Event
         return $this->getUploadRoot().$this->nameImage;
     }
     public function getWebPath(){
-        return $this->getUploadDir().''.$this->nameImage;
+        return $this->getUploadDir().'/'.$this->nameImage;
     }
     public function getUploadRoot()
     {

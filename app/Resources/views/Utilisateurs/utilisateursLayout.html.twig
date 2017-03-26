@@ -115,7 +115,6 @@
                         <ul class="dropdown-menu notifications">
                                 <li class="dropdown-menu-title">
                                     <span>vous avez {{ app.user.events|length }} évènements prévue</span>
-                                    <a href="#refresh"><i class="icon-repeat"></i></a>
                                 </li>
                             {% for event in app.user.events %}
                                 <li>
@@ -131,104 +130,6 @@
                             </li>
                         </ul>
                     </li>
-                    <!-- end: Notifications Dropdown -->
-                    <!-- start: Message Dropdown -->
-                    {#<li class="dropdown hidden-phone">#}
-                        {#<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">#}
-                            {#<i class="icon-envelope"></i>#}
-								{#<span class="badge blue">#}
-								{#4 </span>#}
-                        {#</a>#}
-                        {#<ul class="dropdown-menu messages">#}
-                            {#<li class="dropdown-menu-title">#}
-                                {#<span>Vous avez 4 messages</span>#}
-                                {#<a href="#refresh"><i class="icon-repeat"></i></a>#}
-                            {#</li>#}
-                            {#<li>#}
-                                {#<a href="#">#}
-                                    {#<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>#}
-										{#<span class="header">#}
-											{#<span class="from">#}
-										    	{#{{user.username}}#}
-										     {#</span>#}
-											{#<span class="time">#}
-										    	{#6 min#}
-										    {#</span>#}
-										{#</span>#}
-                                        {#<span class="message">#}
-                                            {#Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore#}
-                                        {#</span>#}
-                                {#</a>#}
-                            {#</li>#}
-                            {#<li>#}
-                                {#<a href="#">#}
-                                    {#<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>#}
-										{#<span class="header">#}
-											{#<span class="from">#}
-										    	{#{{user.username}}#}
-										     {#</span>#}
-											{#<span class="time">#}
-										    	{#56 min#}
-										    {#</span>#}
-										{#</span>#}
-                                        {#<span class="message">#}
-                                            {#Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore#}
-                                        {#</span>#}
-                                {#</a>#}
-                            {#</li>#}
-                            {#<li>#}
-                                {#<a href="#">#}
-                                    {#<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>#}
-										{#<span class="header">#}
-											{#<span class="from">#}
-										    	{#{{user.username}}#}
-										     {#</span>#}
-											{#<span class="time">#}
-										    	{#3 hours#}
-										    {#</span>#}
-										{#</span>#}
-                                        {#<span class="message">#}
-                                            {#Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore#}
-                                        {#</span>#}
-                                {#</a>#}
-                            {#</li>#}
-                            {#<li>#}
-                                {#<a href="#">#}
-                                    {#<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>#}
-										{#<span class="header">#}
-											{#<span class="from">#}
-										    	{#{{user.username}}#}
-										     {#</span>#}
-											{#<span class="time">#}
-										    	{#yesterday#}
-										    {#</span>#}
-										{#</span>#}
-                                        {#<span class="message">#}
-                                            {#Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore#}
-                                        {#</span>#}
-                                {#</a>#}
-                            {#</li>#}
-                            {#<li>#}
-                                {#<a href="#">#}
-                                    {#<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>#}
-										{#<span class="header">#}
-											{#<span class="from">#}
-										    	{#{{user.username}}#}
-										     {#</span>#}
-											{#<span class="time">#}
-										    	{#Jul 25, 2012#}
-										    {#</span>#}
-										{#</span>#}
-                                        {#<span class="message">#}
-                                            {#Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore#}
-                                        {#</span>#}
-                                {#</a>#}
-                            {#</li>#}
-                            {#<li>#}
-                                {#<a href="{{ path('message_user') }}" class="dropdown-menu-sub-footer">Voir tout les messages</a>#}
-                            {#</li>#}
-                        {#</ul>#}
-                    {#</li>#}
 
                     <!-- start: User Dropdown -->
                     <li class="dropdown">
@@ -280,19 +181,25 @@
         </div>
         <!-- end: Main Menu -->
 
+        <div style="min-height: 100vh" id="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        {% block page %}
+
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- start: Content -->
         <noscript>
             <div class="alert alert-block span10">
                 <h4 class="alert-heading">Warning!</h4>
                 <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
             </div>
         </noscript>
-
-        <!-- start: Content -->
-        <div style="min-height: 100vh" id="content" class="row">
-            {% block page %}
-
-            {% endblock %}
-        </div>
     </div>
 </div>
 
@@ -302,7 +209,6 @@
 
     <p>
         <span style="text-align:left;float:left">&copy; 2013 <a href="http://themifycloud.com/downloads/janux-free-responsive-admin-dashboard-template/" alt="Bootstrap_Metro_Dashboard">JANUX Responsive Dashboard</a></span>
-
     </p>
 
 </footer>

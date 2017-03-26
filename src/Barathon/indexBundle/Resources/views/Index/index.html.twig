@@ -36,7 +36,7 @@
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                             <a href="{{ path('fos_user_security_logout') }}" class="btn-primary">Deconnexion</a>
                             </a>
-                            <a href="{{ path('test_front_page') }}" class="btn-primary">UserSpace</a>
+                            <a href="{{ path('fos_user_profile_show') }}" class="btn-primary">Profil</a>
                         {% else %}
                             <a href="{{ path('fos_user_security_login') }}" class="btn-primary">Connexion</a>
                             <a href="{{ path('fos_user_registration_register') }}" class="btn-primary">Inscription</a>

@@ -16,7 +16,7 @@ class EditProfileType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('pays')->add('ville')->add('age')->add('nom')->add('prenom')
-            ->add('file', FIleType::class);
+            ->add('file', FileType::class);
     }
 
     public function getParent()

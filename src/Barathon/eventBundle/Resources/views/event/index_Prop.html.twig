@@ -2,14 +2,14 @@
 {% block page %}
 {% if is_granted('ROLE_PROP') %}
     <h1>Listes de vos événements </h1><br>
-        <a href="{{ path('event_new') }}">Create a new event</a>
+        <a href="{{ path('event_new') }}">Crée un nouvel événement</a>
     {% for event in events %}
         {% if app.user.id == event.barId.userId.id %}
             <div class="container">
                 <div class="well">
                     <div class="media">
                         <a class="pull-left" href="#">
-                            <img class="media-object" src="{{ event.nameImage }}" style="height:150px; width: 150px;">
+                            <img class="media-object" src="{{ asset(event.WebPath) }}" style="height:150px; width: 150px;">
                         </a>
                         <div class="media-body">
                             <h1 class="media-heading">{{ event.libelleevent }} au {{ event.barId.name}}</h1>

@@ -7,7 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class EventType extends AbstractType
+class EventEditPropType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -16,11 +16,13 @@ class EventType extends AbstractType
     {
 
 
-        $builder->add('libelle_event')->add('date_event')->add('heureDebut')->add('heureFin')->add('bar_id')->add('descrition_event')
-        ->add('file', FileType::class, array('by_reference' => false));
+        $builder->add('libelle_event')->add('date_event')->add('heureDebut')->add('heureFin')->add('descrition_event')
+            ->add('file', FileType::class, array(
+                'required' => false,
+            ));
 
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -30,7 +32,6 @@ class EventType extends AbstractType
             'data_class' => 'Barathon\eventBundle\Entity\Event'
         ));
     }
-
 
     /**
      * {@inheritdoc}

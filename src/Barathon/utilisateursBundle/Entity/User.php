@@ -9,6 +9,7 @@
 namespace Barathon\utilisateursBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
+
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -245,6 +246,23 @@ class User extends BaseUser
         return $this->events;
     }
 
+
+    /**
+     * @return mixed
+     */
+    public function getNameImage()
+    {
+        return $this->nameImage;
+    }
+
+    /**
+     * @param mixed $nameImage
+     */
+    public function setNameImage($nameImage)
+    {
+        $this->nameImage = $nameImage;
+    }
+
     /**
      * @return mixed
      */
@@ -269,7 +287,7 @@ class User extends BaseUser
         return $this->getUploadRoot().$this->nameImage;
     }
     public function getWebPath(){
-        return $this->getUploadDir().''.$this->nameImage;
+        return $this->getUploadDir().'/'.$this->nameImage;
     }
     public function getUploadRoot()
     {
@@ -288,22 +306,5 @@ class User extends BaseUser
         unset($this->file);
 
     }
-
-    /**
-     * @return mixed
-     */
-    public function getNameImage()
-    {
-        return $this->nameImage;
-    }
-
-    /**
-     * @param mixed $nameImage
-     */
-    public function setNameImage($nameImage)
-    {
-        $this->nameImage = $nameImage;
-    }
-
 
 }

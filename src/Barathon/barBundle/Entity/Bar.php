@@ -98,7 +98,7 @@ class Bar{
         return $this->getUploadRoot().$this->nameImage;
     }
     public function getWebPath(){
-        return $this->getUploadDir().''.$this->nameImage;
+        return $this->getUploadDir().'/'.$this->nameImage;
     }
     public function getUploadRoot()
     {

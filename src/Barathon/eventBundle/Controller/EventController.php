@@ -119,7 +119,7 @@ class EventController extends Controller
     public function editAction(Request $request, Event $event)
     {
         $deleteForm = $this->createDeleteForm($event);
-        $editForm = $this->createForm('Barathon\eventBundle\Form\EventType', $event);
+        $editForm = $this->createForm('Barathon\eventBundle\Form\EventEditPropType', $event);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {

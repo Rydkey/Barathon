@@ -29,7 +29,9 @@ class BarType extends AbstractType
                 'label' => 'Catégories'
             ))
             ->add('description')
-            ->add('file', FIleType::class);
+            ->add('file', FileType::class, array(
+                'required' => false,
+            ));
     }
     
     /**

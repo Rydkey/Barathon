@@ -14,7 +14,7 @@ class BarController extends Controller
      * Lists all bar entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $repository = $this
             ->getDoctrine()
@@ -22,8 +22,26 @@ class BarController extends Controller
             ->getRepository('BarathonbarBundle:Bar')
         ;
         $bars = $repository->findAll();
+        $form = $this->createForm('Barathon\barBundle\Form\BarSearchType');
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid() && $request->getMethod()=='POST') {
+            if(empty($form->getViewData()->getCategory())){
+                $requestBar =  $repository->searchBarVille($form->getViewData()->getVille());
+                return $this->render('BarathonbarBundle:bar:index.html.twig', array(
+                    'search_form' => $form->createView(), 'bars' => $requestBar
+                ));
+            }else{
+                $requestBar =  $repository->searchBarVille($form->getViewData()->getVille());
+                foreach($form->getViewData()->getCategory() as $name){
+                    $requestBar =  $repository->searchBarCategory($name,$form->getViewData()->getVille());
+                }
+                return $this->render('BarathonbarBundle:bar:index.html.twig', array(
+                    'search_form' => $form->createView(), 'bars' => $requestBar
+                ));
+            }
+        }
         return $this->render('BarathonbarBundle:bar:index.html.twig', array(
-            'bars' => $bars,
+            'search_form' => $form->createView(), 'bars' => $bars
         ));
     }
 

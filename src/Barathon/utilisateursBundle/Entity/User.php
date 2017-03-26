@@ -276,8 +276,14 @@ class User extends BaseUser
      */
     public function setFile(UploadedFile $file)
     {
-        $this->file = $file;
+        if (!isset($this->file)){
+            $this->file = $file;
+        }
+        if (isset($this->file) && $file==null){
+            return $this->getFile();
+        }
     }
+
     public function getUploadDir()
     {
         return 'uploads/images';

@@ -249,6 +249,7 @@ class Event
             return $this->getFile();
         }
     }
+
     public function getUploadDir()
     {
         return 'uploads/images';

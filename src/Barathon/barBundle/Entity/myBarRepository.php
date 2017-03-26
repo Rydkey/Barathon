@@ -26,11 +26,33 @@ class myBarRepository extends \Doctrine\ORM\EntityRepository
             ->where('b.user_id='.$id)
         ;
         return $qb
-
             ->getQuery()
-
             ->getResult()
+            ;
+    }
 
+    public function searchBarVille($ville){
+        $qb=$this
+            ->createQueryBuilder('b')
+            ->where('b.ville=\''.$ville.'\'')
+            ->addSelect('b')
+        ;
+        return $qb
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function searchBarCategory($name,$ville){
+        $qb=$this
+            ->createQueryBuilder('b')
+            ->innerJoin('b.category','c','WITH','c.name=\''.$name.'\'')
+            ->where('b.ville=\''.$ville.'\'')
+
+        ;
+        return $qb
+            ->getQuery()
+            ->getResult()
             ;
     }
 }

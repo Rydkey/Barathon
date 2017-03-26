@@ -1,7 +1,8 @@
 bar_index:
     path:     /
     defaults: { _controller: "BarathonbarBundle:Bar:index" }
-    methods:  GET
+    methods:  [GET, POST]
+
 
 bar_index_prop:
     path:     /barProp/{id}

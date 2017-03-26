@@ -6,7 +6,7 @@
             <div class="well">
                 <div class="row">
                     <div class="col-sm-6 col-md-4">
-                        <img src="{{ asset(user.WebPath) }}" class="img-rounded img-responsive" style="height:120px; width:300px">
+                        <img src="{{ asset(app.user.WebPath) }}" class="avatar img-circle" alt="avatar" style="width: 150px;height: 150px">
                     </div>
                     <div class="col-sm-6 col-md-8">
                         <h4>
@@ -38,11 +38,28 @@
 </div>
 
 
-{% if not app.user.events.empty %}
-    <p>
-        inscrit dans les évènements suivant :
-        {% for event in app.user.events %}
-            {{ event.libelleEvent }}{% if not loop.last %}, {% endif %}
-        {% endfor %}
-    </p>
-{% endif %}
+<div class="box" onDesktop="span4">
+{#<div class="box span4" onDesktop="span4">#}
+    <div class="box-header" style="height: 35px">
+        <h2><i class="icon-calendar"></i><span class="break"></span>mes événements</h2>
+        <div class="box-icon">
+        </div>
+    </div>
+    <div class="box-content">
+        <ul class="dashboard-list">
+            {% if not app.user.events.empty %}
+                {% for event in app.user.events %}
+                    <li>
+                        <a href="#">
+                            <img class="avatar" alt="Dennis Ji" src="{{ asset(event.WebPath) }}">
+                        </a>
+                        <strong>Nom:</strong> <a href="{{ path('event_show', { 'id': event.id }) }}"> {{ event.libelleEvent }}</a><br>
+                        <strong>Date:</strong> le {{ event.dateEvent|date('d/m/Y')}} de {{ event.heureDebut|date('H') }}h à {{ event.heureFin|date('H')}}h<br>
+                        <strong>Status:</strong> <span class="label label-success">Inscrit</span>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+</div><!--/span-->
+

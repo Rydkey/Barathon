@@ -1,5 +1,5 @@
 {% trans_default_domain 'FOSUserBundle' %}
-
+{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
     <div class="row-fluid">
         <div class="col-lg-12">
             <br>
@@ -10,21 +10,18 @@
                     <!-- left column -->
                     <div class="col-md-3">
                         <div class="text-center">
-                            <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-                            <h6>Changer de Photo</h6>
+                            <img src="{{ asset(app.user.WebPath)}}" class="avatar img-circle" alt="avatar" style="width: 250px;height: 250px">
+                            <h6>{{ form_widget(form.file) }}</h6>
                             {#<input type="file" class="form-control">#}
                         </div>
                     </div>
-
                     <!-- edit form column -->
-                    <div class="col-md-9 personal-info">
+                    <div class="col-md-7 personal-info pull-right">
                         {#<div class="alert alert-info alert-dismissable">#}
                             {#<a class="panel-close close" data-dismiss="alert">×</a>#}
                             {#<i class="fa fa-coffee"></i>#}
                             {#This is an <strong>.alert</strong>. Use this to show important messages to the user.#}
                         {#</div>#}
-                        <h3>Infos personnels</h3>
-                        {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
                         {{ form_widget(form) }}
                         <div>
                             <input type="submit" value="{{ 'profile.edit.submit'|trans }}" class="btn btn-success"/>
@@ -37,6 +34,7 @@
             <br>
         </div>
     </div>
+{{ form_end(form) }}
 
 
 {#<form name="fos_user_profile_form" method="post" action="/private/BarathonNew/web/app_dev.php/profile/edit" class="fos_user_profile_edit">#}

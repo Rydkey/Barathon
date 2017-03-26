@@ -13,7 +13,6 @@ use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 
 /**
  * @ORM\Entity
@@ -78,7 +77,7 @@ class User extends BaseUser
     /**
      * @ORM\Column(type="string")
      */
-    protected $nameImage='default_profil_pic.png';
+    protected $nameImage;
 
     private $file;
 
@@ -87,6 +86,7 @@ class User extends BaseUser
     {
         parent::__construct();
         $this->anniversaire = new \DateTime();
+        $this->nameImage='default_profil_pic.png';
     }
 
     /**

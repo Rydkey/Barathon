@@ -18,6 +18,7 @@ class BarType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('adress')
             ->add('ville')
             ->add('user_id')
             ->add('category',    EntityType::class, array(

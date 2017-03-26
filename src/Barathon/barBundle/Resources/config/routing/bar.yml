@@ -5,26 +5,26 @@ bar_index:
 
 
 bar_index_prop:
-    path:     /barProp/{id}
+    path:     /votrBar/{id}
     defaults: { _controller: "BarathonbarBundle:Bar:indexProp" }
     methods:  GET
 
 bar_show:
-    path:     /{id}/show
+    path:     /{id}/detail
     defaults: { _controller: "BarathonbarBundle:Bar:show" }
     methods:  GET
 
 bar_new:
-    path:     /new
+    path:     /nouveau
     defaults: { _controller: "BarathonbarBundle:Bar:new" }
     methods:  [GET, POST]
 
 bar_edit:
-    path:     /{id}/edit
+    path:     /{id}/modifier
     defaults: { _controller: "BarathonbarBundle:Bar:edit" }
     methods:  [GET, POST]
 
 bar_delete:
-    path:     /{id}/delete
+    path:     /{id}/supprimer
     defaults: { _controller: "BarathonbarBundle:Bar:delete" }
     methods:  DELETE

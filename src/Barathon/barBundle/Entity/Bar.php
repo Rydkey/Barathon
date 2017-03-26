@@ -28,6 +28,11 @@ class Bar{
      * @ORM\Column(type="string")
      */
     protected $name;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $adress;
     
     /**
      * @ORM\Column(type="string")
@@ -272,5 +277,29 @@ class Bar{
 
     public function __toString(){
         return $this->getName();
+    }
+
+    /**
+     * Set adress
+     *
+     * @param string $adress
+     *
+     * @return Bar
+     */
+    public function setAdress($adress)
+    {
+        $this->adress = $adress;
+
+        return $this;
+    }
+
+    /**
+     * Get adress
+     *
+     * @return string
+     */
+    public function getAdress()
+    {
+        return $this->adress;
     }
 }

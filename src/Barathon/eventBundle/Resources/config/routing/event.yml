@@ -4,36 +4,36 @@ event_index:
     methods:  [GET, POST]
 
 event_index_prop:
-    path:     /vosevent/{id}
+    path:     /vosevenements/{id}
     defaults: { _controller: "BarathoneventBundle:Event:indexProp" }
     methods: [GET, POST]
 
 event_show:
-    path:     /{id}/show
+    path:     /{id}/detail
     defaults: { _controller: "BarathoneventBundle:Event:show" }
     methods:  GET
 
 event_new:
-    path:     /new
+    path:     /nouveau
     defaults: { _controller: "BarathoneventBundle:Event:new" }
     methods:  [GET, POST]
 
 event_edit:
-    path:     /{id}/edit
+    path:     /{id}/modifier
     defaults: { _controller: "BarathoneventBundle:Event:edit" }
     methods:  [GET, POST]
 
 event_delete:
-    path:     /{id}/delete
+    path:     /{id}/supprimer
     defaults: { _controller: "BarathoneventBundle:Event:delete" }
     methods:  [GET, POST, DELETE]
 
 event_addUser:
-    path:     /{user}/{event}/add
+    path:     /{user}/{event}/ajout
     defaults: { _controller: "BarathoneventBundle:Event:addUser" }
     methods:  [GET, POST]
 
 event_removeUser:
-    path:     /{user}/{event}/remove
+    path:     /{user}/{event}/supression
     defaults: { _controller: "BarathoneventBundle:Event:removeUser"}
     methods:  [GET, POST, DELETE]

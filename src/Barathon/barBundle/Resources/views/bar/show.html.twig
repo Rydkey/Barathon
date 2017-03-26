@@ -56,36 +56,6 @@
         </div>
 
         <div class="col-lg-5">
-            {#<script>#}
-                {#var geocoder;#}
-                {#var map;#}
-                {#function initialize() {#}
-                    {#geocoder = new google.maps.Geocoder();#}
-                    {#var latlng = new google.maps.LatLng(-34.397, 150.644);#}
-                    {#var mapOptions = {#}
-                        {#zoom: 15,#}
-                        {#center: latlng,#}
-                        {#scrollwheel: false#}
-                    {#}#}
-                    {#map = new google.maps.Map(document.getElementById("map"), mapOptions);#}
-                {#}#}
-
-                {#function codeAddress() {#}
-                    {#var address = document.getElementById("address").value;#}
-                    {#geocoder.geocode( { 'address': address}, function(results, status) {#}
-                        {#if (status == google.maps.GeocoderStatus.OK) {#}
-                            {#map.setCenter(results[0].geometry.location);#}
-                            {#var marker = new google.maps.Marker({#}
-                                {#map: map,#}
-                                {#position: results[0].geometry.location#}
-                            {#});#}
-                        {#} else {#}
-                            {#alert("Geocode was not successful for the following reason: " + status);#}
-                        {#}#}
-                    {#});#}
-                {#}#}
-
-            {#</script>#}
             <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCjQF0jXVa3CpSscQuUMAwn_LbcGGdfDM&callback=initMap">
             </script>
@@ -93,79 +63,30 @@
             <body onload="initialize(); codeAddress()">
             <div id="map" style="height: 480px;" ></div>
             <div>
-                <input type="hidden" disabled id="address" type="textbox" value={{ bar.ville }}>
+                <input type="hidden" disabled id="address" type="textbox" value="{{ bar.adress }} {{ bar.ville }}">
             </div>
             </body>
         </div>
     </div>
-    <table>
-        <tbody>
-{#            <tr>
-                <th>Bar_id</th>
-                <td>{{ bar.id }}</td>
-            </tr>#}
-{#            <tr>
-                <th>Name</th>
-                <td>{{ bar.name }}</td>
-            </tr>#}
-{#            <tr>
-                <th>Ville</th>
-                <td>{{ bar.ville }}</td>
-            </tr>#}
-        </tbody>
-    </table>
-    <h2>Horaires : </h2>
-    <table class = "table table-bordered">
-        <thead>
-        <tr>
-            <th>Jour</th>
-            <th>Heures</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Lundi</td>
-            <td>8h-12h</td>
-        </tr>
-        <tr>
-            <td>Mardi</td>
-            <td>8h-12h</td>
-        </tr>
-        <tr>
-            <td>Mercredi</td>
-            <td>8h-14h</td>
-        </tr>
-        <tr>
-            <td>Jeudi</td>
-            <td>8h-14h</td>
-        </tr>
-        <tr>
-            <td>Vendredi</td>
-            <td>8h-14h</td>
-        </tr>
-        <tr>
-            <td>Samedi</td>
-            <td>8h-14h</td>
-        </tr>
-        <tr>
-            <td>Dimanche</td>
-            <td>8h-14h</td>
-        </tr>
-        </tbody>
-    </table>
-    <ul>
+    {% if is_granted('ROLE_PROP') and app.user.id == bar.userId.id %}
         <li>
-            <a class="btn btn-info" role="button" href="{{ path('bar_index') }}">Back to the list</a>
+            <a class="btn btn-info" role="button" href="{{ path('bar_edit', { 'id': bar.id }) }}">Modifier</a>
         </li>
-        </br>
-        <li>
-            <a class="btn btn-info" role="button" href="{{ path('bar_edit', { 'id': bar.id }) }}">Edit</a>
-        </li>
-        </br>
+        <br>
         <li>
             {{ form_start(delete_form) }}
-                <input class="btn btn-danger" role="button" type="submit" value="Delete">
+            <input class="btn btn-danger" role="button" type="submit" value="Delete">
             {{ form_end(delete_form) }}
         </li>
-    </ul>
+    {% endif %}
+    {% if is_granted('ROLE_ADMIN')%}
+        <li>
+            <a class="btn btn-info" role="button" href="{{ path('bar_edit', { 'id': bar.id }) }}">Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+            <input class="btn btn-danger" role="button" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    {% endif %}
 {% endblock %}

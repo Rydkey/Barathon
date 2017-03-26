@@ -1,38 +1,61 @@
 {% extends '::Utilisateurs/utilisateursLayout.html.twig' %}
 {% block page %}
- {% if is_granted('ROLE_ADMIN') %}
-    <h1>User</h1>
+<h1>Utilisateur {{ user.username }}</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ user.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ user.nom }}</td>
-            </tr>
-            <tr>
-                <th>Prenom</th>
-                <td>{{ user.prenom }}</td>
-            </tr>
-            <tr>
-                <th>Pays</th>
-                <td>{{ user.pays }}</td>
-            </tr>
-            <tr>
-                <th>Ville</th>
-                <td>{{ user.ville }}</td>
-            </tr>
-            <tr>
-                <th>Age</th>
-                <td>{{ user.age }}</td>
-            </tr>
-        </tbody>
-    </table>
+ <div class="container">
+     <div class="row">
+         <div class="col-xs-12 col-sm-6 col-md-6">
+             <div class="well">
+                 <div class="row">
+                     <div class="col-sm-6 col-md-4">
+                         <img src="{{ asset(user.WebPath) }}" class="avatar img-circle" alt="avatar" style="width: 150px;height: 150px">
+                     </div>
+                     <div class="col-sm-6 col-md-8">
+                         <h4>
+                             {{ user.prenom }} {{ user.nom }}</h4>
+                         <small><cite title="San Francisco, USA"> {{ user.ville }} <i class="glyphicon glyphicon-map-marker">
+                                 </i></cite></small>
+                         <p>
+                             <i class="glyphicon glyphicon-envelope"></i> {{ user.email }}
+                             <br />
+                             <i class="glyphicon glyphicon-gift"></i> {{ user.anniversaire|date('d/m/Y') }}</p>
+                         <!-- Split button -->
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
 
-    <ul>
+
+ <div class="box" onDesktop="span4">
+     {#<div class="box span4" onDesktop="span4">#}
+     <div class="box-header" style="height: 35px">
+         <h2><i class="icon-calendar"></i><span class="break"></span>événements de {{ user.username }}</h2>
+         <div class="box-icon">
+         </div>
+     </div>
+     <div class="box-content">
+         <ul class="dashboard-list">
+             {% if not user.events.empty %}
+                 {% for event in user.events %}
+                     <li>
+                         <a href="#">
+                             <img class="avatar" alt="Dennis Ji" src="{{ asset(event.WebPath) }}">
+                         </a>
+                         <strong>Nom:</strong> <a href="{{ path('event_show', { 'id': event.id }) }}"> {{ event.libelleEvent }}</a><br>
+                         <strong>Date:</strong> le {{ event.dateEvent|date('d/m/Y')}} de {{ event.heureDebut|date('H') }}h à {{ event.heureFin|date('H')}}h<br>
+                         <strong>Status:</strong> <span class="label label-success">Inscrit</span>
+                     </li>
+                 {% endfor %}
+             {% endif %}
+         </ul>
+     </div>
+ </div><!--/span-->
+
+
+{% if is_granted ('ROLE_ADMIN')%}
+     <ul>
         <li>
             <a href="{{ path('user_index') }}">Back to the list</a>
         </li>
@@ -44,6 +67,6 @@
                 <input type="submit" value="Delete">
             {{ form_end(delete_form) }}
         </li>
-    </ul>
+     </ul>
 {% endif %}
 {% endblock %}

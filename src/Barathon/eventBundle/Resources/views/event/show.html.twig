@@ -1,41 +1,85 @@
 {% extends 'Utilisateurs/utilisateursLayout.html.twig' %}
 {% block page %}
-    <h1>Event</h1>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+    <h1>{{ event.barId.name }}</h1>
+    </br>
+    </br>
+    <div class="row">
+        <div class="col-lg-6">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                </ol>
 
-    <table class="table table-hover">
-        <tbody>
-            <tr>
-                <th>Bar</th>
-                <td>{{ event.barId.name }}</td>
-            </tr>
-            <tr>
-                <th>Libelle_event</th>
-                <td>{{ event.libelleevent }}</td>
-            </tr>
-            <tr>
-                <th>Date_event</th>
-                <td>{% if event.dateevent %}{{ event.dateevent|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>photo</th>
-                <td> <img src="{{ asset(event.WebPath) }}" width="500"></td>
-            </tr>
-        </tbody>
-    </table>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="{{ asset(event.WebPath) }}" width="500" style="width: 400px;height: 224px">
+                    </div>
+                </div>
 
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div>
+                <h2>Déscription</h2>
+                {{ event.descritionEvent }}
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCjQF0jXVa3CpSscQuUMAwn_LbcGGdfDM&callback=initMap">
+            </script>
+            <script src="{{ asset('assets/Maps/js/maps.js') }}"></script>
+            <body onload="initialize(); codeAddress()">
+            <div id="map" style="height: 480px;" ></div>
+            <div>
+                <input type="hidden" disabled id="address" type="textbox" value={{ event.barId.ville }}>
+            </div>
+            </body>
+        </div>
+    </div>
     <ul>
         <li>
-            <a class="btn btn-info" role="button" href="{{ path('event_index') }}">Back to the list</a>
+            <a class="btn btn-info" role="button" href="{{ path('event_index') }}">Retour à la liste</a>
         </li>
-        <br/>
-        <li>
-            <a class="btn btn-info" role="button" href="{{ path('event_edit', { 'id': event.id }) }}">Edit</a>
-        </li>
-        <br/>
-        <li>
-            {{ form_start(delete_form) }}
-            <input class="btn btn-danger" role="button" type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
+        </br>
+        {% if is_granted('ROLE_PROP') and app.user.id == event.barId.userId.id%}
+            <li>
+                <a class="btn btn-info" role="button" href="{{ path('event_edit', { 'id': event.id }) }}">Modifier</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                <input class="btn btn-danger" role="button" type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </li>
+        {% endif %}
+        {% if is_granted('ROLE_ADMIN')%}
+            <li>
+                <a class="btn btn-info" role="button" href="{{ path('event_edit', { 'id': event.id }) }}">Modifier</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                <input class="btn btn-danger" role="button" type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </li>
+        {% endif %}
     </ul>
 {% endblock %}

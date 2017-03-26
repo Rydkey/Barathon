@@ -51,7 +51,7 @@
             <body onload="initialize(); codeAddress()">
             <div id="map" style="height: 480px;" ></div>
             <div>
-                <input type="hidden" disabled id="address" type="textbox" value={{ event.barId.ville }}>
+                <input type="hidden" disabled id="address" type="textbox" value="{{ event.barId.adress }} {{event.barId.ville}}">
             </div>
             </body>
         </div>

@@ -204,7 +204,7 @@ public function removeUserAction(User $user,Event $event){
     $em->flush();
     $this->get('session')->getFlashBag()->add(
         'unsubscribe',
-        'Vous vous êtes désinscrit'
+        'Désinscrit'
     );
     return $this->redirectToRoute('event_index');
 }

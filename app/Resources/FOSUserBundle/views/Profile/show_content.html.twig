@@ -35,31 +35,28 @@
             </div>
         </div>
     </div>
-</div>
-
-
-<div class="box" onDesktop="span4">
-{#<div class="box span4" onDesktop="span4">#}
-    <div class="box-header" style="height: 35px">
-        <h2><i class="icon-calendar"></i><span class="break"></span>mes événements</h2>
-        <div class="box-icon">
+    <div class="box" onDesktop="span4">
+        {#<div class="box span4" onDesktop="span4">#}
+        <div class="box-header" style="height: 35px">
+            <h2><i class="icon-calendar"></i><span class="break"></span>mes événements</h2>
+            <div class="box-icon">
+            </div>
         </div>
-    </div>
-    <div class="box-content">
-        <ul class="dashboard-list">
-            {% if not app.user.events.empty %}
-                {% for event in app.user.events %}
-                    <li>
-                        <a href="#">
-                            <img class="avatar" alt="Dennis Ji" src="{{ asset(event.WebPath) }}">
-                        </a>
-                        <strong>Nom:</strong> <a href="{{ path('event_show', { 'id': event.id }) }}"> {{ event.libelleEvent }}</a><br>
-                        <strong>Date:</strong> le {{ event.dateEvent|date('d/m/Y')}} de {{ event.heureDebut|date('H') }}h à {{ event.heureFin|date('H')}}h<br>
-                        <strong>Status:</strong> <span class="label label-success">Inscrit</span>
-                    </li>
-                {% endfor %}
-            {% endif %}
-        </ul>
-    </div>
-</div><!--/span-->
-
+        <div class="box-content">
+            <ul class="dashboard-list">
+                {% if not app.user.events.empty %}
+                    {% for event in app.user.events %}
+                        <li>
+                            <a href="#">
+                                <img class="avatar" alt="Dennis Ji" src="{{ asset(event.WebPath) }}">
+                            </a>
+                            <strong>Nom:</strong> <a href="{{ path('event_show', { 'id': event.id }) }}"> {{ event.libelleEvent }}</a><br>
+                            <strong>Date:</strong> le {{ event.dateEvent|date('d/m/Y')}} de {{ event.heureDebut|date('H') }}h à {{ event.heureFin|date('H')}}h<br>
+                            <strong>Status:</strong> <span class="label label-success">Inscrit</span>
+                        </li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+    </div><!--/span-->
+</div>

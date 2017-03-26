@@ -9,14 +9,14 @@
 namespace Barathon\utilisateursBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 class RegistrationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('pays')->add('ville')->add('age')->add('nom')->add('prenom');
+        $builder->add('pays')->add('ville')->add('anniversaire', BirthdayType::class)->add('nom')->add('prenom');
     }
 
     public function getParent()

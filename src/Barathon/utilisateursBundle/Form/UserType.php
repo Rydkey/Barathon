@@ -14,8 +14,12 @@ class UserType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('prenom')->add('pays')->add('ville')->add('age')->add('events')
-            ->add('file', FIleType::class);
+        $builder->add('nom')->add('prenom')->add('pays')->add('ville')
+            ->add('anniversaire', BirthdayType::class)
+            ->add('events')
+            ->add('file', FileType::class, array(
+                'required' => false,
+            ));
     }
     
     /**

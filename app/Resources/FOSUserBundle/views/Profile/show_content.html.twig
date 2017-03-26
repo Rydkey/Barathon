@@ -1,27 +1,37 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<div class="col-lg-12 well">
-    <div class="col-lg-6">
-        <div class="col-md-3">
-            <img class="media-object" src="{{ asset(user.WebPath) }}">
-        </div>
-        <div class="col-md-3">
-            <h1>{{ user.prenom }} {{ user.nom }}</h1>
-            <h6>{{ user.email }}</h6>
-            {#<h6>{{ user.events }}</h6>#}
-        </div>
-    </div>
-    <div class="col-md-3 col-lg-offset-3">
-        <div class="span2">
-            <div class="btn-group">
-                <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
-                <span class="icon-cog icon-white"></span>
-                </a>
-                <ul class="dropdown-menu dropdown">
-                    <li><a href="{{ path('fos_user_profile_edit') }}">Modifier le profil</a></li>
-                    <li><a href="{{ path('fos_user_change_password') }}">Changer de mot de passe</a></li>
-                    <li><a href="{{ path('fos_user_security_logout') }}">déconnexion</a></li>
-                </ul>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="well">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <img src="{{ asset(user.WebPath) }}" class="img-rounded img-responsive" style="height:120px; width:300px">
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <h4>
+                            {{ user.prenom }} {{ user.nom }}</h4>
+                        <small><cite title="San Francisco, USA"> {{ user.ville }} <i class="glyphicon glyphicon-map-marker">
+                                </i></cite></small>
+                        <p>
+                            <i class="glyphicon glyphicon-envelope"></i> {{ user.email }}
+                            <br />
+                            <i class="glyphicon glyphicon-gift"></i>{{ user.anniversaire|date('d/m/Y') }}</p>
+                        <!-- Split button -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary">
+                                Actions</button>
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span><span class="sr-only">Actions</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown">
+                                <li><a href="{{ path('fos_user_profile_edit') }}">Modifier le profil</a></li>
+                                <li><a href="{{ path('fos_user_change_password') }}">Changer de mot de passe</a></li>
+                                <li><a href="{{ path('fos_user_security_logout') }}">déconnexion</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -36,31 +46,3 @@
         {% endfor %}
     </p>
 {% endif %}
-
-{{ dump(user) }}
-
-{#<div class="container-fluid well span6">#}
-    {#<div class="row-fluid">#}
-        {#<div class="span2" >#}
-            {#<img src="https://secure.gravatar.com/avatar/de9b11d0f9c0569ba917393ed5e5b3ab?s=140&r=g&d=mm" class="img-circle">#}
-        {#</div>#}
-
-        {#<div class="span8">#}
-            {#<h3>{{ 'profile.show.username'|trans }}: {{ user.username }}</h3>#}
-            {#<h6>{{ 'profile.show.email'|trans }}: {{ user.email }}</h6>#}
-            {#<h6>{{ 'profile.show.famillyname'|trans }}: {{ user.nom }}</h6>#}
-            {#<h6>{{ 'profile.show.name'|trans }}: {{ user.prenom }}</h6>#}
-            {#<h6>{{ 'profile.show.age'|trans }}: {{ user.age }}</h6>#}
-            {#<h6>{{ 'profile.show.country'|trans }}: {{ user.pays }}</h6>#}
-            {#<h6>{{ 'profile.show.city'|trans }}: {{ user.ville }}</h6>#}
-            {#{% if user.barId != NULL %}#}
-                {#<h6>{{ 'profile.show.bar'|trans }} : {{ user.barId.name }}</h6>#}
-            {#{% endif %}#}
-            {#{% for event in user.events%}#}
-                {#<h6>{{ event.libelleEvent}} dans le bar {{ event.barId }} a la date du {{ event.dateEvent | date('d/m/Y') }}</h6>#}
-            {#{% endfor %}#}
-        {#</div>#}
-
-
-    {#</div>#}
-{#</div>#}

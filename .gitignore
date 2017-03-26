@@ -24,3 +24,4 @@ Supprimerait src/Barathon/barBundle/Entity/Bar.php~
 Supprimerait src/Barathon/eventBundle/Entity/Event.php~
 /.idea/dataSources.xml
 /.idea/dataSources.local.xml
+/web/uploads/

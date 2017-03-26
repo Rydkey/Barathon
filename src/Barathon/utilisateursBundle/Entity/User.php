@@ -13,6 +13,7 @@ use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 
 /**
  * @ORM\Entity
@@ -65,9 +66,9 @@ class User extends BaseUser
     protected $ville;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="date")
      */
-    protected $age;
+    protected $anniversaire;
 
     /**
      * @ORM\ManyToMany(targetEntity="Barathon\eventBundle\Entity\Event", cascade={"persist"})
@@ -77,10 +78,16 @@ class User extends BaseUser
     /**
      * @ORM\Column(type="string")
      */
-    protected $nameImage;
+    protected $nameImage='default_profil_pic.png';
 
     private $file;
 
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->anniversaire = new \DateTime();
+    }
 
     /**
      * Get id
@@ -313,4 +320,28 @@ class User extends BaseUser
 
     }
 
+
+    /**
+     * Set anniversaire
+     *
+     * @param \DateTime $anniversaire
+     *
+     * @return User
+     */
+    public function setAnniversaire($anniversaire)
+    {
+        $this->anniversaire = $anniversaire;
+
+        return $this;
+    }
+
+    /**
+     * Get anniversaire
+     *
+     * @return \DateTime
+     */
+    public function getAnniversaire()
+    {
+        return $this->anniversaire;
+    }
 }
